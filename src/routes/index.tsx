@@ -54,7 +54,7 @@ function Index() {
               </div>
             </div>
             <div className="flex items-center justify-center">
-              <img src="/images/logo.png" alt="Hero" className="w-full" />
+              <img src="/images/logo.webp" alt="Hero" className="w-full" />
             </div>
           </div>
         </div>

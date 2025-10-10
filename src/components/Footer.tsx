@@ -26,12 +26,12 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="flex items-center mb-4">
               <img
-                src="/images/logo.png"
+                src="/images/logo.webp"
                 alt="SabIA Labs"
                 className="h-8 w-auto mr-3"
               />
               <span className="font-['Space_Grotesk'] text-xl font-bold">
-                SabIA Labs
+                SabIA
               </span>
             </div>
             <p className="text-[var(--color-neutral-300)] leading-relaxed mb-6 max-w-md">
