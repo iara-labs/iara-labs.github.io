@@ -62,7 +62,7 @@ const Navigation = () => {
   }, [menuItems]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[var(--color-neutral-200)] shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[var(--color-neutral-200)] shadow-lg w-full">
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="flex items-center justify-between h-[80px] md:h-[110px]">
           <div className="flex items-center">

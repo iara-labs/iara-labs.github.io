@@ -42,11 +42,6 @@ function Index() {
               </div>
               {/* Social Proof */}
               <div className="space-y-4 pt-8">
-                <div className="flex items-center gap-6">
-                  <div className="h-12 w-24 rounded bg-[var(--color-neutral-200)]"></div>
-                  <div className="h-12 w-24 rounded bg-[var(--color-neutral-200)]"></div>
-                  <div className="h-12 w-24 rounded bg-[var(--color-neutral-200)]"></div>
-                </div>
                 <p className="text-sm italic text-[var(--color-neutral-600)]">
                   "Migramos do Rekognition e reduzimos custos em 40% mantendo a
                   mesma qualidade."
@@ -101,9 +96,9 @@ function Index() {
 
             {/* USP 2 */}
             <div className="rounded-xl border border-[var(--color-neutral-200)] bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--color-secondary)]/10">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--color-primary)]/10">
                 <svg
-                  className="h-6 w-6 text-[var(--color-secondary)]"
+                  className="h-6 w-6 text-[var(--color-primary)]"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -127,9 +122,9 @@ function Index() {
 
             {/* USP 3 */}
             <div className="rounded-xl border border-[var(--color-neutral-200)] bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--color-accent)]/10">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--color-primary)]/10">
                 <svg
-                  className="h-6 w-6 text-[var(--color-accent)]"
+                  className="h-6 w-6 text-[var(--color-primary)]"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -208,7 +203,7 @@ function Index() {
 
             {/* Step 2 */}
             <div className="relative">
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-secondary)] text-2xl font-bold text-white">
+              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-primary)] text-2xl font-bold text-white">
                 2
               </div>
               <h3 className="mb-3 font-['Space_Grotesk'] text-xl font-semibold text-[var(--color-neutral-900)]">
@@ -222,7 +217,7 @@ function Index() {
 
             {/* Step 3 */}
             <div className="relative">
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-accent)] text-2xl font-bold text-white">
+              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-primary)] text-2xl font-bold text-white">
                 3
               </div>
               <h3 className="mb-3 font-['Space_Grotesk'] text-xl font-semibold text-[var(--color-neutral-900)]">
@@ -278,9 +273,9 @@ function Index() {
 
             <div className="text-center">
               <div className="mb-4 flex justify-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-secondary)]/10">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-primary)]/10">
                   <svg
-                    className="h-8 w-8 text-[var(--color-secondary)]"
+                    className="h-8 w-8 text-[var(--color-primary)]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -304,9 +299,9 @@ function Index() {
 
             <div className="text-center">
               <div className="mb-4 flex justify-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-accent)]/10">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-primary)]/10">
                   <svg
-                    className="h-8 w-8 text-[var(--color-accent)]"
+                    className="h-8 w-8 text-[var(--color-primary)]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -472,9 +467,9 @@ function Index() {
                 </ul>
               </div>
               <div className="flex items-center justify-center">
-                <div className="rounded-xl bg-[var(--color-neutral-100)] p-8">
+                <div className="flex h-54 w-54 items-center justify-center rounded-full bg-[var(--color-primary)]/10">
                   <svg
-                    className="h-32 w-32 text-[var(--color-neutral-400)]"
+                    className="h-36 w-36 text-[var(--color-primary)]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -889,95 +884,6 @@ console.log(response.Blocks);`}</code>
                 logs de requisição (sem conteúdo) por 30 dias para auditoria.
               </p>
             </details>
-          </div>
-        </div>
-      </section>
-
-      {/* Accessibility Checklist Section */}
-      <section className="bg-[var(--color-primary)]/5 py-20 md:py-32">
-        <div className="mx-auto max-w-[800px] px-6">
-          <div className="rounded-2xl border border-[var(--color-neutral-200)] bg-white p-8 shadow-lg md:p-12">
-            <h2 className="mb-6 font-['Space_Grotesk'] text-2xl font-bold text-[var(--color-neutral-900)] md:text-3xl">
-              Compromisso com acessibilidade
-            </h2>
-            <p className="mb-8 leading-relaxed text-[var(--color-neutral-700)]">
-              Nossa plataforma segue as diretrizes WCAG 2.1 nível AA:
-            </p>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <svg
-                  className="mt-1 h-5 w-5 flex-shrink-0 text-[var(--color-primary)]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span className="text-[var(--color-neutral-700)]">
-                  Contraste mínimo de 4.5:1 em todos os textos
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <svg
-                  className="mt-1 h-5 w-5 flex-shrink-0 text-[var(--color-primary)]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span className="text-[var(--color-neutral-700)]">
-                  Navegação completa por teclado com indicadores de foco
-                  visíveis
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <svg
-                  className="mt-1 h-5 w-5 flex-shrink-0 text-[var(--color-primary)]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span className="text-[var(--color-neutral-700)]">
-                  Markup semântico e ARIA labels para leitores de tela
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <svg
-                  className="mt-1 h-5 w-5 flex-shrink-0 text-[var(--color-primary)]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span className="text-[var(--color-neutral-700)]">
-                  Respeito a prefers-reduced-motion para animações
-                </span>
-              </li>
-            </ul>
           </div>
         </div>
       </section>
