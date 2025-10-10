@@ -1,12 +1,14 @@
-import { Link } from "@tanstack/react-router";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      const elementPosition = element.offsetTop;
+      // Use getBoundingClientRect().top to get the position relative to the viewport,
+      // and add window.pageYOffset to get the document position
+      const elementPosition =
+        (element as HTMLElement).getBoundingClientRect().top +
+        window.pageYOffset;
       const offsetPosition = elementPosition - 120;
 
       window.scrollTo({
