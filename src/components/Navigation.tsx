@@ -25,7 +25,7 @@ const Navigation = () => {
     const element = document.querySelector(href) as HTMLElement;
     if (element) {
       const elementPosition = element.offsetTop;
-      const offsetPosition = elementPosition - 120; // 120px de offset para dar espaço abaixo do menu
+      const offsetPosition = elementPosition - 100;
 
       window.scrollTo({
         top: offsetPosition,
