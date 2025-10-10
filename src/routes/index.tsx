@@ -8,7 +8,10 @@ function Index() {
   return (
     <div className="bg-[var(--color-background)]">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 md:py-32">
+      <section
+        id="inicio"
+        className="relative overflow-hidden bg-gradient-to-br from-[var(--color-background)] via-[var(--color-neutral-50)] to-[var(--color-primary)]/10 py-20 md:py-32"
+      >
         <div className="mx-auto max-w-[1200px] px-6">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
             <div className="space-y-8">
@@ -58,7 +61,10 @@ function Index() {
       </section>
 
       {/* USPs Section */}
-      <section className="py-20 md:py-32">
+      <section
+        id="recursos"
+        className="bg-gradient-to-br from-[var(--color-primary)]/5 via-[var(--color-primary)]/10 to-[var(--color-primary)]/15 py-20 md:py-32"
+      >
         <div className="mx-auto max-w-[1200px] px-6">
           <div className="mb-16 text-center">
             <h2 className="font-['Space_Grotesk'] text-3xl font-bold text-[var(--color-neutral-900)] md:text-4xl">
@@ -175,7 +181,10 @@ function Index() {
       </section>
 
       {/* How It Works Section */}
-      <section className="bg-[var(--color-neutral-50)] py-20 md:py-32">
+      <section
+        id="como-funciona"
+        className="bg-gradient-to-br from-[var(--color-neutral-100)] via-[var(--color-neutral-200)]/50 to-[var(--color-neutral-100)] py-20 md:py-32"
+      >
         <div className="mx-auto max-w-[1200px] px-6">
           <div className="mb-16 text-center">
             <h2 className="font-['Space_Grotesk'] text-3xl font-bold text-[var(--color-neutral-900)] md:text-4xl">
@@ -229,7 +238,7 @@ function Index() {
       </section>
 
       {/* Developer Experience Section */}
-      <section className="py-20 md:py-32">
+      <section id="desenvolvedores" className="py-20 md:py-32">
         <div className="mx-auto max-w-[1200px] px-6">
           <div className="mb-16 text-center">
             <h2 className="font-['Space_Grotesk'] text-3xl font-bold text-[var(--color-neutral-900)] md:text-4xl">
@@ -323,7 +332,7 @@ function Index() {
       </section>
 
       {/* Main Features Section */}
-      <section className="bg-[var(--color-neutral-50)] py-20 md:py-32">
+      <section className="bg-gradient-to-br from-[var(--color-primary)]/5 via-[var(--color-primary)]/15 to-[var(--color-secondary)]/10 py-20 md:py-32">
         <div className="mx-auto max-w-[1200px] px-6">
           <div className="mb-16 text-center">
             <h2 className="font-['Space_Grotesk'] text-3xl font-bold text-[var(--color-neutral-900)] md:text-4xl">
@@ -391,7 +400,7 @@ function Index() {
       </section>
 
       {/* AWS Compatibility Section */}
-      <section className="py-20 md:py-32">
+      <section className="bg-gradient-to-br from-[var(--color-neutral-100)] via-[var(--color-neutral-50)] to-[var(--color-neutral-200)]/30 py-20 md:py-32">
         <div className="mx-auto max-w-[1200px] px-6">
           <div className="rounded-2xl border border-[var(--color-neutral-200)] bg-white p-8 shadow-lg md:p-12">
             <div className="grid gap-8 md:grid-cols-2 md:items-center">
@@ -485,7 +494,7 @@ function Index() {
       </section>
 
       {/* Quickstart Code Examples Section */}
-      <section className="bg-[var(--color-neutral-900)] py-20 text-white md:py-32">
+      <section className="bg-gradient-to-br from-[var(--color-neutral-900)] via-[var(--color-secondary)] to-[var(--color-neutral-800)] py-20 text-white md:py-32">
         <div className="mx-auto max-w-[1200px] px-6">
           <div className="mb-16 text-center">
             <h2 className="font-['Space_Grotesk'] text-3xl font-bold md:text-4xl">
@@ -595,7 +604,7 @@ console.log(response.Blocks);`}</code>
       </section>
 
       {/* Limits and Sandbox Section */}
-      <section className="py-20 md:py-32">
+      <section className="bg-[var(--color-primary)]/5 py-20 md:py-32">
         <div className="mx-auto max-w-[1200px] px-6">
           <div className="rounded-2xl border border-[var(--color-neutral-200)] bg-[var(--color-neutral-50)] p-8 md:p-12">
             <h2 className="mb-6 font-['Space_Grotesk'] text-2xl font-bold text-[var(--color-neutral-900)] md:text-3xl">
@@ -632,7 +641,7 @@ console.log(response.Blocks);`}</code>
       {/* Pricing Section */}
       <section
         id="precos"
-        className="bg-[var(--color-neutral-50)] py-20 md:py-32"
+        className="bg-gradient-to-br from-[var(--color-primary)]/5 via-[var(--color-primary)]/10 to-[var(--color-primary)]/20 py-20 md:py-32"
       >
         <div className="mx-auto max-w-[1200px] px-6">
           <div className="mb-16 text-center">
@@ -752,7 +761,10 @@ console.log(response.Blocks);`}</code>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 md:py-32">
+      <section
+        id="faq"
+        className="bg-gradient-to-br from-[var(--color-neutral-100)] via-[var(--color-neutral-200)]/40 to-[var(--color-neutral-100)] py-20 md:py-32"
+      >
         <div className="mx-auto max-w-[800px] px-6">
           <div className="mb-16 text-center">
             <h2 className="font-['Space_Grotesk'] text-3xl font-bold text-[var(--color-neutral-900)] md:text-4xl">
@@ -882,7 +894,7 @@ console.log(response.Blocks);`}</code>
       </section>
 
       {/* Accessibility Checklist Section */}
-      <section className="bg-[var(--color-neutral-50)] py-20 md:py-32">
+      <section className="bg-[var(--color-primary)]/5 py-20 md:py-32">
         <div className="mx-auto max-w-[800px] px-6">
           <div className="rounded-2xl border border-[var(--color-neutral-200)] bg-white p-8 shadow-lg md:p-12">
             <h2 className="mb-6 font-['Space_Grotesk'] text-2xl font-bold text-[var(--color-neutral-900)] md:text-3xl">
@@ -971,7 +983,7 @@ console.log(response.Blocks);`}</code>
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20 md:py-32">
+      <section className="bg-gradient-to-br from-[var(--color-primary)]/5 via-[var(--color-primary)]/15 to-[var(--color-primary)]/25 py-20 md:py-32">
         <div className="mx-auto max-w-[800px] px-6 text-center">
           <h2 className="mb-6 font-['Space_Grotesk'] text-3xl font-bold text-[var(--color-neutral-900)] md:text-4xl">
             Pronto para começar?
