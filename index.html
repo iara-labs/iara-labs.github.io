@@ -62,7 +62,12 @@
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
-    gtag('config', 'G-Y9PX7D2GDJ');
+    gtag('config', 'G-Y9PX7D2GDJ', {
+      cookie_domain: 'sabia-labs.github.io',
+      cookie_flags: 'SameSite=None;Secure',
+      cookie_expires: 63072000,
+      send_page_view: true
+    });
   </script>
 
 
