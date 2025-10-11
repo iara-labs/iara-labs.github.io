@@ -105,12 +105,12 @@ const Navigation = () => {
           </div>
 
           {/* Menu Items */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             {menuItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.href, item.label)}
-                className={`group relative px-5 py-3 text-base font-medium transition-all duration-300 ease-in-out rounded-4xl cursor-pointer ${
+                className={`group relative px-4 py-2 xl:px-5 xl:py-3 text-sm xl:text-base font-medium transition-all duration-300 ease-in-out rounded-4xl cursor-pointer ${
                   activeSection === item.id
                     ? "text-white bg-[var(--color-primary)]"
                     : "text-[var(--color-secondary)] hover:text-white hover:bg-[var(--color-primary)]"
@@ -122,7 +122,7 @@ const Navigation = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:flex">
+          <div className="hidden lg:flex">
             <a
               href={isOnThankYouPage ? "/" : "/registrar-se"}
               onClick={() =>
@@ -131,14 +131,14 @@ const Navigation = () => {
                   "navigation-header"
                 )
               }
-              className="group relative px-5 py-3 text-base font-medium transition-all duration-300 ease-in-out rounded-4xl cursor-pointer text-white bg-[var(--color-primary)] hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:ring-offset-2"
+              className="group relative px-4 py-2 xl:px-5 xl:py-3 text-sm xl:text-base font-medium transition-all duration-300 ease-in-out rounded-4xl cursor-pointer text-white bg-[var(--color-primary)] hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:ring-offset-2"
             >
               {isOnThankYouPage ? "Voltar ao Início" : "Começar Agora"}
             </a>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 rounded-md text-[var(--color-secondary)] hover:text-[var(--color-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] cursor-pointer"
@@ -172,7 +172,7 @@ const Navigation = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-[var(--color-neutral-200)] shadow-lg">
+        <div className="lg:hidden bg-white border-t border-[var(--color-neutral-200)] shadow-lg">
           <div className="px-6 py-4 space-y-2">
             {menuItems.map((item) => (
               <button
