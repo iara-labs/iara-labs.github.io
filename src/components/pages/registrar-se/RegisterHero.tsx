@@ -11,12 +11,26 @@ export default function RegisterHero() {
         <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-[var(--color-primary)]/20 to-[var(--color-secondary)]/10 blur-3xl"></div>
         <div className="absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-gradient-to-tr from-[var(--color-secondary)]/15 to-[var(--color-primary)]/20 blur-2xl"></div>
 
-        {/* Subtle particles */}
-        <div className="absolute top-1/6 left-1/6 h-4 w-4 rounded-full bg-[var(--color-primary)]/5 animate-pulse"></div>
-        <div className="absolute top-1/4 right-1/4 h-3 w-3 rounded-full bg-[var(--color-secondary)]/8 animate-pulse delay-500"></div>
-        <div className="absolute top-1/3 left-1/5 h-5 w-5 rounded-full bg-[var(--color-primary)]/3 animate-pulse delay-1000"></div>
-        <div className="absolute bottom-1/6 left-1/6 h-3 w-3 rounded-full bg-[var(--color-primary)]/8 animate-pulse delay-3000"></div>
-        <div className="absolute bottom-1/4 right-1/5 h-5 w-5 rounded-full bg-[var(--color-secondary)]/5 animate-pulse delay-3500"></div>
+        {/* Subtle particles com tamanhos e delays aleatórios */}
+        <div className="absolute top-1/6 left-1/6 h-1 w-1 rounded-full bg-[var(--color-primary)]/4 animate-pulse delay-[3800ms]"></div>
+        <div className="absolute top-1/4 right-1/4 h-2.5 w-2.5 rounded-full bg-[var(--color-secondary)]/6 animate-pulse delay-[1200ms]"></div>
+        <div className="absolute top-1/3 left-1/5 h-4 w-4 rounded-full bg-[var(--color-primary)]/3 animate-pulse delay-[3200ms]"></div>
+        <div className="absolute bottom-1/6 left-1/6 h-2 w-2 rounded-full bg-[var(--color-primary)]/7 animate-pulse delay-[800ms]"></div>
+        <div className="absolute bottom-1/4 right-1/5 h-3.5 w-3.5 rounded-full bg-[var(--color-secondary)]/5 animate-pulse delay-[2200ms]"></div>
+
+        {/* Partículas adicionais para mais densidade */}
+        <div className="absolute top-1/8 left-1/8 h-1.5 w-1.5 rounded-full bg-[var(--color-primary)]/3 animate-pulse delay-[1600ms]"></div>
+        <div className="absolute top-3/8 right-1/8 h-2 w-2 rounded-full bg-[var(--color-secondary)]/5 animate-pulse delay-[4200ms]"></div>
+        <div className="absolute top-5/8 left-1/8 h-1 w-1 rounded-full bg-[var(--color-primary)]/6 animate-pulse delay-[2800ms]"></div>
+        <div className="absolute top-7/8 right-1/8 h-3 w-3 rounded-full bg-[var(--color-secondary)]/4 animate-pulse delay-[4800ms]"></div>
+        <div className="absolute bottom-1/8 left-1/8 h-2.5 w-2.5 rounded-full bg-[var(--color-primary)]/7 animate-pulse delay-[1800ms]"></div>
+        <div className="absolute bottom-3/8 right-1/8 h-1.5 w-1.5 rounded-full bg-[var(--color-secondary)]/8 animate-pulse delay-[5200ms]"></div>
+        <div className="absolute bottom-5/8 left-1/8 h-2 w-2 rounded-full bg-[var(--color-primary)]/3 animate-pulse delay-[3200ms]"></div>
+        <div className="absolute bottom-7/8 right-1/8 h-1 w-1 rounded-full bg-[var(--color-secondary)]/6 animate-pulse delay-[6800ms]"></div>
+
+        {/* Partículas no centro */}
+        <div className="absolute top-1/2 left-1/2 h-1.5 w-1.5 rounded-full bg-[var(--color-primary)]/4 animate-pulse delay-[2400ms]"></div>
+        <div className="absolute top-1/2 left-1/2 h-2.5 w-2.5 rounded-full bg-[var(--color-secondary)]/7 animate-pulse delay-[5600ms]"></div>
       </div>
 
       <div className="relative z-10 mx-auto max-w-[1200px] px-6">
