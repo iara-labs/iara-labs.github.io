@@ -91,7 +91,7 @@ const CodeBlock = ({
               handleLanguageChange(value as keyof typeof codeExamples)
             }
           >
-            <SelectTrigger className="w-32 sm:w-40 bg-[var(--color-neutral-700)] border-0 text-white text-sm hover:bg-[var(--color-neutral-600)] rounded-4xl [&:focus]:ring-0 [&:focus]:ring-offset-0 [&:focus]:border-0 [&:focus]:outline-none [&:focus]:shadow-none">
+            <SelectTrigger className="w-32 sm:w-40 h-10 bg-[var(--color-neutral-700)] border-0 text-white text-sm hover:bg-[var(--color-neutral-600)] rounded-4xl [&:focus]:ring-0 [&:focus]:ring-offset-0 [&:focus]:border-0 [&:focus]:outline-none [&:focus]:shadow-none">
               <SelectValue placeholder="Linguagem" />
             </SelectTrigger>
             <SelectContent
@@ -103,7 +103,14 @@ const CodeBlock = ({
                 <SelectItem
                   key={key}
                   value={key}
-                  className="text-white hover:bg-[var(--color-neutral-700)] focus:bg-[var(--color-neutral-700)] [&:focus]:outline-none [&:focus]:ring-0 [&:focus]:border-0 [&:hover]:outline-none [&:hover]:ring-0 [&:hover]:border-0"
+                  className="text-white hover:bg-[var(--color-neutral-700)] focus:bg-[var(--color-neutral-700)] !border-0 !outline-none !ring-0 !shadow-none [&:focus]:!outline-none [&:focus]:!ring-0 [&:focus]:!border-0 [&:hover]:!outline-none [&:hover]:!ring-0 [&:hover]:!border-0 [&[data-state=checked]]:!border-0 [&[data-state=checked]]:!outline-none [&[data-state=checked]]:!ring-0 [&[data-highlighted]]:!border-0 [&[data-highlighted]]:!outline-none [&[data-highlighted]]:!ring-0 [&[data-highlighted]]:!shadow-none"
+                  style={{
+                    border: "none !important",
+                    outline: "none !important",
+                    boxShadow: "none !important",
+                    borderWidth: "0 !important",
+                    borderStyle: "none !important",
+                  }}
                 >
                   {label}
                 </SelectItem>
@@ -114,7 +121,7 @@ const CodeBlock = ({
           {/* Botão Copiar - texto menor em mobile */}
           <button
             onClick={copyToClipboard}
-            className="flex items-center gap-1 sm:gap-2 rounded-4xl bg-[var(--color-neutral-700)] px-2 py-2 sm:px-3 text-xs sm:text-sm text-[var(--color-neutral-200)] transition-colors hover:bg-[var(--color-neutral-600)]"
+            className="flex items-center gap-1 sm:gap-2 h-10 rounded-4xl bg-[var(--color-neutral-700)] px-3 text-xs sm:text-sm text-[var(--color-neutral-200)] transition-colors hover:bg-[var(--color-neutral-600)]"
           >
             {copied ? (
               <>
