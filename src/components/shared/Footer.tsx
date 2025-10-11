@@ -30,41 +30,41 @@ const Footer = () => {
     <footer className="relative bg-gradient-to-br from-[var(--color-neutral-900)] via-[var(--color-secondary)] to-[var(--color-neutral-800)] text-white overflow-hidden">
       {/* Efeito de partículas/grãos aleatórias */}
       <div className="absolute inset-0 opacity-5">
-        {/* Partículas principais com tamanhos variados */}
-        <div className="absolute top-20 left-20 w-1 h-1 bg-[var(--color-primary)] rounded-full animate-pulse delay-[3200ms]"></div>
-        <div className="absolute top-40 right-32 w-2.5 h-2.5 bg-white rounded-full animate-pulse delay-[800ms]"></div>
-        <div className="absolute bottom-40 left-1/3 w-1.5 h-1.5 bg-[var(--color-primary)] rounded-full animate-pulse delay-[1600ms]"></div>
-        <div className="absolute top-1/3 right-20 w-3 h-3 bg-white rounded-full animate-pulse delay-[2800ms]"></div>
-        <div className="absolute bottom-20 right-1/4 w-1 h-1 bg-[var(--color-primary)] rounded-full animate-pulse delay-[1200ms]"></div>
-        <div className="absolute top-60 left-1/2 w-2 h-2 bg-white rounded-full animate-pulse delay-[2200ms]"></div>
+        {/* Partículas principais com tamanhos variados e efeitos de escala */}
+        <div className="absolute top-20 left-20 w-1 h-1 bg-[var(--color-primary)] rounded-full animate-particle-1"></div>
+        <div className="absolute top-40 right-32 w-2.5 h-2.5 bg-white rounded-full animate-particle-2"></div>
+        <div className="absolute bottom-40 left-1/3 w-1.5 h-1.5 bg-[var(--color-primary)] rounded-full animate-particle-3"></div>
+        <div className="absolute top-1/3 right-20 w-3 h-3 bg-white rounded-full animate-particle-4"></div>
+        <div className="absolute bottom-20 right-1/4 w-1 h-1 bg-[var(--color-primary)] rounded-full animate-particle-5"></div>
+        <div className="absolute top-60 left-1/2 w-2 h-2 bg-white rounded-full animate-particle-6"></div>
 
         {/* Partículas adicionais com delays mais aleatórios */}
-        <div className="absolute top-10 right-1/3 w-1.5 h-1.5 bg-[var(--color-primary)] rounded-full animate-pulse delay-[4500ms]"></div>
-        <div className="absolute bottom-60 left-1/4 w-2.5 h-2.5 bg-white rounded-full animate-pulse delay-[900ms]"></div>
-        <div className="absolute top-80 left-2/3 w-1 h-1 bg-[var(--color-primary)] rounded-full animate-pulse delay-[3000ms]"></div>
-        <div className="absolute bottom-10 right-1/5 w-2 h-2 bg-white rounded-full animate-pulse delay-[1400ms]"></div>
-        <div className="absolute top-1/2 left-10 w-1.5 h-1.5 bg-[var(--color-primary)] rounded-full animate-pulse delay-[4000ms]"></div>
-        <div className="absolute bottom-80 right-1/2 w-2.5 h-2.5 bg-white rounded-full animate-pulse delay-[2500ms]"></div>
-        <div className="absolute top-30 left-1/5 w-1 h-1 bg-[var(--color-primary)] rounded-full animate-pulse delay-[1900ms]"></div>
-        <div className="absolute bottom-30 right-10 w-3 h-3 bg-white rounded-full animate-pulse delay-[3500ms]"></div>
-        <div className="absolute top-70 right-1/6 w-1.5 h-1.5 bg-[var(--color-primary)] rounded-full animate-pulse delay-[5000ms]"></div>
-        <div className="absolute bottom-70 left-1/6 w-2 h-2 bg-white rounded-full animate-pulse delay-[5500ms]"></div>
-        <div className="absolute top-1/4 left-3/4 w-1 h-1 bg-[var(--color-primary)] rounded-full animate-pulse delay-[6000ms]"></div>
-        <div className="absolute bottom-1/4 right-3/4 w-2.5 h-2.5 bg-white rounded-full animate-pulse delay-[6500ms]"></div>
+        <div className="absolute top-10 right-1/3 w-1.5 h-1.5 bg-[var(--color-primary)] rounded-full animate-particle-7"></div>
+        <div className="absolute bottom-60 left-1/4 w-2.5 h-2.5 bg-white rounded-full animate-particle-8"></div>
+        <div className="absolute top-80 left-2/3 w-1 h-1 bg-[var(--color-primary)] rounded-full animate-particle-9"></div>
+        <div className="absolute bottom-10 right-1/5 w-2 h-2 bg-white rounded-full animate-particle-10"></div>
+        <div className="absolute top-1/2 left-10 w-1.5 h-1.5 bg-[var(--color-primary)] rounded-full animate-particle-11"></div>
+        <div className="absolute bottom-80 right-1/2 w-2.5 h-2.5 bg-white rounded-full animate-particle-12"></div>
+        <div className="absolute top-30 left-1/5 w-1 h-1 bg-[var(--color-primary)] rounded-full animate-particle-13"></div>
+        <div className="absolute bottom-30 right-10 w-3 h-3 bg-white rounded-full animate-particle-14"></div>
+        <div className="absolute top-70 right-1/6 w-1.5 h-1.5 bg-[var(--color-primary)] rounded-full animate-particle-15"></div>
+        <div className="absolute bottom-70 left-1/6 w-2 h-2 bg-white rounded-full animate-particle-16"></div>
+        <div className="absolute top-1/4 left-3/4 w-1 h-1 bg-[var(--color-primary)] rounded-full animate-particle-17"></div>
+        <div className="absolute bottom-1/4 right-3/4 w-2.5 h-2.5 bg-white rounded-full animate-particle-18"></div>
 
         {/* Partículas extras para mais densidade */}
-        <div className="absolute top-1/8 left-1/8 w-1.5 h-1.5 bg-[var(--color-primary)] rounded-full animate-pulse delay-[7200ms]"></div>
-        <div className="absolute top-3/8 right-1/8 w-1 h-1 bg-white rounded-full animate-pulse delay-[3800ms]"></div>
-        <div className="absolute top-5/8 left-1/8 w-2 h-2 bg-[var(--color-primary)] rounded-full animate-pulse delay-[8200ms]"></div>
-        <div className="absolute top-7/8 right-1/8 w-1.5 h-1.5 bg-white rounded-full animate-pulse delay-[5200ms]"></div>
-        <div className="absolute bottom-1/8 left-1/8 w-1 h-1 bg-[var(--color-primary)] rounded-full animate-pulse delay-[6200ms]"></div>
-        <div className="absolute bottom-3/8 right-1/8 w-2.5 h-2.5 bg-white rounded-full animate-pulse delay-[4200ms]"></div>
-        <div className="absolute bottom-5/8 left-1/8 w-1.5 h-1.5 bg-[var(--color-primary)] rounded-full animate-pulse delay-[7200ms]"></div>
-        <div className="absolute bottom-7/8 right-1/8 w-1 h-1 bg-white rounded-full animate-pulse delay-[9200ms]"></div>
-        <div className="absolute top-1/6 left-2/3 w-2 h-2 bg-[var(--color-primary)] rounded-full animate-pulse delay-[10200ms]"></div>
-        <div className="absolute top-1/3 right-2/3 w-1 h-1 bg-white rounded-full animate-pulse delay-[11200ms]"></div>
-        <div className="absolute bottom-1/6 left-2/3 w-1.5 h-1.5 bg-[var(--color-primary)] rounded-full animate-pulse delay-[12200ms]"></div>
-        <div className="absolute bottom-1/3 right-2/3 w-2.5 h-2.5 bg-white rounded-full animate-pulse delay-[13200ms]"></div>
+        <div className="absolute top-1/8 left-1/8 w-1.5 h-1.5 bg-[var(--color-primary)] rounded-full animate-particle-19"></div>
+        <div className="absolute top-3/8 right-1/8 w-1 h-1 bg-white rounded-full animate-particle-20"></div>
+        <div className="absolute top-5/8 left-1/8 w-2 h-2 bg-[var(--color-primary)] rounded-full animate-particle-21"></div>
+        <div className="absolute top-7/8 right-1/8 w-1.5 h-1.5 bg-white rounded-full animate-particle-22"></div>
+        <div className="absolute bottom-1/8 left-1/8 w-1 h-1 bg-[var(--color-primary)] rounded-full animate-particle-23"></div>
+        <div className="absolute bottom-3/8 right-1/8 w-2.5 h-2.5 bg-white rounded-full animate-particle-24"></div>
+        <div className="absolute bottom-5/8 left-1/8 w-1.5 h-1.5 bg-[var(--color-primary)] rounded-full animate-particle-25"></div>
+        <div className="absolute bottom-7/8 right-1/8 w-1 h-1 bg-white rounded-full animate-particle-26"></div>
+        <div className="absolute top-1/6 left-2/3 w-2 h-2 bg-[var(--color-primary)] rounded-full animate-particle-27"></div>
+        <div className="absolute top-1/3 right-2/3 w-1 h-1 bg-white rounded-full animate-particle-28"></div>
+        <div className="absolute bottom-1/6 left-2/3 w-1.5 h-1.5 bg-[var(--color-primary)] rounded-full animate-particle-29"></div>
+        <div className="absolute bottom-1/3 right-2/3 w-2.5 h-2.5 bg-white rounded-full animate-particle-30"></div>
 
         {/* Partículas extras para efeito ainda mais rico */}
         <div className="absolute top-5 left-1/8 w-1.5 h-1.5 bg-[var(--color-primary)] rounded-full animate-pulse delay-6250"></div>

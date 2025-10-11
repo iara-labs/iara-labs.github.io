@@ -109,6 +109,299 @@ html {
   animation: float 3s ease-in-out infinite;
 }
 
+/* Custom particle animations with random timing and scale effects */
+@keyframes particle-pulse-1 {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+@keyframes particle-pulse-2 {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  30% { opacity: 0.9; transform: scale(1.2); }
+  70% { opacity: 0.3; transform: scale(0.9); }
+}
+
+@keyframes particle-pulse-3 {
+  0%, 100% { opacity: 0.05; transform: scale(1); }
+  25% { opacity: 0.7; transform: scale(1.3); }
+  75% { opacity: 0.2; transform: scale(0.8); }
+}
+
+@keyframes particle-pulse-4 {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  40% { opacity: 0.6; transform: scale(1.15); }
+  80% { opacity: 0.1; transform: scale(0.85); }
+}
+
+@keyframes particle-pulse-5 {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  60% { opacity: 0.85; transform: scale(1.25); }
+}
+
+@keyframes particle-pulse-6 {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  20% { opacity: 0.4; transform: scale(0.9); }
+  50% { opacity: 0.9; transform: scale(1.2); }
+  80% { opacity: 0.1; transform: scale(0.7); }
+}
+
+@keyframes particle-pulse-7 {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  35% { opacity: 0.8; transform: scale(1.1); }
+  65% { opacity: 0.2; transform: scale(0.95); }
+}
+
+@keyframes particle-pulse-8 {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  45% { opacity: 0.7; transform: scale(1.3); }
+  90% { opacity: 0.05; transform: scale(0.8); }
+}
+
+@keyframes particle-pulse-9 {
+  0%, 100% { opacity: 0.05; transform: scale(1); }
+  15% { opacity: 0.6; transform: scale(1.15); }
+  55% { opacity: 0.9; transform: scale(1.4); }
+  85% { opacity: 0.1; transform: scale(0.75); }
+}
+
+@keyframes particle-pulse-10 {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  70% { opacity: 0.5; transform: scale(1.1); }
+}
+
+/* Additional random animations with more variety */
+@keyframes particle-pulse-11 {
+  0%, 100% { opacity: 0.08; transform: scale(1); }
+  22% { opacity: 0.6; transform: scale(1.2); }
+  44% { opacity: 0.2; transform: scale(0.9); }
+  66% { opacity: 0.8; transform: scale(1.3); }
+  88% { opacity: 0.1; transform: scale(0.8); }
+}
+
+@keyframes particle-pulse-12 {
+  0%, 100% { opacity: 0.12; transform: scale(1); }
+  33% { opacity: 0.7; transform: scale(1.15); }
+  66% { opacity: 0.3; transform: scale(0.85); }
+}
+
+@keyframes particle-pulse-13 {
+  0%, 100% { opacity: 0.18; transform: scale(1); }
+  16% { opacity: 0.4; transform: scale(0.9); }
+  32% { opacity: 0.8; transform: scale(1.25); }
+  48% { opacity: 0.2; transform: scale(0.8); }
+  64% { opacity: 0.9; transform: scale(1.35); }
+  80% { opacity: 0.1; transform: scale(0.75); }
+  96% { opacity: 0.5; transform: scale(1.1); }
+}
+
+@keyframes particle-pulse-14 {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  28% { opacity: 0.6; transform: scale(1.2); }
+  56% { opacity: 0.1; transform: scale(0.7); }
+  84% { opacity: 0.8; transform: scale(1.3); }
+}
+
+@keyframes particle-pulse-15 {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  40% { opacity: 0.9; transform: scale(1.4); }
+  80% { opacity: 0.05; transform: scale(0.6); }
+}
+
+@keyframes particle-pulse-16 {
+  0%, 100% { opacity: 0.22; transform: scale(1); }
+  12% { opacity: 0.5; transform: scale(1.1); }
+  24% { opacity: 0.1; transform: scale(0.8); }
+  36% { opacity: 0.7; transform: scale(1.25); }
+  48% { opacity: 0.2; transform: scale(0.9); }
+  60% { opacity: 0.8; transform: scale(1.3); }
+  72% { opacity: 0.1; transform: scale(0.75); }
+  84% { opacity: 0.6; transform: scale(1.15); }
+  96% { opacity: 0.3; transform: scale(0.85); }
+}
+
+@keyframes particle-pulse-17 {
+  0%, 100% { opacity: 0.08; transform: scale(1); }
+  25% { opacity: 0.4; transform: scale(1.2); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+  75% { opacity: 0.2; transform: scale(0.9); }
+}
+
+@keyframes particle-pulse-18 {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  20% { opacity: 0.1; transform: scale(0.7); }
+  40% { opacity: 0.6; transform: scale(1.3); }
+  60% { opacity: 0.2; transform: scale(0.8); }
+  80% { opacity: 0.9; transform: scale(1.4); }
+}
+
+@keyframes particle-pulse-19 {
+  0%, 100% { opacity: 0.12; transform: scale(1); }
+  18% { opacity: 0.7; transform: scale(1.25); }
+  36% { opacity: 0.1; transform: scale(0.75); }
+  54% { opacity: 0.5; transform: scale(1.1); }
+  72% { opacity: 0.8; transform: scale(1.35); }
+  90% { opacity: 0.2; transform: scale(0.85); }
+}
+
+@keyframes particle-pulse-20 {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  30% { opacity: 0.8; transform: scale(1.2); }
+  60% { opacity: 0.1; transform: scale(0.8); }
+  90% { opacity: 0.6; transform: scale(1.3); }
+}
+
+/* Animation classes with highly random durations and delays */
+.animate-particle-1 {
+  animation: particle-pulse-1 2.3s ease-in-out infinite;
+  animation-delay: 0.2s;
+}
+
+.animate-particle-2 {
+  animation: particle-pulse-2 3.7s ease-in-out infinite;
+  animation-delay: 1.1s;
+}
+
+.animate-particle-3 {
+  animation: particle-pulse-3 1.8s ease-in-out infinite;
+  animation-delay: 2.4s;
+}
+
+.animate-particle-4 {
+  animation: particle-pulse-4 4.2s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+.animate-particle-5 {
+  animation: particle-pulse-5 2.9s ease-in-out infinite;
+  animation-delay: 1.9s;
+}
+
+.animate-particle-6 {
+  animation: particle-pulse-6 3.4s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.animate-particle-7 {
+  animation: particle-pulse-7 2.1s ease-in-out infinite;
+  animation-delay: 2.7s;
+}
+
+.animate-particle-8 {
+  animation: particle-pulse-8 3.8s ease-in-out infinite;
+  animation-delay: 1.3s;
+}
+
+.animate-particle-9 {
+  animation: particle-pulse-9 2.6s ease-in-out infinite;
+  animation-delay: 0.9s;
+}
+
+.animate-particle-10 {
+  animation: particle-pulse-10 4.1s ease-in-out infinite;
+  animation-delay: 2.1s;
+}
+
+.animate-particle-11 {
+  animation: particle-pulse-11 3.2s ease-in-out infinite;
+  animation-delay: 1.7s;
+}
+
+.animate-particle-12 {
+  animation: particle-pulse-12 2.4s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+.animate-particle-13 {
+  animation: particle-pulse-13 3.9s ease-in-out infinite;
+  animation-delay: 2.8s;
+}
+
+.animate-particle-14 {
+  animation: particle-pulse-14 1.9s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.animate-particle-15 {
+  animation: particle-pulse-15 3.6s ease-in-out infinite;
+  animation-delay: 0.7s;
+}
+
+.animate-particle-16 {
+  animation: particle-pulse-16 2.7s ease-in-out infinite;
+  animation-delay: 2.2s;
+}
+
+.animate-particle-17 {
+  animation: particle-pulse-17 4.3s ease-in-out infinite;
+  animation-delay: 1.0s;
+}
+
+.animate-particle-18 {
+  animation: particle-pulse-18 2.2s ease-in-out infinite;
+  animation-delay: 2.5s;
+}
+
+.animate-particle-19 {
+  animation: particle-pulse-19 3.5s ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+
+.animate-particle-20 {
+  animation: particle-pulse-20 2.8s ease-in-out infinite;
+  animation-delay: 1.8s;
+}
+
+/* Additional animation classes for even more variety */
+.animate-particle-21 {
+  animation: particle-pulse-1 1.7s ease-in-out infinite;
+  animation-delay: 3.2s;
+}
+
+.animate-particle-22 {
+  animation: particle-pulse-2 4.8s ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+
+.animate-particle-23 {
+  animation: particle-pulse-3 2.1s ease-in-out infinite;
+  animation-delay: 1.8s;
+}
+
+.animate-particle-24 {
+  animation: particle-pulse-4 3.3s ease-in-out infinite;
+  animation-delay: 2.6s;
+}
+
+.animate-particle-25 {
+  animation: particle-pulse-5 1.9s ease-in-out infinite;
+  animation-delay: 0.9s;
+}
+
+.animate-particle-26 {
+  animation: particle-pulse-6 4.1s ease-in-out infinite;
+  animation-delay: 1.4s;
+}
+
+.animate-particle-27 {
+  animation: particle-pulse-7 2.8s ease-in-out infinite;
+  animation-delay: 3.1s;
+}
+
+.animate-particle-28 {
+  animation: particle-pulse-8 1.6s ease-in-out infinite;
+  animation-delay: 0.7s;
+}
+
+.animate-particle-29 {
+  animation: particle-pulse-9 3.7s ease-in-out infinite;
+  animation-delay: 2.3s;
+}
+
+.animate-particle-30 {
+  animation: particle-pulse-10 2.2s ease-in-out infinite;
+  animation-delay: 1.1s;
+}
+
 /* Respect reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -123,7 +416,37 @@ html {
     transition-duration: 0.01ms !important;
   }
   
-  .animate-float {
+  .animate-float,
+  .animate-particle-1,
+  .animate-particle-2,
+  .animate-particle-3,
+  .animate-particle-4,
+  .animate-particle-5,
+  .animate-particle-6,
+  .animate-particle-7,
+  .animate-particle-8,
+  .animate-particle-9,
+  .animate-particle-10,
+  .animate-particle-11,
+  .animate-particle-12,
+  .animate-particle-13,
+  .animate-particle-14,
+  .animate-particle-15,
+  .animate-particle-16,
+  .animate-particle-17,
+  .animate-particle-18,
+  .animate-particle-19,
+  .animate-particle-20,
+  .animate-particle-21,
+  .animate-particle-22,
+  .animate-particle-23,
+  .animate-particle-24,
+  .animate-particle-25,
+  .animate-particle-26,
+  .animate-particle-27,
+  .animate-particle-28,
+  .animate-particle-29,
+  .animate-particle-30 {
     animation: none;
   }
 }
