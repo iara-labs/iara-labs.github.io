@@ -95,6 +95,20 @@ html {
   scrollbar-color: var(--color-primary) var(--color-neutral-200);
 }
 
+/* Floating animation for hero logo */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
 /* Respect reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -107,5 +121,9 @@ html {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+  
+  .animate-float {
+    animation: none;
   }
 }

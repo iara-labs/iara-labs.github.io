@@ -77,12 +77,13 @@ const CodeBlock = ({
   };
 
   return (
-    <div className="rounded-xl bg-[var(--color-neutral-800)] p-6">
-      <div className="mb-4 flex items-center justify-between">
+    <div className="rounded-xl bg-[var(--color-neutral-800)] p-4 sm:p-6">
+      {/* Header - empilha em mobile, lado a lado em desktop */}
+      <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <h3 className="font-['Space_Grotesk'] text-lg font-semibold">
           {title}
         </h3>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           {/* Seletor de Linguagem */}
           <Select
             value={selectedLanguage}
@@ -90,11 +91,11 @@ const CodeBlock = ({
               handleLanguageChange(value as keyof typeof codeExamples)
             }
           >
-            <SelectTrigger className="w-40 bg-[var(--color-neutral-700)] border-[var(--color-neutral-600)] text-white text-sm hover:bg-[var(--color-neutral-600)] rounded-4xl [&:focus]:ring-0 [&:focus]:ring-offset-0 [&:focus]:border-[var(--color-neutral-600)] [&:focus]:outline-none [&:focus]:shadow-none">
+            <SelectTrigger className="w-32 sm:w-40 bg-[var(--color-neutral-700)] border-0 text-white text-sm hover:bg-[var(--color-neutral-600)] rounded-4xl [&:focus]:ring-0 [&:focus]:ring-offset-0 [&:focus]:border-0 [&:focus]:outline-none [&:focus]:shadow-none">
               <SelectValue placeholder="Linguagem" />
             </SelectTrigger>
             <SelectContent
-              className="bg-[var(--color-neutral-800)] border-[var(--color-neutral-700)] [&:focus]:outline-none [&:focus]:ring-0 [&:focus]:border-[var(--color-neutral-700)] z-[99999]"
+              className="bg-[var(--color-neutral-800)] !border-0 [&:focus]:outline-none [&:focus]:ring-0 [&:focus]:border-0 z-[99999]"
               position="popper"
               sideOffset={4}
             >
@@ -110,10 +111,10 @@ const CodeBlock = ({
             </SelectContent>
           </Select>
 
-          {/* Botão Copiar */}
+          {/* Botão Copiar - texto menor em mobile */}
           <button
             onClick={copyToClipboard}
-            className="flex items-center gap-2 rounded-4xl bg-[var(--color-neutral-700)] px-3 py-2 text-sm text-[var(--color-neutral-200)] transition-colors hover:bg-[var(--color-neutral-600)]"
+            className="flex items-center gap-1 sm:gap-2 rounded-4xl bg-[var(--color-neutral-700)] px-2 py-2 sm:px-3 text-xs sm:text-sm text-[var(--color-neutral-200)] transition-colors hover:bg-[var(--color-neutral-600)]"
           >
             {copied ? (
               <>
@@ -130,7 +131,8 @@ const CodeBlock = ({
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                Copiado!
+                <span className="hidden sm:inline">Copiado!</span>
+                <span className="sm:hidden">OK</span>
               </>
             ) : (
               <>
@@ -147,7 +149,8 @@ const CodeBlock = ({
                     d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
                   />
                 </svg>
-                Copiar
+                <span className="hidden sm:inline">Copiar</span>
+                <span className="sm:hidden">Copy</span>
               </>
             )}
           </button>
