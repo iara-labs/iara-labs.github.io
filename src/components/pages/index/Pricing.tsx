@@ -126,15 +126,16 @@ const Pricing = () => {
               </div>
 
               <div className="mt-8">
-                <button
-                  className={`w-full rounded-4xl px-6 py-3 font-semibold transition-all duration-200 ${
+                <a
+                  href="/registrar-se"
+                  className={`w-full inline-flex items-center justify-center rounded-4xl px-6 py-3 font-semibold transition-all duration-200 ${
                     plan.ctaVariant === "primary"
                       ? "bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary)]/90"
                       : "border-2 border-[var(--color-neutral-300)] text-[var(--color-neutral-700)] hover:border-[var(--color-primary)] hover:bg-[var(--color-primary)]/5 hover:text-[var(--color-primary)]"
                   }`}
                 >
                   {plan.cta}
-                </button>
+                </a>
               </div>
             </div>
           ))}

@@ -1,29 +1,47 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "@tanstack/react-router";
 import { menuItems } from "@/data/menuItems";
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState("inicio");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isOverQuickstart, setIsOverQuickstart] = useState(false);
+  const location = useLocation();
 
-  // Função para scroll suave
+  // Verificar se estamos na página de registro ou obrigado
+  const isOnRegisterPage = location.pathname === "/registrar-se";
+  const isOnThankYouPage = location.pathname === "/obrigado";
+
+  // Função para scroll suave ou navegação
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href) as HTMLElement;
-    if (element) {
-      const elementPosition = element.offsetTop;
-      const offsetPosition = elementPosition - 100;
+    if (isOnRegisterPage || isOnThankYouPage) {
+      // Se estamos na página de registro ou obrigado, navegar para a página index com a seção
+      window.location.href = `/${href}`;
+    } else {
+      // Se estamos na página index, fazer scroll suave
+      const element = document.querySelector(href) as HTMLElement;
+      if (element) {
+        const elementPosition = element.offsetTop;
+        const offsetPosition = elementPosition - 100;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
     }
     // Fechar menu mobile após clicar
     setIsMobileMenuOpen(false);
   };
 
-  // Detectar seção ativa baseada no scroll
+  // Detectar seção ativa baseada no scroll (apenas na página index)
   useEffect(() => {
+    if (isOnRegisterPage || isOnThankYouPage) {
+      // Se estamos na página de registro ou obrigado, definir seção ativa como "inicio"
+      setActiveSection("inicio");
+      return;
+    }
+
     const handleScroll = () => {
       const sections = menuItems.map((item) => ({
         id: item.id,
@@ -58,7 +76,7 @@ const Navigation = () => {
     handleScroll(); // Verificar seção inicial
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [menuItems]);
+  }, [isOnRegisterPage, isOnThankYouPage]);
 
   return (
     <nav
@@ -95,12 +113,12 @@ const Navigation = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex">
-            <button
-              onClick={() => scrollToSection("#cta")}
+            <a
+              href={isOnThankYouPage ? "/" : "/registrar-se"}
               className="group relative px-5 py-3 text-base font-medium transition-all duration-300 ease-in-out rounded-4xl cursor-pointer text-white bg-[var(--color-primary)] hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:ring-offset-2"
             >
-              Começar Agora
-            </button>
+              {isOnThankYouPage ? "Voltar ao Início" : "Começar Agora"}
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -154,12 +172,12 @@ const Navigation = () => {
               </button>
             ))}
             <div className="pt-4 border-t border-[var(--color-neutral-200)]">
-              <button
-                onClick={() => scrollToSection("#precos")}
+              <a
+                href={isOnThankYouPage ? "/" : "/registrar-se"}
                 className="w-full inline-flex items-center justify-center rounded-lg bg-[var(--color-primary)] px-6 py-3 text-base font-semibold text-white shadow-md transition-all hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:ring-offset-2 cursor-pointer"
               >
-                Começar Agora
-              </button>
+                {isOnThankYouPage ? "Voltar ao Início" : "Começar Agora"}
+              </a>
             </div>
           </div>
         </div>

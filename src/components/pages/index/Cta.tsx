@@ -12,7 +12,7 @@ const Cta = () => {
           Cadastre-se e garanta o seu acesso antecipado ao nosso sistema!
         </p>
         <a
-          href="#"
+          href="/registrar-se"
           className="inline-flex items-center justify-center rounded-4xl bg-[var(--color-primary)] px-8 py-4 font-semibold text-white shadow-lg transition-all hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:ring-offset-2"
         >
           Quero me Cadastrar

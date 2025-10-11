@@ -3,30 +3,34 @@ import { db } from "../services/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { z } from "zod";
 
-export const userSchema = z.object({
+export const leadSchema = z.object({
   name: z.string().min(3, "Nome deve ter pelo menos 3 caracteres"),
   email: z.string().email("Email inválido"),
   phone: z
     .string()
-    .regex(
-      /^\+?\d{10,15}$/,
-      "Telefone deve estar no formato internacional ex: +5511999999999"
-    ),
+    .min(10, "Telefone deve ter pelo menos 10 dígitos")
+    .refine((value) => {
+      // Remove todos os caracteres não numéricos
+      const cleanValue = value.replace(/\D/g, "");
+      // Verifica se tem entre 10 e 15 dígitos
+      return cleanValue.length >= 10 && cleanValue.length <= 15;
+    }, "Telefone inválido"),
+  company: z.string().optional(),
 });
 
-export type UserData = z.infer<typeof userSchema>;
+export type LeadData = z.infer<typeof leadSchema>;
 
-export function useFirebaseUser() {
+export function useFirebaseLead() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
 
-  async function saveUser(data: UserData) {
+  async function saveLead(data: LeadData) {
     setLoading(true);
     setError(null);
     setSuccess(false);
 
-    const parsed = userSchema.safeParse(data);
+    const parsed = leadSchema.safeParse(data);
     if (!parsed.success) {
       setLoading(false);
       setError(parsed.error.message);
@@ -34,8 +38,9 @@ export function useFirebaseUser() {
     }
 
     try {
-      await addDoc(collection(db, "users"), {
+      await addDoc(collection(db, "leads"), {
         ...parsed.data,
+        company: parsed.data.company || "",
         createdAt: serverTimestamp(),
       });
 
@@ -51,7 +56,7 @@ export function useFirebaseUser() {
   }
 
   return {
-    saveUser,
+    saveLead,
     loading,
     error,
     success,

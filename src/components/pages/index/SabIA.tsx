@@ -2,7 +2,7 @@ const SabIA = () => {
   return (
     <section
       id="sabia"
-      className="bg-gradient-to-br from-[var(--color-primary)]/5 via-[var(--color-primary)]/10 to-[var(--color-primary)]/15 py-20 md:py-32"
+      className="bg-gradient-to-br from-[var(--color-neutral-50)] via-[var(--color-background)] to-[var(--color-neutral-100)] py-20 md:py-32"
     >
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="mb-16 text-center">
