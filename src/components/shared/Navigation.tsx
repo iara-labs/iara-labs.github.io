@@ -1,24 +1,10 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
+import { menuItems } from "@/data/menuItems";
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState("inicio");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const menuItems = useMemo(
-    () => [
-      { id: "inicio", label: "Início", href: "#inicio" },
-      { id: "sabia", label: "SabIA", href: "#sabia" },
-      { id: "como-funciona", label: "Como Funciona", href: "#como-funciona" },
-      {
-        id: "desenvolvedores",
-        label: "Desenvolvedores",
-        href: "#desenvolvedores",
-      },
-      { id: "precos", label: "Preços", href: "#precos" },
-      { id: "faq", label: "FAQ", href: "#faq" },
-    ],
-    []
-  );
+  const [isOverQuickstart, setIsOverQuickstart] = useState(false);
 
   // Função para scroll suave
   const scrollToSection = (href: string) => {
@@ -46,6 +32,19 @@ const Navigation = () => {
 
       const scrollPosition = window.scrollY + 100; // Offset para considerar o menu fixo
 
+      // Verificar se estamos sobre a seção Quickstart
+      const quickstartElement = document.getElementById("quickstart");
+      if (quickstartElement) {
+        const quickstartTop = quickstartElement.offsetTop;
+        const quickstartBottom = quickstartTop + quickstartElement.offsetHeight;
+        const menuHeight = 110; // Altura do menu
+
+        setIsOverQuickstart(
+          scrollPosition >= quickstartTop - menuHeight &&
+            scrollPosition <= quickstartBottom
+        );
+      }
+
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
         if (section.element && section.element.offsetTop <= scrollPosition) {
@@ -62,7 +61,11 @@ const Navigation = () => {
   }, [menuItems]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/65 backdrop-blur-lg border-b border-[var(--color-neutral-200)] shadow-lg w-full">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-lg border-b border-[var(--color-neutral-200)] shadow-lg w-full transition-all duration-300 ${
+        isOverQuickstart ? "bg-background" : "bg-background/65"
+      }`}
+    >
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="flex items-center justify-between h-[80px] md:h-[110px]">
           <div className="flex items-center">

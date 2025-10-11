@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://sabia-labs.github.io/sitemap.xml
+
+# PWA related
+Allow: /manifest.json
+Allow: /sw.js
+Allow: /browserconfig.xml

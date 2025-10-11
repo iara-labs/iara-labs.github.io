@@ -23,10 +23,10 @@ const Hero = () => {
                 href="#"
                 className="inline-flex items-center justify-center rounded-4xl bg-[var(--color-primary)] px-8 py-4 font-semibold text-white shadow-md transition-all hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:ring-offset-2"
               >
-                Crie sua chave gratuita
+                Começar Agora
               </a>
               <a
-                href="#"
+                href="#quickstart"
                 className="inline-flex items-center justify-center rounded-4xl border-2 border-[var(--color-secondary)] px-8 py-4 font-semibold text-[var(--color-secondary)] transition-all hover:bg-[var(--color-secondary)] hover:text-white focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:ring-offset-2"
               >
                 Ver documentação
