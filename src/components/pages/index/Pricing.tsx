@@ -1,9 +1,19 @@
 import { useState } from "react";
 import { plans } from "@/data/plans";
 import { Switch } from "@/components/ui/switch";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(false);
+  const { trackCTAClick, trackCustomEvent } = useAnalytics();
+
+  const handleBillingToggle = (checked: boolean) => {
+    setIsAnnual(checked);
+    trackCustomEvent("billing_toggle", {
+      billing_type: checked ? "annual" : "monthly",
+      location: "pricing-section",
+    });
+  };
   return (
     <section
       id="precos"
@@ -28,7 +38,7 @@ const Pricing = () => {
               </span>
               <Switch
                 checked={isAnnual}
-                onCheckedChange={setIsAnnual}
+                onCheckedChange={handleBillingToggle}
                 className="data-[state=checked]:bg-[var(--color-primary)]"
               />
               <span
@@ -128,6 +138,12 @@ const Pricing = () => {
               <div className="mt-8">
                 <a
                   href="/registrar-se"
+                  onClick={() =>
+                    trackCTAClick(
+                      `pricing-${plan.name.toLowerCase().replace(/\s+/g, "-")}`,
+                      "pricing-section"
+                    )
+                  }
                   className={`w-full inline-flex items-center justify-center rounded-4xl px-6 py-3 font-semibold transition-all duration-200 ${
                     plan.ctaVariant === "primary"
                       ? "bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary)]/90"

@@ -1,4 +1,8 @@
+import { useAnalytics } from "@/hooks/useAnalytics";
+
 const Cta = () => {
+  const { trackCTAClick } = useAnalytics();
+
   return (
     <section
       className="bg-gradient-to-br from-[var(--color-primary)]/5 via-[var(--color-primary)]/15 to-[var(--color-primary)]/25 py-20 md:py-32"
@@ -13,6 +17,7 @@ const Cta = () => {
         </p>
         <a
           href="/registrar-se"
+          onClick={() => trackCTAClick("quero-me-cadastrar", "cta-section")}
           className="inline-flex items-center justify-center rounded-4xl bg-[var(--color-primary)] px-8 py-4 font-semibold text-white shadow-lg transition-all hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:ring-offset-2"
         >
           Quero me Cadastrar

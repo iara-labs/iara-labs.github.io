@@ -1,10 +1,12 @@
 import { useForm } from "@tanstack/react-form";
 import { useNavigate } from "@tanstack/react-router";
 import { useFirebaseLead } from "../../../hooks/useFirebaseLead";
+import { useAnalytics } from "../../../hooks/useAnalytics";
 
 export default function RegisterForm() {
   const { saveLead, loading, error } = useFirebaseLead();
   const navigate = useNavigate();
+  const { trackConversion, trackCTAClick } = useAnalytics();
 
   const form = useForm({
     defaultValues: {
@@ -16,6 +18,8 @@ export default function RegisterForm() {
     onSubmit: async ({ value }) => {
       const result = await saveLead(value);
       if (result) {
+        // Rastreia a conversão
+        trackConversion("lead_registration", 1);
         navigate({ to: "/obrigado" });
       }
     },
@@ -190,6 +194,7 @@ export default function RegisterForm() {
         <button
           type="submit"
           disabled={loading || !form.state.canSubmit}
+          onClick={() => trackCTAClick("garantir-desconto", "register-form")}
           className="w-full rounded-lg bg-[var(--color-primary)] px-6 py-4 font-semibold text-white shadow-lg transition-all hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {loading ? (

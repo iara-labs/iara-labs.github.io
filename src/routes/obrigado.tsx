@@ -1,10 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useAnalytics } from "@/hooks/useAnalytics";
+import { useEffect } from "react";
 
 export const Route = createFileRoute("/obrigado")({
   component: ThankYouPage,
 });
 
 function ThankYouPage() {
+  const { trackConversion, trackCTAClick } = useAnalytics();
+
+  // Rastreia a visualização da página de agradecimento
+  useEffect(() => {
+    trackConversion("thank_you_page_view", 1);
+  }, [trackConversion]);
   return (
     <div className="min-h-screen bg-gradient-to-br from-[var(--color-background)] via-[var(--color-neutral-50)] to-[var(--color-primary)]/10 flex items-center justify-center">
       <div className="max-w-2xl mx-auto px-6 text-center">
@@ -82,6 +90,7 @@ function ThankYouPage() {
 
         <a
           href="/"
+          onClick={() => trackCTAClick("voltar-inicio", "thank-you-page")}
           className="inline-flex items-center justify-center rounded-lg bg-[var(--color-primary)] px-8 py-4 font-semibold text-white shadow-lg transition-all hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2"
         >
           Voltar ao Início

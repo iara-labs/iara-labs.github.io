@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/select";
 import { codeExamples, languageLabels } from "@/data/codeExamples";
 import { customDarkTheme } from "@/styles/customDarkTheme";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 const CodeBlock = ({
   exampleType,
@@ -20,6 +21,16 @@ const CodeBlock = ({
   const [copied, setCopied] = useState(false);
   const [selectedLanguage, setSelectedLanguage] =
     useState<keyof typeof codeExamples>("nodejs");
+  const { trackCustomEvent } = useAnalytics();
+
+  const handleLanguageChange = (value: keyof typeof codeExamples) => {
+    setSelectedLanguage(value);
+    trackCustomEvent("language_change", {
+      example_type: exampleType,
+      language: value,
+      title: title,
+    });
+  };
 
   const getLanguageForSyntaxHighlighter = (lang: keyof typeof codeExamples) => {
     switch (lang) {
@@ -53,6 +64,13 @@ const CodeBlock = ({
       await navigator.clipboard.writeText(currentCode);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
+
+      // Rastrear evento de cópia
+      trackCustomEvent("code_copy", {
+        example_type: exampleType,
+        language: selectedLanguage,
+        title: title,
+      });
     } catch (err) {
       console.error("Failed to copy text: ", err);
     }
@@ -69,7 +87,7 @@ const CodeBlock = ({
           <Select
             value={selectedLanguage}
             onValueChange={(value) =>
-              setSelectedLanguage(value as keyof typeof codeExamples)
+              handleLanguageChange(value as keyof typeof codeExamples)
             }
           >
             <SelectTrigger className="w-40 bg-[var(--color-neutral-700)] border-[var(--color-neutral-600)] text-white text-sm hover:bg-[var(--color-neutral-600)] rounded-4xl [&:focus]:ring-0 [&:focus]:ring-offset-0 [&:focus]:border-[var(--color-neutral-600)] [&:focus]:outline-none [&:focus]:shadow-none">

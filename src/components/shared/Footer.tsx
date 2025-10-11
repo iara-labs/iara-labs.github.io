@@ -1,7 +1,17 @@
+import { useAnalytics } from "@/hooks/useAnalytics";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { trackCTAClick } = useAnalytics();
 
-  const scrollToSection = (href: string) => {
+  const scrollToSection = (href: string, sectionName?: string) => {
+    // Rastrear clique no footer
+    if (sectionName) {
+      trackCTAClick(
+        `footer-${sectionName.toLowerCase().replace(/\s+/g, "-")}`,
+        "footer"
+      );
+    }
     const element = document.querySelector(href);
     if (element) {
       const elementPosition =
@@ -133,7 +143,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <button
-                  onClick={() => scrollToSection("#inicio")}
+                  onClick={() => scrollToSection("#inicio", "inicio")}
                   className="text-[var(--color-neutral-300)] hover:text-[var(--color-primary)] transition-colors duration-300 cursor-pointer"
                 >
                   Início
@@ -141,7 +151,7 @@ const Footer = () => {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection("#recursos")}
+                  onClick={() => scrollToSection("#recursos", "recursos")}
                   className="text-[var(--color-neutral-300)] hover:text-[var(--color-primary)] transition-colors duration-300 cursor-pointer"
                 >
                   Recursos
@@ -149,7 +159,9 @@ const Footer = () => {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection("#como-funciona")}
+                  onClick={() =>
+                    scrollToSection("#como-funciona", "como-funciona")
+                  }
                   className="text-[var(--color-neutral-300)] hover:text-[var(--color-primary)] transition-colors duration-300 cursor-pointer"
                 >
                   Como Funciona
@@ -157,7 +169,9 @@ const Footer = () => {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection("#desenvolvedores")}
+                  onClick={() =>
+                    scrollToSection("#desenvolvedores", "desenvolvedores")
+                  }
                   className="text-[var(--color-neutral-300)] hover:text-[var(--color-primary)] transition-colors duration-300 cursor-pointer"
                 >
                   Desenvolvedores
@@ -165,7 +179,7 @@ const Footer = () => {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection("#precos")}
+                  onClick={() => scrollToSection("#precos", "precos")}
                   className="text-[var(--color-neutral-300)] hover:text-[var(--color-primary)] transition-colors duration-300 cursor-pointer"
                 >
                   Preços

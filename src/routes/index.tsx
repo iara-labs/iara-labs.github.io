@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 // Lazy load components for better performance
 const Hero = lazy(() => import("../components/pages/index/Hero"));
@@ -29,6 +30,16 @@ function LoadingSpinner() {
 }
 
 function Index() {
+  const { trackCustomEvent } = useAnalytics();
+
+  // Rastrear visualização da página inicial
+  useEffect(() => {
+    trackCustomEvent("page_view", {
+      page_name: "home",
+      page_path: "/",
+    });
+  }, [trackCustomEvent]);
+
   return (
     <div className="bg-[var(--color-background)]">
       <Suspense fallback={<LoadingSpinner />}>

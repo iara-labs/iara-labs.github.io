@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 // Lazy load components for better performance
 const RegisterHero = lazy(
@@ -26,6 +27,16 @@ function LoadingSpinner() {
 }
 
 function RegisterPage() {
+  const { trackCustomEvent } = useAnalytics();
+
+  // Rastrear visualização da página de registro
+  useEffect(() => {
+    trackCustomEvent("page_view", {
+      page_name: "register",
+      page_path: "/registrar-se",
+    });
+  }, [trackCustomEvent]);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-[var(--color-background)] via-[var(--color-neutral-50)] to-[var(--color-primary)]/10">
       {/* Hero Section with Form */}

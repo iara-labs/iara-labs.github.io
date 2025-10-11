@@ -1,19 +1,29 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "@tanstack/react-router";
 import { menuItems } from "@/data/menuItems";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState("inicio");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isOverQuickstart, setIsOverQuickstart] = useState(false);
   const location = useLocation();
+  const { trackCTAClick } = useAnalytics();
 
   // Verificar se estamos na página de registro ou obrigado
   const isOnRegisterPage = location.pathname === "/registrar-se";
   const isOnThankYouPage = location.pathname === "/obrigado";
 
   // Função para scroll suave ou navegação
-  const scrollToSection = (href: string) => {
+  const scrollToSection = (href: string, itemLabel?: string) => {
+    // Rastrear clique na navegação
+    if (itemLabel) {
+      trackCTAClick(
+        `nav-${itemLabel.toLowerCase().replace(/\s+/g, "-")}`,
+        "navigation"
+      );
+    }
+
     if (isOnRegisterPage || isOnThankYouPage) {
       // Se estamos na página de registro ou obrigado, navegar para a página index com a seção
       window.location.href = `/${href}`;
@@ -99,7 +109,7 @@ const Navigation = () => {
             {menuItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => scrollToSection(item.href, item.label)}
                 className={`group relative px-5 py-3 text-base font-medium transition-all duration-300 ease-in-out rounded-4xl cursor-pointer ${
                   activeSection === item.id
                     ? "text-white bg-[var(--color-primary)]"
@@ -115,6 +125,12 @@ const Navigation = () => {
           <div className="hidden md:flex">
             <a
               href={isOnThankYouPage ? "/" : "/registrar-se"}
+              onClick={() =>
+                trackCTAClick(
+                  isOnThankYouPage ? "voltar-inicio" : "comecar-agora",
+                  "navigation-header"
+                )
+              }
               className="group relative px-5 py-3 text-base font-medium transition-all duration-300 ease-in-out rounded-4xl cursor-pointer text-white bg-[var(--color-primary)] hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:ring-offset-2"
             >
               {isOnThankYouPage ? "Voltar ao Início" : "Começar Agora"}
@@ -161,7 +177,7 @@ const Navigation = () => {
             {menuItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => scrollToSection(item.href, item.label)}
                 className={`w-full text-left px-4 py-3 text-base font-medium transition-all duration-300 ease-in-out rounded-md cursor-pointer ${
                   activeSection === item.id
                     ? "text-white bg-[var(--color-primary)]"
@@ -174,6 +190,12 @@ const Navigation = () => {
             <div className="pt-4 border-t border-[var(--color-neutral-200)]">
               <a
                 href={isOnThankYouPage ? "/" : "/registrar-se"}
+                onClick={() =>
+                  trackCTAClick(
+                    isOnThankYouPage ? "voltar-inicio" : "comecar-agora",
+                    "navigation-mobile"
+                  )
+                }
                 className="w-full inline-flex items-center justify-center rounded-lg bg-[var(--color-primary)] px-6 py-3 text-base font-semibold text-white shadow-md transition-all hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:ring-offset-2 cursor-pointer"
               >
                 {isOnThankYouPage ? "Voltar ao Início" : "Começar Agora"}

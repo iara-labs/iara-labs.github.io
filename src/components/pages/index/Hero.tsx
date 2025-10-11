@@ -1,4 +1,12 @@
+import { useAnalytics } from "@/hooks/useAnalytics";
+
 const Hero = () => {
+  const { trackCTAClick } = useAnalytics();
+
+  const handleCTAClick = (ctaName: string) => {
+    trackCTAClick(ctaName, "hero-section");
+  };
+
   return (
     <section
       id="inicio"
@@ -56,12 +64,14 @@ const Hero = () => {
             <div className="flex flex-col gap-4 sm:flex-row">
               <a
                 href="/registrar-se"
+                onClick={() => handleCTAClick("comecar-agora")}
                 className="inline-flex items-center justify-center rounded-4xl bg-[var(--color-primary)] px-8 py-4 font-semibold text-white shadow-md transition-all hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:ring-offset-2"
               >
                 Começar Agora
               </a>
               <a
                 href="#quickstart"
+                onClick={() => handleCTAClick("ver-documentacao")}
                 className="inline-flex items-center justify-center rounded-4xl border-2 border-[var(--color-secondary)] px-8 py-4 font-semibold text-[var(--color-secondary)] transition-all hover:bg-[var(--color-secondary)] hover:text-white focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:ring-offset-2"
               >
                 Ver documentação
