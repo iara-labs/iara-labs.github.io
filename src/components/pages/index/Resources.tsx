@@ -30,10 +30,11 @@ const Resources = () => {
           </div>
           <div className="rounded-lg bg-white p-6 shadow-lg">
             <h3 className="mb-3 font-['Space_Grotesk'] text-2xl font-semibold text-[var(--color-neutral-900)]">
-              OCR de documentos
+              OCR inteligente
             </h3>
             <p className="leading-relaxed text-[var(--color-neutral-700)]">
-              Extração de texto de RG, CNH, passaportes e documentos gerais.
+              Extração de texto de documentos, placas de veículos, cartões e
+              qualquer imagem com texto.
             </p>
           </div>
           <div className="rounded-lg bg-white p-6 shadow-lg">
