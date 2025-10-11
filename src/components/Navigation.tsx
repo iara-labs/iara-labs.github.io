@@ -7,7 +7,7 @@ const Navigation = () => {
   const menuItems = useMemo(
     () => [
       { id: "inicio", label: "Início", href: "#inicio" },
-      { id: "recursos", label: "Recursos", href: "#recursos" },
+      { id: "sabia", label: "SabIA", href: "#sabia" },
       { id: "como-funciona", label: "Como Funciona", href: "#como-funciona" },
       {
         id: "desenvolvedores",
@@ -62,7 +62,7 @@ const Navigation = () => {
   }, [menuItems]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[var(--color-neutral-200)] shadow-lg w-full">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/65 backdrop-blur-lg border-b border-[var(--color-neutral-200)] shadow-lg w-full">
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="flex items-center justify-between h-[80px] md:h-[110px]">
           <div className="flex items-center">
@@ -79,7 +79,7 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.href)}
-                className={`group relative px-5 py-3 text-base font-medium transition-all duration-300 ease-in-out rounded-md cursor-pointer ${
+                className={`group relative px-5 py-3 text-base font-medium transition-all duration-300 ease-in-out rounded-4xl cursor-pointer ${
                   activeSection === item.id
                     ? "text-white bg-[var(--color-primary)]"
                     : "text-[var(--color-secondary)] hover:text-white hover:bg-[var(--color-primary)]"
@@ -94,7 +94,7 @@ const Navigation = () => {
           <div className="hidden md:flex">
             <button
               onClick={() => scrollToSection("#precos")}
-              className="group relative px-5 py-3 text-base font-medium transition-all duration-300 ease-in-out rounded-md cursor-pointer text-white bg-[var(--color-primary)] hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:ring-offset-2"
+              className="group relative px-5 py-3 text-base font-medium transition-all duration-300 ease-in-out rounded-4xl cursor-pointer text-white bg-[var(--color-primary)] hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:ring-offset-2"
             >
               Começar Agora
             </button>

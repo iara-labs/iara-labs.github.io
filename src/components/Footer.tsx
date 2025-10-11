@@ -4,8 +4,6 @@ const Footer = () => {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      // Use getBoundingClientRect().top to get the position relative to the viewport,
-      // and add window.pageYOffset to get the document position
       const elementPosition =
         (element as HTMLElement).getBoundingClientRect().top +
         window.pageYOffset;
