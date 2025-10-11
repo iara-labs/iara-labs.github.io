@@ -93,7 +93,7 @@ const Navigation = () => {
           {/* CTA Button */}
           <div className="hidden md:flex">
             <button
-              onClick={() => scrollToSection("#precos")}
+              onClick={() => scrollToSection("#cta")}
               className="group relative px-5 py-3 text-base font-medium transition-all duration-300 ease-in-out rounded-4xl cursor-pointer text-white bg-[var(--color-primary)] hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:ring-offset-2"
             >
               Começar Agora

@@ -114,8 +114,8 @@ const Pricing = () => {
 
         <div className="mt-8 text-center">
           <p className="text-sm text-[var(--color-neutral-600)]">
-            * Todos os planos incluem suporte por email. Enterprise inclui SLA e
-            suporte prioritário.
+            * Todos os planos incluem suporte por email. <br />* Enterprise
+            inclui SLA e suporte prioritário.
           </p>
         </div>
       </div>

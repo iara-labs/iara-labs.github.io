@@ -11,7 +11,7 @@ const SabIA = () => {
           </h2>
         </div>
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="rounded-xl border border-[var(--color-neutral-200)] bg-white p-8 shadow-lg transition-shadow">
+          <div className="rounded-xl bg-white p-8 shadow-lg transition-shadow">
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--color-primary)]/10">
               <svg
                 className="h-6 w-6 text-[var(--color-primary)]"
@@ -36,7 +36,7 @@ const SabIA = () => {
               riscos de compliance.
             </p>
           </div>
-          <div className="rounded-xl border border-[var(--color-neutral-200)] bg-white p-8 shadow-lg transition-shadow">
+          <div className="rounded-xl bg-white p-8 shadow-lg transition-shadow">
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--color-primary)]/10">
               <svg
                 className="h-6 w-6 text-[var(--color-primary)]"
@@ -60,7 +60,7 @@ const SabIA = () => {
               para usuários no Brasil comparado a APIs hospedadas nos EUA.
             </p>
           </div>
-          <div className="rounded-xl border border-[var(--color-neutral-200)] bg-white p-8 shadow-lg transition-shadow">
+          <div className="rounded-xl bg-white p-8 shadow-lg transition-shadow">
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--color-primary)]/10">
               <svg
                 className="h-6 w-6 text-[var(--color-primary)]"
@@ -84,7 +84,7 @@ const SabIA = () => {
               previsíveis, com tier gratuito generoso para desenvolvimento.
             </p>
           </div>
-          <div className="rounded-xl border border-[var(--color-neutral-200)] bg-white p-8 shadow-lg transition-shadow">
+          <div className="rounded-xl bg-white p-8 shadow-lg transition-shadow">
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--color-primary)]/10">
               <svg
                 className="h-6 w-6 text-[var(--color-primary)]"

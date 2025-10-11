@@ -7,7 +7,7 @@ const Compatibility = () => {
         </h2>
       </div>
       <div className="mx-auto max-w-[1200px] px-6">
-        <div className="rounded-2xl border border-[var(--color-neutral-200)] bg-white p-8 shadow-lg md:p-12">
+        <div className="rounded-2xl bg-white p-8 shadow-lg md:p-12">
           <div className="grid gap-8 md:grid-cols-2 md:items-center">
             <div>
               <p className="mb-6 leading-relaxed text-[var(--color-neutral-700)]">
