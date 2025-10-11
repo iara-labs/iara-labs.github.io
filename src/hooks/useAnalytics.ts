@@ -11,8 +11,16 @@ declare global {
 export const useAnalytics = () => {
   // Função para enviar eventos para o GTM
   const pushToDataLayer = useCallback((data: any) => {
-    if (typeof window !== "undefined" && window.dataLayer) {
-      window.dataLayer.push(data);
+    if (
+      typeof window !== "undefined" &&
+      window.dataLayer &&
+      Array.isArray(window.dataLayer)
+    ) {
+      try {
+        window.dataLayer.push(data);
+      } catch (error) {
+        console.warn("Erro ao enviar dados para dataLayer:", error);
+      }
     }
   }, []);
 
