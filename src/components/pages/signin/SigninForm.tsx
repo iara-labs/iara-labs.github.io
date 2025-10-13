@@ -2,10 +2,8 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
   Field,
-  FieldDescription,
   FieldGroup,
   FieldLabel,
-  FieldSeparator,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { useAnalytics } from "@/hooks/useAnalytics";
@@ -22,15 +20,6 @@ export function SigninForm({
     // Aqui você pode adicionar a lógica de signin
   };
 
-  const handleGitHubSignin = () => {
-    trackCTAClick("github-signin", "signin-form");
-    // Aqui você pode adicionar a lógica de signin com GitHub
-  };
-
-  const handleSignUpClick = () => {
-    trackCTAClick("sign-up-link", "signin-form");
-    window.location.href = "/registrar-se";
-  };
 
   const handleForgotPasswordClick = () => {
     trackCTAClick("forgot-password", "signin-form");

@@ -4,7 +4,6 @@ import {
   Field,
   FieldGroup,
   FieldLabel,
-  FieldSeparator,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { useAnalytics } from "@/hooks/useAnalytics";
@@ -21,10 +20,6 @@ export function SignupForm({
     // Aqui você pode adicionar a lógica de signup
   };
 
-  const handleGitHubSignup = () => {
-    trackCTAClick("github-signup", "signup-form");
-    // Aqui você pode adicionar a lógica de signup com GitHub
-  };
 
   const handleSigninClick = () => {
     trackCTAClick("signin-link", "signup-form");
