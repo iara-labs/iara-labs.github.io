@@ -10,9 +10,11 @@ const Navigation = () => {
   const location = useLocation();
   const { trackCTAClick } = useAnalytics();
 
-  // Verificar se estamos na página de registro ou obrigado
+  // Verificar se estamos na página de registro, obrigado, login ou signup
   const isOnRegisterPage = location.pathname === "/registrar-se";
   const isOnThankYouPage = location.pathname === "/obrigado";
+  const isOnLoginPage = location.pathname === "/login";
+  const isOnSignupPage = location.pathname === "/signup";
 
   // Função para scroll suave ou navegação
   const scrollToSection = (href: string, itemLabel?: string) => {
@@ -24,8 +26,13 @@ const Navigation = () => {
       );
     }
 
-    if (isOnRegisterPage || isOnThankYouPage) {
-      // Se estamos na página de registro ou obrigado, navegar para a página index com a seção
+    if (
+      isOnRegisterPage ||
+      isOnThankYouPage ||
+      isOnLoginPage ||
+      isOnSignupPage
+    ) {
+      // Se estamos na página de registro, obrigado, login ou signup, navegar para a página index com a seção
       window.location.href = `/${href}`;
     } else {
       // Se estamos na página index, fazer scroll suave
@@ -46,8 +53,13 @@ const Navigation = () => {
 
   // Detectar seção ativa baseada no scroll (apenas na página index)
   useEffect(() => {
-    if (isOnRegisterPage || isOnThankYouPage) {
-      // Se estamos na página de registro ou obrigado, definir seção ativa como "inicio"
+    if (
+      isOnRegisterPage ||
+      isOnThankYouPage ||
+      isOnLoginPage ||
+      isOnSignupPage
+    ) {
+      // Se estamos na página de registro, obrigado, login ou signup, definir seção ativa como "inicio"
       setActiveSection("inicio");
       return;
     }
@@ -86,7 +98,7 @@ const Navigation = () => {
     handleScroll(); // Verificar seção inicial
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isOnRegisterPage, isOnThankYouPage]);
+  }, [isOnRegisterPage, isOnThankYouPage, isOnLoginPage, isOnSignupPage]);
 
   return (
     <nav
@@ -121,20 +133,51 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:flex">
-            <a
-              href={isOnThankYouPage ? "/" : "/registrar-se"}
-              onClick={() =>
-                trackCTAClick(
-                  isOnThankYouPage ? "voltar-inicio" : "comecar-agora",
-                  "navigation-header"
-                )
-              }
-              className="group relative px-4 py-2 xl:px-5 xl:py-3 text-sm xl:text-base font-medium transition-all duration-300 ease-in-out rounded-4xl cursor-pointer text-white bg-[var(--color-primary)] hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:ring-offset-2"
-            >
-              {isOnThankYouPage ? "Voltar ao Início" : "Começar Agora"}
-            </a>
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex items-center space-x-3">
+            {isOnLoginPage || isOnSignupPage ? (
+              <>
+                <a
+                  href="/login"
+                  onClick={() =>
+                    trackCTAClick("login-nav", "navigation-header")
+                  }
+                  className={`px-4 py-2 xl:px-5 xl:py-3 text-sm xl:text-base font-medium transition-all duration-300 ease-in-out rounded-4xl cursor-pointer ${
+                    isOnLoginPage
+                      ? "text-white bg-[var(--color-primary)]"
+                      : "text-[var(--color-secondary)] hover:text-white hover:bg-[var(--color-primary)]"
+                  }`}
+                >
+                  Login
+                </a>
+                <a
+                  href="/signup"
+                  onClick={() =>
+                    trackCTAClick("signup-nav", "navigation-header")
+                  }
+                  className={`px-4 py-2 xl:px-5 xl:py-3 text-sm xl:text-base font-medium transition-all duration-300 ease-in-out rounded-4xl cursor-pointer ${
+                    isOnSignupPage
+                      ? "text-white bg-[var(--color-primary)]"
+                      : "text-[var(--color-secondary)] hover:text-white hover:bg-[var(--color-primary)]"
+                  }`}
+                >
+                  Signup
+                </a>
+              </>
+            ) : (
+              <a
+                href={isOnThankYouPage ? "/" : "/registrar-se"}
+                onClick={() =>
+                  trackCTAClick(
+                    isOnThankYouPage ? "voltar-inicio" : "comecar-agora",
+                    "navigation-header"
+                  )
+                }
+                className="group relative px-4 py-2 xl:px-5 xl:py-3 text-sm xl:text-base font-medium transition-all duration-300 ease-in-out rounded-4xl cursor-pointer text-white bg-[var(--color-primary)] hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:ring-offset-2"
+              >
+                {isOnThankYouPage ? "Voltar ao Início" : "Começar Agora"}
+              </a>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -187,19 +230,50 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
-            <div className="pt-4 border-t border-[var(--color-neutral-200)]">
-              <a
-                href={isOnThankYouPage ? "/" : "/registrar-se"}
-                onClick={() =>
-                  trackCTAClick(
-                    isOnThankYouPage ? "voltar-inicio" : "comecar-agora",
-                    "navigation-mobile"
-                  )
-                }
-                className="w-full inline-flex items-center justify-center rounded-lg bg-[var(--color-primary)] px-6 py-3 text-base font-semibold text-white shadow-md transition-all hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:ring-offset-2 cursor-pointer"
-              >
-                {isOnThankYouPage ? "Voltar ao Início" : "Começar Agora"}
-              </a>
+            <div className="pt-4 border-t border-[var(--color-neutral-200)] space-y-2">
+              {isOnLoginPage || isOnSignupPage ? (
+                <>
+                  <a
+                    href="/login"
+                    onClick={() =>
+                      trackCTAClick("login-nav-mobile", "navigation-mobile")
+                    }
+                    className={`w-full inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-semibold shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:ring-offset-2 cursor-pointer ${
+                      isOnLoginPage
+                        ? "bg-[var(--color-primary)] text-white"
+                        : "bg-[var(--color-neutral-100)] text-[var(--color-neutral-800)] hover:bg-[var(--color-neutral-200)]"
+                    }`}
+                  >
+                    Login
+                  </a>
+                  <a
+                    href="/signup"
+                    onClick={() =>
+                      trackCTAClick("signup-nav-mobile", "navigation-mobile")
+                    }
+                    className={`w-full inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-semibold shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:ring-offset-2 cursor-pointer ${
+                      isOnSignupPage
+                        ? "bg-[var(--color-primary)] text-white"
+                        : "bg-[var(--color-neutral-100)] text-[var(--color-neutral-800)] hover:bg-[var(--color-neutral-200)]"
+                    }`}
+                  >
+                    Signup
+                  </a>
+                </>
+              ) : (
+                <a
+                  href={isOnThankYouPage ? "/" : "/registrar-se"}
+                  onClick={() =>
+                    trackCTAClick(
+                      isOnThankYouPage ? "voltar-inicio" : "comecar-agora",
+                      "navigation-mobile"
+                    )
+                  }
+                  className="w-full inline-flex items-center justify-center rounded-lg bg-[var(--color-primary)] px-6 py-3 text-base font-semibold text-white shadow-md transition-all hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:ring-offset-2 cursor-pointer"
+                >
+                  {isOnThankYouPage ? "Voltar ao Início" : "Começar Agora"}
+                </a>
+              )}
             </div>
           </div>
         </div>

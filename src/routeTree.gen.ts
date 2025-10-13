@@ -11,6 +11,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SignupRouteImport } from './routes/signup'
 import { Route as RegistrarSeRouteImport } from './routes/registrar-se'
 import { Route as ObrigadoRouteImport } from './routes/obrigado'
 import { Route as LoginRouteImport } from './routes/login'
@@ -23,6 +24,11 @@ const AdminRouteImport = createFileRoute('/admin')()
 const AdminRoute = AdminRouteImport.update({
   id: '/admin',
   path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RegistrarSeRoute = RegistrarSeRouteImport.update({
@@ -60,6 +66,7 @@ export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/obrigado': typeof ObrigadoRoute
   '/registrar-se': typeof RegistrarSeRoute
+  '/signup': typeof SignupRoute
   '/admin': typeof AdminLayoutRoute
   '/admin/dashboard': typeof AdminDashboardRoute
 }
@@ -68,6 +75,7 @@ export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/obrigado': typeof ObrigadoRoute
   '/registrar-se': typeof RegistrarSeRoute
+  '/signup': typeof SignupRoute
   '/admin': typeof AdminLayoutRoute
   '/admin/dashboard': typeof AdminDashboardRoute
 }
@@ -77,6 +85,7 @@ export interface FileRoutesById {
   '/login': typeof LoginRoute
   '/obrigado': typeof ObrigadoRoute
   '/registrar-se': typeof RegistrarSeRoute
+  '/signup': typeof SignupRoute
   '/admin': typeof AdminRouteWithChildren
   '/admin/_layout': typeof AdminLayoutRoute
   '/admin/dashboard': typeof AdminDashboardRoute
@@ -88,6 +97,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/obrigado'
     | '/registrar-se'
+    | '/signup'
     | '/admin'
     | '/admin/dashboard'
   fileRoutesByTo: FileRoutesByTo
@@ -96,6 +106,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/obrigado'
     | '/registrar-se'
+    | '/signup'
     | '/admin'
     | '/admin/dashboard'
   id:
@@ -104,6 +115,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/obrigado'
     | '/registrar-se'
+    | '/signup'
     | '/admin'
     | '/admin/_layout'
     | '/admin/dashboard'
@@ -114,6 +126,7 @@ export interface RootRouteChildren {
   LoginRoute: typeof LoginRoute
   ObrigadoRoute: typeof ObrigadoRoute
   RegistrarSeRoute: typeof RegistrarSeRoute
+  SignupRoute: typeof SignupRoute
   AdminRoute: typeof AdminRouteWithChildren
 }
 
@@ -124,6 +137,13 @@ declare module '@tanstack/react-router' {
       path: '/admin'
       fullPath: '/admin'
       preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/registrar-se': {
@@ -188,6 +208,7 @@ const rootRouteChildren: RootRouteChildren = {
   LoginRoute: LoginRoute,
   ObrigadoRoute: ObrigadoRoute,
   RegistrarSeRoute: RegistrarSeRoute,
+  SignupRoute: SignupRoute,
   AdminRoute: AdminRouteWithChildren,
 }
 export const routeTree = rootRouteImport
