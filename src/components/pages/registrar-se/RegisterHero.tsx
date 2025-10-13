@@ -15,7 +15,7 @@ export default function RegisterHero() {
         <div className="absolute top-1/3 left-1/5 h-4 w-4 rounded-full bg-[var(--color-primary)]/3 animate-particle-3"></div>
         <div className="absolute bottom-1/6 left-1/6 h-2 w-2 rounded-full bg-[var(--color-primary)]/7 animate-particle-4"></div>
         <div className="absolute bottom-1/4 right-1/5 h-3.5 w-3.5 rounded-full bg-[var(--color-secondary)]/5 animate-particle-5"></div>
-        
+
         {/* Partículas adicionais para mais densidade */}
         <div className="absolute top-1/8 left-1/8 h-1.5 w-1.5 rounded-full bg-[var(--color-primary)]/3 animate-particle-6"></div>
         <div className="absolute top-3/8 right-1/8 h-2 w-2 rounded-full bg-[var(--color-secondary)]/5 animate-particle-7"></div>
@@ -25,7 +25,7 @@ export default function RegisterHero() {
         <div className="absolute bottom-3/8 right-1/8 h-1.5 w-1.5 rounded-full bg-[var(--color-secondary)]/8 animate-particle-11"></div>
         <div className="absolute bottom-5/8 left-1/8 h-2 w-2 rounded-full bg-[var(--color-primary)]/3 animate-particle-12"></div>
         <div className="absolute bottom-7/8 right-1/8 h-1 w-1 rounded-full bg-[var(--color-secondary)]/6 animate-particle-13"></div>
-        
+
         {/* Partículas no centro */}
         <div className="absolute top-1/2 left-1/2 h-1.5 w-1.5 rounded-full bg-[var(--color-primary)]/4 animate-particle-14"></div>
         <div className="absolute top-1/2 left-1/2 h-2.5 w-2.5 rounded-full bg-[var(--color-secondary)]/7 animate-particle-15"></div>

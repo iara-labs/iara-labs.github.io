@@ -43,7 +43,7 @@ const Hero = () => {
         <div className="absolute top-2/5 right-2/3 h-1 w-1 rounded-full bg-[var(--color-secondary)]/4 animate-particle-14"></div>
         <div className="absolute bottom-1/5 left-2/3 h-3.5 w-3.5 rounded-full bg-[var(--color-primary)]/5 animate-particle-15"></div>
         <div className="absolute bottom-2/5 right-2/3 h-2 w-2 rounded-full bg-[var(--color-secondary)]/7 animate-particle-16"></div>
-        
+
         {/* Additional random particles for more density */}
         <div className="absolute top-1/8 left-1/8 h-1.5 w-1.5 rounded-full bg-[var(--color-primary)]/3 animate-particle-17"></div>
         <div className="absolute top-3/8 right-1/8 h-2 w-2 rounded-full bg-[var(--color-secondary)]/5 animate-particle-18"></div>
@@ -53,12 +53,12 @@ const Hero = () => {
         <div className="absolute bottom-3/8 right-1/8 h-1.5 w-1.5 rounded-full bg-[var(--color-secondary)]/8 animate-particle-22"></div>
         <div className="absolute bottom-5/8 left-1/8 h-4 w-4 rounded-full bg-[var(--color-primary)]/3 animate-particle-23"></div>
         <div className="absolute bottom-7/8 right-1/8 h-1 w-1 rounded-full bg-[var(--color-secondary)]/6 animate-particle-24"></div>
-        
+
         {/* Center area particles */}
         <div className="absolute top-1/2 left-1/2 h-2 w-2 rounded-full bg-[var(--color-primary)]/4 animate-particle-25"></div>
         <div className="absolute top-1/2 left-1/2 h-1 w-1 rounded-full bg-[var(--color-secondary)]/7 animate-particle-26"></div>
         <div className="absolute top-1/2 left-1/2 h-3 w-3 rounded-full bg-[var(--color-primary)]/5 animate-particle-27"></div>
-        
+
         {/* Extra scattered particles for maximum randomness */}
         <div className="absolute top-1/12 left-1/3 h-1.5 w-1.5 rounded-full bg-[var(--color-secondary)]/5 animate-particle-28"></div>
         <div className="absolute top-1/3 right-1/12 h-2 w-2 rounded-full bg-[var(--color-primary)]/4 animate-particle-29"></div>
