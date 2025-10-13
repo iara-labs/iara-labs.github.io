@@ -13,8 +13,8 @@ export default function FeaturesSection() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <div className="bg-white rounded-xl p-6 shadow-lg">
-            <div className="w-12 h-12 bg-[var(--color-primary)]/10 rounded-lg flex items-center justify-center mb-4">
+          <div className="bg-white rounded-xl p-6 shadow-lg text-center">
+            <div className="w-12 h-12 bg-[var(--color-primary)]/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
               <svg
                 className="w-6 h-6 text-[var(--color-primary)]"
                 fill="none"
@@ -43,8 +43,8 @@ export default function FeaturesSection() {
             </p>
           </div>
 
-          <div className="bg-white rounded-xl p-6 shadow-lg">
-            <div className="w-12 h-12 bg-[var(--color-primary)]/10 rounded-lg flex items-center justify-center mb-4">
+          <div className="bg-white rounded-xl p-6 shadow-lg text-center">
+            <div className="w-12 h-12 bg-[var(--color-primary)]/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
               <svg
                 className="w-6 h-6 text-[var(--color-primary)]"
                 fill="none"
@@ -67,8 +67,8 @@ export default function FeaturesSection() {
             </p>
           </div>
 
-          <div className="bg-white rounded-xl p-6 shadow-lg">
-            <div className="w-12 h-12 bg-[var(--color-primary)]/10 rounded-lg flex items-center justify-center mb-4">
+          <div className="bg-white rounded-xl p-6 shadow-lg text-center">
+            <div className="w-12 h-12 bg-[var(--color-primary)]/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
               <svg
                 className="w-6 h-6 text-[var(--color-primary)]"
                 fill="none"
@@ -91,8 +91,8 @@ export default function FeaturesSection() {
             </p>
           </div>
 
-          <div className="bg-white rounded-xl p-6 shadow-lg">
-            <div className="w-12 h-12 bg-[var(--color-primary)]/10 rounded-lg flex items-center justify-center mb-4">
+          <div className="bg-white rounded-xl p-6 shadow-lg text-center">
+            <div className="w-12 h-12 bg-[var(--color-primary)]/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
               <svg
                 className="w-6 h-6 text-[var(--color-primary)]"
                 fill="none"

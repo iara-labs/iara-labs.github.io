@@ -137,7 +137,7 @@ export default function RegisterHero() {
 
             {/* Trust Indicators */}
             <div className="pt-4">
-              <p className="text-sm text-[var(--color-neutral-500)]">
+              <div className="text-sm text-[var(--color-neutral-500)] flex items-center">
                 <svg
                   className="mr-2 inline h-4 w-4"
                   fill="currentColor"
@@ -150,7 +150,7 @@ export default function RegisterHero() {
                   />
                 </svg>
                 Seus dados estão seguros. Não enviamos spam.
-              </p>
+              </div>
             </div>
           </div>
 

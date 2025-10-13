@@ -195,7 +195,7 @@ export default function RegisterForm() {
           type="submit"
           disabled={loading || !form.state.canSubmit}
           onClick={() => trackCTAClick("garantir-desconto", "register-form")}
-          className="w-full rounded-lg bg-[var(--color-primary)] px-6 py-4 font-semibold text-white shadow-lg transition-all hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full rounded-4xl bg-[var(--color-primary)] px-6 py-4 font-semibold text-white shadow-lg transition-all hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {loading ? (
             <div className="flex items-center justify-center">
