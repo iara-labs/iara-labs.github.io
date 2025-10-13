@@ -1,0 +1,21 @@
+/* Base body styles */
+body {
+  background-color: var(--color-background);
+  color: var(--color-neutral-900);
+}
+
+/* Focus ring utility */
+*:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+/* Prevent scroll lock when Select is open */
+body[data-scroll-locked="false"] {
+  overflow: auto !important;
+}
+
+/* Ensure Select dropdown doesn't block scroll */
+[data-radix-select-content] {
+  position: fixed !important;
+}
