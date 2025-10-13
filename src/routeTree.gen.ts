@@ -12,9 +12,9 @@ import { createFileRoute } from '@tanstack/react-router'
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SignupRouteImport } from './routes/signup'
+import { Route as SigninRouteImport } from './routes/signin'
 import { Route as RegistrarSeRouteImport } from './routes/registrar-se'
 import { Route as ObrigadoRouteImport } from './routes/obrigado'
-import { Route as LoginRouteImport } from './routes/login'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdminDashboardRouteImport } from './routes/admin/dashboard'
 import { Route as AdminLayoutRouteImport } from './routes/admin/_layout'
@@ -31,6 +31,11 @@ const SignupRoute = SignupRouteImport.update({
   path: '/signup',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SigninRoute = SigninRouteImport.update({
+  id: '/signin',
+  path: '/signin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RegistrarSeRoute = RegistrarSeRouteImport.update({
   id: '/registrar-se',
   path: '/registrar-se',
@@ -39,11 +44,6 @@ const RegistrarSeRoute = RegistrarSeRouteImport.update({
 const ObrigadoRoute = ObrigadoRouteImport.update({
   id: '/obrigado',
   path: '/obrigado',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LoginRoute = LoginRouteImport.update({
-  id: '/login',
-  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -63,18 +63,18 @@ const AdminLayoutRoute = AdminLayoutRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/login': typeof LoginRoute
   '/obrigado': typeof ObrigadoRoute
   '/registrar-se': typeof RegistrarSeRoute
+  '/signin': typeof SigninRoute
   '/signup': typeof SignupRoute
   '/admin': typeof AdminLayoutRoute
   '/admin/dashboard': typeof AdminDashboardRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/login': typeof LoginRoute
   '/obrigado': typeof ObrigadoRoute
   '/registrar-se': typeof RegistrarSeRoute
+  '/signin': typeof SigninRoute
   '/signup': typeof SignupRoute
   '/admin': typeof AdminLayoutRoute
   '/admin/dashboard': typeof AdminDashboardRoute
@@ -82,9 +82,9 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/login': typeof LoginRoute
   '/obrigado': typeof ObrigadoRoute
   '/registrar-se': typeof RegistrarSeRoute
+  '/signin': typeof SigninRoute
   '/signup': typeof SignupRoute
   '/admin': typeof AdminRouteWithChildren
   '/admin/_layout': typeof AdminLayoutRoute
@@ -94,27 +94,27 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/login'
     | '/obrigado'
     | '/registrar-se'
+    | '/signin'
     | '/signup'
     | '/admin'
     | '/admin/dashboard'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/login'
     | '/obrigado'
     | '/registrar-se'
+    | '/signin'
     | '/signup'
     | '/admin'
     | '/admin/dashboard'
   id:
     | '__root__'
     | '/'
-    | '/login'
     | '/obrigado'
     | '/registrar-se'
+    | '/signin'
     | '/signup'
     | '/admin'
     | '/admin/_layout'
@@ -123,9 +123,9 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  LoginRoute: typeof LoginRoute
   ObrigadoRoute: typeof ObrigadoRoute
   RegistrarSeRoute: typeof RegistrarSeRoute
+  SigninRoute: typeof SigninRoute
   SignupRoute: typeof SignupRoute
   AdminRoute: typeof AdminRouteWithChildren
 }
@@ -146,6 +146,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SignupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/signin': {
+      id: '/signin'
+      path: '/signin'
+      fullPath: '/signin'
+      preLoaderRoute: typeof SigninRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/registrar-se': {
       id: '/registrar-se'
       path: '/registrar-se'
@@ -158,13 +165,6 @@ declare module '@tanstack/react-router' {
       path: '/obrigado'
       fullPath: '/obrigado'
       preLoaderRoute: typeof ObrigadoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/login': {
-      id: '/login'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -205,9 +205,9 @@ const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  LoginRoute: LoginRoute,
   ObrigadoRoute: ObrigadoRoute,
   RegistrarSeRoute: RegistrarSeRoute,
+  SigninRoute: SigninRoute,
   SignupRoute: SignupRoute,
   AdminRoute: AdminRouteWithChildren,
 }

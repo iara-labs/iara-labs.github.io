@@ -1,20 +1,20 @@
-import { LoginForm } from "@/components/pages/login/LoginForm";
+import { SigninForm } from "@/components/pages/signin/SigninForm";
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { useAnalytics } from "@/hooks/useAnalytics";
 
-export const Route = createFileRoute("/login")({
-  component: LoginPage,
+export const Route = createFileRoute("/signin")({
+  component: SigninPage,
 });
 
-function LoginPage() {
+function SigninPage() {
   const { trackCustomEvent } = useAnalytics();
 
-  // Rastrear visualização da página de login
+  // Rastrear visualização da página de signin
   useEffect(() => {
     trackCustomEvent("page_view", {
-      page_name: "login",
-      page_path: "/login",
+      page_name: "signin",
+      page_path: "/signin",
     });
   }, [trackCustomEvent]);
 
@@ -74,7 +74,7 @@ function LoginPage() {
       {/* Main Content */}
       <div className="relative z-10 min-h-screen flex items-center justify-center py-20">
         <div className="w-full max-w-md mx-auto px-6">
-          <LoginForm />
+          <SigninForm />
         </div>
       </div>
     </div>

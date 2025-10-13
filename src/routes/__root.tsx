@@ -6,12 +6,12 @@ import { useScrollTracking } from "@/hooks/useScrollTracking";
 
 const RootLayout = () => {
   const location = useLocation();
-  const isLoginPage = location.pathname === "/login";
+  const isSigninPage = location.pathname === "/signin";
   const isSignupPage = location.pathname === "/signup";
   const isAdminPage = location.pathname.startsWith("/admin");
 
   // Páginas que não devem ter menu e rodapé
-  const isMinimalPage = isLoginPage || isSignupPage || isAdminPage;
+  const isMinimalPage = isSigninPage || isSignupPage || isAdminPage;
 
   // Ativa o tracking de scroll apenas se não for uma página minimal
   useScrollTracking();
