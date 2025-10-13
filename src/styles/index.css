@@ -6,3 +6,15 @@
 @import "./base.css";
 @import "./scroll.css";
 @import "./animations.css";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
