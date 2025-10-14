@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SectionCards } from "@/components/section-cards";
-import { ChartAreaInteractive } from "@/components/chart-area-interactive";
-import { DataTable } from "@/components/data-table";
+import { SectionCards } from "@/components/admin/dashboard/SectionCards";
+import { ChartAreaInteractive } from "@/components/admin/dashboard/ChartAreaInteractive";
+import { DataTable } from "@/components/admin/shared/DataTable";
 import data from "@/data/dashboard.json";
 import {
   Breadcrumb,

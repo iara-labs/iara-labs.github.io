@@ -3,9 +3,9 @@
 import * as React from "react";
 import { BookOpen, LayoutDashboard, PieChart, Plug } from "lucide-react";
 
-import { NavMain } from "@/components/admin/sidebar/nav-main";
-import { NavUser } from "@/components/admin/sidebar/nav-user";
-import { TeamSwitcher } from "@/components/admin/sidebar/team-switcher";
+import { NavMain } from "@/components/admin/sidebar/NavMain";
+import { NavUser } from "@/components/admin/sidebar/NavUser";
+import { TeamSwitcher } from "@/components/admin/sidebar/TeamSwitcher";
 import {
   Sidebar,
   SidebarContent,
