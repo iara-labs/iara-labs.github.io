@@ -61,7 +61,7 @@ function Dashboard() {
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem className="hidden md:block">
-                <BreadcrumbLink href="#">Admin</BreadcrumbLink>
+                <BreadcrumbLink href="#">Administração</BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator className="hidden md:block" />
               <BreadcrumbItem>

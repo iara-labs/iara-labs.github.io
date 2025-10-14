@@ -9,6 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
 
 type SectionCardsProps = {
   ocrCount: number;
@@ -101,10 +102,13 @@ export function SectionCards({
           </CardAction>
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
-          <div className="line-clamp-1 flex gap-2 leading-none font-medium">
-            Plano atual <IconTrendingUp className="size-4" />
+          <div className="w-full space-y-2">
+            <Progress value={planUsagePercent} className="h-2" />
+            <div className="line-clamp-1 flex gap-2 leading-none font-medium">
+              Plano atual <IconTrendingUp className="size-4" />
+            </div>
+            <div className="text-muted-foreground">{currentPlan}</div>
           </div>
-          <div className="text-muted-foreground">{currentPlan}</div>
         </CardFooter>
       </Card>
     </div>

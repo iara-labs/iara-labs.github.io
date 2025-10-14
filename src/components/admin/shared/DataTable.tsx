@@ -78,7 +78,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 type ApiLog = {
   id: number;
-  date: string; // YYYY-MM-DD
+  date: string; // YYYY-MM-DD HH:MM:SS
   api: string; // ocr | recognition
   count: number;
 };
@@ -137,10 +137,21 @@ const columns: ColumnDef<ApiLog>[] = [
   },
   {
     accessorKey: "date",
-    header: "Data",
+    header: "Data e Hora",
     cell: ({ row }) => {
       const d = new Date(row.original.date);
-      return d.toLocaleDateString("pt-BR");
+      return (
+        <div className="space-y-1">
+          <div className="font-medium">{d.toLocaleDateString("pt-BR")}</div>
+          <div className="text-sm text-muted-foreground">
+            {d.toLocaleTimeString("pt-BR", {
+              hour: "2-digit",
+              minute: "2-digit",
+              second: "2-digit",
+            })}
+          </div>
+        </div>
+      );
     },
     enableHiding: false,
   },
