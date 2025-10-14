@@ -24,7 +24,6 @@ import {
   IconChevronRight,
   IconChevronsLeft,
   IconChevronsRight,
-  
   IconDotsVertical,
   IconGripVertical,
   IconLayoutColumns,
@@ -47,20 +46,10 @@ import type {
   SortingState,
   VisibilityState,
 } from "@tanstack/react-table";
- 
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -77,7 +66,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 type ApiLog = {
@@ -153,7 +149,10 @@ const columns: ColumnDef<ApiLog>[] = [
     header: "API",
     cell: ({ row }) => (
       <div className="w-32">
-        <Badge variant="outline" className="text-muted-foreground px-1.5 capitalize">
+        <Badge
+          variant="outline"
+          className="text-muted-foreground px-1.5 capitalize"
+        >
           {row.original.api}
         </Badge>
       </div>
@@ -163,7 +162,9 @@ const columns: ColumnDef<ApiLog>[] = [
     accessorKey: "count",
     header: () => <div className="w-full text-right">Acessos</div>,
     cell: ({ row }) => (
-      <div className="w-full text-right">{row.original.count.toLocaleString("pt-BR")}</div>
+      <div className="w-full text-right">
+        {row.original.count.toLocaleString("pt-BR")}
+      </div>
     ),
   },
   {
@@ -409,7 +410,8 @@ export function DataTable({ data: initialData }: { data: ApiLog[] }) {
         </div>
         <div className="flex items-center justify-between px-4">
           <div className="text-muted-foreground hidden flex-1 text-sm lg:flex">
-            {table.getFilteredSelectedRowModel().rows.length} de {table.getFilteredRowModel().rows.length} linha(s) selecionadas.
+            {table.getFilteredSelectedRowModel().rows.length} de{" "}
+            {table.getFilteredRowModel().rows.length} linha(s) selecionadas.
           </div>
           <div className="flex w-full items-center gap-8 lg:w-fit">
             <div className="hidden items:center gap-2 lg:flex">
@@ -437,7 +439,8 @@ export function DataTable({ data: initialData }: { data: ApiLog[] }) {
               </Select>
             </div>
             <div className="flex w-fit items-center justify-center text-sm font-medium">
-              Página {table.getState().pagination.pageIndex + 1} de {table.getPageCount()}
+              Página {table.getState().pagination.pageIndex + 1} de{" "}
+              {table.getPageCount()}
             </div>
             <div className="ml-auto flex items-center gap-2 lg:ml-0">
               <Button
@@ -499,143 +502,5 @@ export function DataTable({ data: initialData }: { data: ApiLog[] }) {
         <div className="aspect-video w-full flex-1 rounded-lg border border-dashed"></div>
       </TabsContent>
     </Tabs>
-  );
-}
-
-const chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
-];
-
-const chartConfig = {
-  desktop: {
-    label: "Desktop",
-    color: "var(--primary)",
-  },
-  mobile: {
-    label: "Mobile",
-    color: "var(--primary)",
-  },
-} satisfies ChartConfig;
-
-function TableCellViewer({ item }: { item: ApiLog }) {
-  const isMobile = useIsMobile();
-
-  return (
-    <Drawer direction={isMobile ? "bottom" : "right"}>
-      <DrawerTrigger asChild>
-        <Button variant="link" className="text-foreground w-fit px-0 text-left">
-          {item.header}
-        </Button>
-      </DrawerTrigger>
-      <DrawerContent>
-        <DrawerHeader className="gap-1">
-          <DrawerTitle>Detalhes do Request</DrawerTitle>
-          <DrawerDescription>Informações do log selecionado</DrawerDescription>
-        </DrawerHeader>
-        <div className="flex flex-col gap-4 overflow-y-auto px-4 text-sm">
-          {!isMobile && (
-            <>
-              <ChartContainer config={chartConfig}>
-                <AreaChart
-                  accessibilityLayer
-                  data={chartData}
-                  margin={{
-                    left: 0,
-                    right: 10,
-                  }}
-                >
-                  <CartesianGrid vertical={false} />
-                  <XAxis
-                    dataKey="month"
-                    tickLine={false}
-                    axisLine={false}
-                    tickMargin={8}
-                    tickFormatter={(value) => value.slice(0, 3)}
-                    hide
-                  />
-                  <ChartTooltip
-                    cursor={false}
-                    content={<ChartTooltipContent indicator="dot" />}
-                  />
-                  <Area
-                    dataKey="mobile"
-                    type="natural"
-                    fill="var(--color-mobile)"
-                    fillOpacity={0.6}
-                    stroke="var(--color-mobile)"
-                    stackId="a"
-                  />
-                  <Area
-                    dataKey="desktop"
-                    type="natural"
-                    fill="var(--color-desktop)"
-                    fillOpacity={0.4}
-                    stroke="var(--color-desktop)"
-                    stackId="a"
-                  />
-                </AreaChart>
-              </ChartContainer>
-              <Separator />
-              <div className="grid gap-2">
-                <div className="flex gap-2 leading-none font-medium">
-                  Estatística de exemplo <IconTrendingUp className="size-4" />
-                </div>
-                <div className="text-muted-foreground">Visualização ilustrativa.</div>
-              </div>
-              <Separator />
-            </>
-          )}
-          <form className="flex flex-col gap-4">
-            <div className="flex flex-col gap-3">
-              <Label htmlFor="dataHora">Data/Hora</Label>
-              <Input id="dataHora" defaultValue={new Date(item.dataHora).toLocaleString("pt-BR")} />
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="flex flex-col gap-3">
-                <Label htmlFor="api">API</Label>
-                <Select defaultValue={item.api}>
-                  <SelectTrigger id="api" className="w-full">
-                    <SelectValue placeholder="Selecione a API" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="ocr">ocr</SelectItem>
-                    <SelectItem value="recognition">recognition</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="flex flex-col gap-3">
-                <Label htmlFor="status">Status</Label>
-                <Input id="status" defaultValue={String(item.status)} />
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="flex flex-col gap-3">
-                <Label htmlFor="metodo">Método</Label>
-                <Input id="metodo" defaultValue={item.metodo} />
-              </div>
-              <div className="flex flex-col gap-3">
-                <Label htmlFor="duracaoMs">Duração (ms)</Label>
-                <Input id="duracaoMs" defaultValue={String(item.duracaoMs)} />
-              </div>
-            </div>
-            <div className="flex flex-col gap-3">
-              <Label htmlFor="ip">IP</Label>
-              <Input id="ip" defaultValue={item.ip} />
-            </div>
-          </form>
-        </div>
-        <DrawerFooter>
-          <Button>Salvar</Button>
-          <DrawerClose asChild>
-            <Button variant="outline">Fechar</Button>
-          </DrawerClose>
-        </DrawerFooter>
-      </DrawerContent>
-    </Drawer>
   );
 }

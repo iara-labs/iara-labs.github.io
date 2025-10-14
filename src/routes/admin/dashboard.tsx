@@ -20,7 +20,9 @@ export const Route = createFileRoute("/admin/dashboard")({
 
 function Dashboard() {
   // Deriva métricas a partir dos logs
-  const ocrCount = logs.filter((l) => l.api === "ocr").reduce((acc, l: any) => acc + (l.count ?? 1), 0);
+  const ocrCount = logs
+    .filter((l) => l.api === "ocr")
+    .reduce((acc, l: any) => acc + (l.count ?? 1), 0);
   const recognitionCount = logs
     .filter((l) => l.api === "recognition")
     .reduce((acc, l: any) => acc + (l.count ?? 1), 0);
@@ -37,7 +39,8 @@ function Dashboard() {
   // Series para o gráfico (agrega por dia)
   const byDay = new Map<string, { ocr: number; recognition: number }>();
   for (const log of logs as any[]) {
-    const key = (log.date || new Date(log.dataHora).toISOString().slice(0, 10)) as string;
+    const key = (log.date ||
+      new Date(log.dataHora).toISOString().slice(0, 10)) as string;
     const entry = byDay.get(key) || { ocr: 0, recognition: 0 };
     if (log.api === "ocr") entry.ocr += log.count ?? 1;
     else entry.recognition += log.count ?? 1;
