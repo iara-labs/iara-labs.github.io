@@ -10,91 +10,101 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-export function SectionCards() {
+type SectionCardsProps = {
+  ocrCount: number;
+  recognitionCount: number;
+  totalCount: number;
+  planUsagePercent: number; // 0-100
+  currentPlan: string;
+};
+
+export function SectionCards({
+  ocrCount,
+  recognitionCount,
+  totalCount,
+  planUsagePercent,
+  currentPlan,
+}: SectionCardsProps) {
   return (
     <div className="*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 px-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs lg:px-6 @xl/main:grid-cols-2 @5xl/main:grid-cols-4">
       <Card className="@container/card">
         <CardHeader>
-          <CardDescription>Total Revenue</CardDescription>
+          <CardDescription>Acessos na API de OCR</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            $1,250.00
+            {ocrCount.toLocaleString("pt-BR")}
           </CardTitle>
           <CardAction>
             <Badge variant="outline">
               <IconTrendingUp />
-              +12.5%
+              Hoje
             </Badge>
           </CardAction>
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 font-medium">
-            Trending up this month <IconTrendingUp className="size-4" />
+            Volume de chamadas recente <IconTrendingUp className="size-4" />
           </div>
-          <div className="text-muted-foreground">
-            Visitors for the last 6 months
-          </div>
+          <div className="text-muted-foreground">Últimos dias</div>
         </CardFooter>
       </Card>
       <Card className="@container/card">
         <CardHeader>
-          <CardDescription>New Customers</CardDescription>
+          <CardDescription>Acessos na API de Recognition</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            1,234
+            {recognitionCount.toLocaleString("pt-BR")}
           </CardTitle>
           <CardAction>
             <Badge variant="outline">
               <IconTrendingDown />
-              -20%
+              Hoje
             </Badge>
           </CardAction>
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 font-medium">
-            Down 20% this period <IconTrendingDown className="size-4" />
+            Tendência do período <IconTrendingDown className="size-4" />
           </div>
-          <div className="text-muted-foreground">
-            Acquisition needs attention
-          </div>
+          <div className="text-muted-foreground">Últimos dias</div>
         </CardFooter>
       </Card>
       <Card className="@container/card">
         <CardHeader>
-          <CardDescription>Active Accounts</CardDescription>
+          <CardDescription>Total de acessos</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            45,678
+            {totalCount.toLocaleString("pt-BR")}
           </CardTitle>
           <CardAction>
             <Badge variant="outline">
               <IconTrendingUp />
-              +12.5%
+              Geral
             </Badge>
           </CardAction>
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 leading-none font-medium">
-            Strong user retention <IconTrendingUp className="size-4" />
+            Acumulado no período <IconTrendingUp className="size-4" />
           </div>
-          <div className="text-muted-foreground">Engagement exceed targets</div>
+          <div className="text-muted-foreground">Soma de OCR + Recognition</div>
         </CardFooter>
       </Card>
       <Card className="@container/card">
         <CardHeader>
-          <CardDescription>Growth Rate</CardDescription>
+          <CardDescription>Utilização do plano</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            4.5%
+            {planUsagePercent.toFixed(1)}%
           </CardTitle>
           <CardAction>
             <Badge variant="outline">
               <IconTrendingUp />
-              +4.5%
+              {currentPlan}
             </Badge>
           </CardAction>
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 leading-none font-medium">
-            Steady performance increase <IconTrendingUp className="size-4" />
+            Plano atual <IconTrendingUp className="size-4" />
           </div>
-          <div className="text-muted-foreground">Meets growth projections</div>
+          <div className="text-muted-foreground">{currentPlan}</div>
         </CardFooter>
       </Card>
     </div>

@@ -24,13 +24,11 @@ import {
   IconChevronRight,
   IconChevronsLeft,
   IconChevronsRight,
-  IconCircleCheckFilled,
+  
   IconDotsVertical,
   IconGripVertical,
   IconLayoutColumns,
-  IconLoader,
   IconPlus,
-  IconTrendingUp,
 } from "@tabler/icons-react";
 import {
   flexRender,
@@ -49,18 +47,9 @@ import type {
   SortingState,
   VisibilityState,
 } from "@tanstack/react-table";
-import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
-import { toast } from "sonner";
-
-import { useIsMobile } from "@/hooks/useMobile";
+ 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import type { ChartConfig } from "@/components/ui/chart";
-import {
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   Drawer,
@@ -80,7 +69,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
   Select,
@@ -89,25 +77,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Separator } from "@/components/ui/separator";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-type TableItem = {
+type ApiLog = {
   id: number;
-  header: string;
-  type: string;
-  status: string;
-  target: string;
-  limit: string;
-  reviewer: string;
+  date: string; // YYYY-MM-DD
+  api: string; // ocr | recognition
+  count: number;
 };
 
 // Create a separate component for the drag handle
@@ -130,7 +107,7 @@ function DragHandle({ id }: { id: number }) {
   );
 }
 
-const columns: ColumnDef<TableItem>[] = [
+const columns: ColumnDef<ApiLog>[] = [
   {
     id: "drag",
     header: () => null,
@@ -163,121 +140,31 @@ const columns: ColumnDef<TableItem>[] = [
     enableHiding: false,
   },
   {
-    accessorKey: "header",
-    header: "Header",
+    accessorKey: "date",
+    header: "Data",
     cell: ({ row }) => {
-      return <TableCellViewer item={row.original} />;
+      const d = new Date(row.original.date);
+      return d.toLocaleDateString("pt-BR");
     },
     enableHiding: false,
   },
   {
-    accessorKey: "type",
-    header: "Section Type",
+    accessorKey: "api",
+    header: "API",
     cell: ({ row }) => (
       <div className="w-32">
-        <Badge variant="outline" className="text-muted-foreground px-1.5">
-          {row.original.type}
+        <Badge variant="outline" className="text-muted-foreground px-1.5 capitalize">
+          {row.original.api}
         </Badge>
       </div>
     ),
   },
   {
-    accessorKey: "status",
-    header: "Status",
+    accessorKey: "count",
+    header: () => <div className="w-full text-right">Acessos</div>,
     cell: ({ row }) => (
-      <Badge variant="outline" className="text-muted-foreground px-1.5">
-        {row.original.status === "Done" ? (
-          <IconCircleCheckFilled className="fill-green-500 dark:fill-green-400" />
-        ) : (
-          <IconLoader />
-        )}
-        {row.original.status}
-      </Badge>
+      <div className="w-full text-right">{row.original.count.toLocaleString("pt-BR")}</div>
     ),
-  },
-  {
-    accessorKey: "target",
-    header: () => <div className="w-full text-right">Target</div>,
-    cell: ({ row }) => (
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          toast.promise(new Promise((resolve) => setTimeout(resolve, 1000)), {
-            loading: `Saving ${row.original.header}`,
-            success: "Done",
-            error: "Error",
-          });
-        }}
-      >
-        <Label htmlFor={`${row.original.id}-target`} className="sr-only">
-          Target
-        </Label>
-        <Input
-          className="hover:bg-input/30 focus-visible:bg-background dark:hover:bg-input/30 dark:focus-visible:bg-input/30 h-8 w-16 border-transparent bg-transparent text-right shadow-none focus-visible;border dark:bg-transparent"
-          defaultValue={row.original.target}
-          id={`${row.original.id}-target`}
-        />
-      </form>
-    ),
-  },
-  {
-    accessorKey: "limit",
-    header: () => <div className="w-full text-right">Limit</div>,
-    cell: ({ row }) => (
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          toast.promise(new Promise((resolve) => setTimeout(resolve, 1000)), {
-            loading: `Saving ${row.original.header}`,
-            success: "Done",
-            error: "Error",
-          });
-        }}
-      >
-        <Label htmlFor={`${row.original.id}-limit`} className="sr-only">
-          Limit
-        </Label>
-        <Input
-          className="hover:bg-input/30 focus-visible:bg-background dark:hover:bg-input/30 dark:focus-visible:bg-input/30 h-8 w-16 border-transparent bg-transparent text-right shadow-none focus-visible;border dark:bg-transparent"
-          defaultValue={row.original.limit}
-          id={`${row.original.id}-limit`}
-        />
-      </form>
-    ),
-  },
-  {
-    accessorKey: "reviewer",
-    header: "Reviewer",
-    cell: ({ row }) => {
-      const isAssigned = row.original.reviewer !== "Assign reviewer";
-
-      if (isAssigned) {
-        return row.original.reviewer;
-      }
-
-      return (
-        <>
-          <Label htmlFor={`${row.original.id}-reviewer`} className="sr-only">
-            Reviewer
-          </Label>
-          <Select>
-            <SelectTrigger
-              className="w-38 **:data-[slot=select-value]:block **:data-[slot=select-value]:truncate"
-              size="sm"
-              id={`${row.original.id}-reviewer`}
-            >
-              <SelectValue placeholder="Assign reviewer" />
-            </SelectTrigger>
-            <SelectContent align="end">
-              <SelectItem value="Eddie Lake">Eddie Lake</SelectItem>
-              <SelectItem value="Jamik Tashpulatov">
-                Jamik Tashpulatov
-              </SelectItem>
-            </SelectContent>
-          </Select>
-        </>
-      );
-    },
   },
   {
     id: "actions",
@@ -294,18 +181,18 @@ const columns: ColumnDef<TableItem>[] = [
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-32">
-          <DropdownMenuItem>Edit</DropdownMenuItem>
-          <DropdownMenuItem>Make a copy</DropdownMenuItem>
-          <DropdownMenuItem>Favorite</DropdownMenuItem>
+          <DropdownMenuItem>Detalhes</DropdownMenuItem>
+          <DropdownMenuItem>Copiar</DropdownMenuItem>
+          <DropdownMenuItem>Favoritar</DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem variant="destructive">Delete</DropdownMenuItem>
+          <DropdownMenuItem variant="destructive">Excluir</DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     ),
   },
 ];
 
-function DraggableRow({ row }: { row: Row<TableItem> }) {
+function DraggableRow({ row }: { row: Row<ApiLog> }) {
   const { transform, transition, setNodeRef, isDragging } = useSortable({
     id: row.original.id,
   });
@@ -330,7 +217,7 @@ function DraggableRow({ row }: { row: Row<TableItem> }) {
   );
 }
 
-export function DataTable({ data: initialData }: { data: TableItem[] }) {
+export function DataTable({ data: initialData }: { data: ApiLog[] }) {
   const [data, setData] = React.useState(() => initialData);
   const [rowSelection, setRowSelection] = React.useState({});
   const [columnVisibility, setColumnVisibility] =
@@ -398,7 +285,7 @@ export function DataTable({ data: initialData }: { data: TableItem[] }) {
     >
       <div className="flex items-center justify-between px-4 lg:px-6">
         <Label htmlFor="view-selector" className="sr-only">
-          View
+          Visualização
         </Label>
         <Select defaultValue="outline">
           <SelectTrigger
@@ -406,32 +293,32 @@ export function DataTable({ data: initialData }: { data: TableItem[] }) {
             size="sm"
             id="view-selector"
           >
-            <SelectValue placeholder="Select a view" />
+            <SelectValue placeholder="Selecione uma visualização" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="outline">Outline</SelectItem>
-            <SelectItem value="past-performance">Past Performance</SelectItem>
-            <SelectItem value="key-personnel">Key Personnel</SelectItem>
-            <SelectItem value="focus-documents">Focus Documents</SelectItem>
+            <SelectItem value="outline">Logs</SelectItem>
+            <SelectItem value="past-performance">Estatísticas</SelectItem>
+            <SelectItem value="key-personnel">Origens</SelectItem>
+            <SelectItem value="focus-documents">Documentos</SelectItem>
           </SelectContent>
         </Select>
         <TabsList className="**:data-[slot=badge]:bg-muted-foreground/30 hidden **:data-[slot=badge]:size-5 **:data-[slot=badge]:rounded-full **:data-[slot=badge]:px-1 @4xl/main:flex">
-          <TabsTrigger value="outline">Outline</TabsTrigger>
+          <TabsTrigger value="outline">Logs</TabsTrigger>
           <TabsTrigger value="past-performance">
-            Past Performance <Badge variant="secondary">3</Badge>
+            Estatísticas <Badge variant="secondary">3</Badge>
           </TabsTrigger>
           <TabsTrigger value="key-personnel">
-            Key Personnel <Badge variant="secondary">2</Badge>
+            Origens <Badge variant="secondary">2</Badge>
           </TabsTrigger>
-          <TabsTrigger value="focus-documents">Focus Documents</TabsTrigger>
+          <TabsTrigger value="focus-documents">Documentos</TabsTrigger>
         </TabsList>
         <div className="flex items-center gap-2">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" size="sm">
                 <IconLayoutColumns />
-                <span className="hidden lg:inline">Customize Columns</span>
-                <span className="lg:hidden">Columns</span>
+                <span className="hidden lg:inline">Personalizar Colunas</span>
+                <span className="lg:hidden">Colunas</span>
                 <IconChevronDown />
               </Button>
             </DropdownMenuTrigger>
@@ -461,7 +348,7 @@ export function DataTable({ data: initialData }: { data: TableItem[] }) {
           </DropdownMenu>
           <Button variant="outline" size="sm">
             <IconPlus />
-            <span className="hidden lg:inline">Add Section</span>
+            <span className="hidden lg:inline">Adicionar</span>
           </Button>
         </div>
       </div>
@@ -512,7 +399,7 @@ export function DataTable({ data: initialData }: { data: TableItem[] }) {
                       colSpan={columns.length}
                       className="h-24 text-center"
                     >
-                      No results.
+                      Sem resultados.
                     </TableCell>
                   </TableRow>
                 )}
@@ -522,13 +409,12 @@ export function DataTable({ data: initialData }: { data: TableItem[] }) {
         </div>
         <div className="flex items-center justify-between px-4">
           <div className="text-muted-foreground hidden flex-1 text-sm lg:flex">
-            {table.getFilteredSelectedRowModel().rows.length} of{" "}
-            {table.getFilteredRowModel().rows.length} row(s) selected.
+            {table.getFilteredSelectedRowModel().rows.length} de {table.getFilteredRowModel().rows.length} linha(s) selecionadas.
           </div>
           <div className="flex w-full items-center gap-8 lg:w-fit">
             <div className="hidden items:center gap-2 lg:flex">
               <Label htmlFor="rows-per-page" className="text-sm font-medium">
-                Rows per page
+                Linhas por página
               </Label>
               <Select
                 value={`${table.getState().pagination.pageSize}`}
@@ -551,8 +437,7 @@ export function DataTable({ data: initialData }: { data: TableItem[] }) {
               </Select>
             </div>
             <div className="flex w-fit items-center justify-center text-sm font-medium">
-              Page {table.getState().pagination.pageIndex + 1} of{" "}
-              {table.getPageCount()}
+              Página {table.getState().pagination.pageIndex + 1} de {table.getPageCount()}
             </div>
             <div className="ml-auto flex items-center gap-2 lg:ml-0">
               <Button
@@ -561,7 +446,7 @@ export function DataTable({ data: initialData }: { data: TableItem[] }) {
                 onClick={() => table.setPageIndex(0)}
                 disabled={!table.getCanPreviousPage()}
               >
-                <span className="sr-only">Go to first page</span>
+                <span className="sr-only">Ir para a primeira página</span>
                 <IconChevronsLeft />
               </Button>
               <Button
@@ -571,7 +456,7 @@ export function DataTable({ data: initialData }: { data: TableItem[] }) {
                 onClick={() => table.previousPage()}
                 disabled={!table.getCanPreviousPage()}
               >
-                <span className="sr-only">Go to previous page</span>
+                <span className="sr-only">Página anterior</span>
                 <IconChevronLeft />
               </Button>
               <Button
@@ -581,7 +466,7 @@ export function DataTable({ data: initialData }: { data: TableItem[] }) {
                 onClick={() => table.nextPage()}
                 disabled={!table.getCanNextPage()}
               >
-                <span className="sr-only">Go to next page</span>
+                <span className="sr-only">Próxima página</span>
                 <IconChevronRight />
               </Button>
               <Button
@@ -591,7 +476,7 @@ export function DataTable({ data: initialData }: { data: TableItem[] }) {
                 onClick={() => table.setPageIndex(table.getPageCount() - 1)}
                 disabled={!table.getCanNextPage()}
               >
-                <span className="sr-only">Go to last page</span>
+                <span className="sr-only">Ir para a última página</span>
                 <IconChevronsRight />
               </Button>
             </div>
@@ -637,7 +522,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-function TableCellViewer({ item }: { item: TableItem }) {
+function TableCellViewer({ item }: { item: ApiLog }) {
   const isMobile = useIsMobile();
 
   return (
@@ -649,10 +534,8 @@ function TableCellViewer({ item }: { item: TableItem }) {
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="gap-1">
-          <DrawerTitle>{item.header}</DrawerTitle>
-          <DrawerDescription>
-            Showing total visitors for the last 6 months
-          </DrawerDescription>
+          <DrawerTitle>Detalhes do Request</DrawerTitle>
+          <DrawerDescription>Informações do log selecionado</DrawerDescription>
         </DrawerHeader>
         <div className="flex flex-col gap-4 overflow-y-auto px-4 text-sm">
           {!isMobile && (
@@ -700,95 +583,56 @@ function TableCellViewer({ item }: { item: TableItem }) {
               <Separator />
               <div className="grid gap-2">
                 <div className="flex gap-2 leading-none font-medium">
-                  Trending up by 5.2% this month{" "}
-                  <IconTrendingUp className="size-4" />
+                  Estatística de exemplo <IconTrendingUp className="size-4" />
                 </div>
-                <div className="text-muted-foreground">
-                  Showing total visitors for the last 6 months. This is just
-                  some random text to test the layout. It spans multiple lines
-                  and should wrap around.
-                </div>
+                <div className="text-muted-foreground">Visualização ilustrativa.</div>
               </div>
               <Separator />
             </>
           )}
           <form className="flex flex-col gap-4">
             <div className="flex flex-col gap-3">
-              <Label htmlFor="header">Header</Label>
-              <Input id="header" defaultValue={item.header} />
+              <Label htmlFor="dataHora">Data/Hora</Label>
+              <Input id="dataHora" defaultValue={new Date(item.dataHora).toLocaleString("pt-BR")} />
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="flex flex-col gap-3">
-                <Label htmlFor="type">Type</Label>
-                <Select defaultValue={item.type}>
-                  <SelectTrigger id="type" className="w-full">
-                    <SelectValue placeholder="Select a type" />
+                <Label htmlFor="api">API</Label>
+                <Select defaultValue={item.api}>
+                  <SelectTrigger id="api" className="w-full">
+                    <SelectValue placeholder="Selecione a API" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="Table of Contents">
-                      Table of Contents
-                    </SelectItem>
-                    <SelectItem value="Executive Summary">
-                      Executive Summary
-                    </SelectItem>
-                    <SelectItem value="Technical Approach">
-                      Technical Approach
-                    </SelectItem>
-                    <SelectItem value="Design">Design</SelectItem>
-                    <SelectItem value="Capabilities">Capabilities</SelectItem>
-                    <SelectItem value="Focus Documents">
-                      Focus Documents
-                    </SelectItem>
-                    <SelectItem value="Narrative">Narrative</SelectItem>
-                    <SelectItem value="Cover Page">Cover Page</SelectItem>
+                    <SelectItem value="ocr">ocr</SelectItem>
+                    <SelectItem value="recognition">recognition</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
               <div className="flex flex-col gap-3">
                 <Label htmlFor="status">Status</Label>
-                <Select defaultValue={item.status}>
-                  <SelectTrigger id="status" className="w-full">
-                    <SelectValue placeholder="Select a status" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Done">Done</SelectItem>
-                    <SelectItem value="In Progress">In Progress</SelectItem>
-                    <SelectItem value="Not Started">Not Started</SelectItem>
-                  </SelectContent>
-                </Select>
+                <Input id="status" defaultValue={String(item.status)} />
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="flex flex-col gap-3">
-                <Label htmlFor="target">Target</Label>
-                <Input id="target" defaultValue={item.target} />
+                <Label htmlFor="metodo">Método</Label>
+                <Input id="metodo" defaultValue={item.metodo} />
               </div>
               <div className="flex flex-col gap-3">
-                <Label htmlFor="limit">Limit</Label>
-                <Input id="limit" defaultValue={item.limit} />
+                <Label htmlFor="duracaoMs">Duração (ms)</Label>
+                <Input id="duracaoMs" defaultValue={String(item.duracaoMs)} />
               </div>
             </div>
             <div className="flex flex-col gap-3">
-              <Label htmlFor="reviewer">Reviewer</Label>
-              <Select defaultValue={item.reviewer}>
-                <SelectTrigger id="reviewer" className="w-full">
-                  <SelectValue placeholder="Select a reviewer" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="Eddie Lake">Eddie Lake</SelectItem>
-                  <SelectItem value="Jamik Tashpulatov">
-                    Jamik Tashpulatov
-                  </SelectItem>
-                  <SelectItem value="Emily Whalen">Emily Whalen</SelectItem>
-                </SelectContent>
-              </Select>
+              <Label htmlFor="ip">IP</Label>
+              <Input id="ip" defaultValue={item.ip} />
             </div>
           </form>
         </div>
         <DrawerFooter>
-          <Button>Submit</Button>
+          <Button>Salvar</Button>
           <DrawerClose asChild>
-            <Button variant="outline">Done</Button>
+            <Button variant="outline">Fechar</Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>

@@ -1,0 +1,902 @@
+[
+  {
+    "id": 1,
+    "date": "2025-08-01",
+    "api": "ocr",
+    "count": 8123
+  },
+  {
+    "id": 2,
+    "date": "2025-08-01",
+    "api": "recognition",
+    "count": 2104
+  },
+  {
+    "id": 3,
+    "date": "2025-08-02",
+    "api": "ocr",
+    "count": 3640
+  },
+  {
+    "id": 4,
+    "date": "2025-08-02",
+    "api": "recognition",
+    "count": 987
+  },
+  {
+    "id": 5,
+    "date": "2025-08-03",
+    "api": "ocr",
+    "count": 5230
+  },
+  {
+    "id": 6,
+    "date": "2025-08-03",
+    "api": "recognition",
+    "count": 3120
+  },
+  {
+    "id": 7,
+    "date": "2025-08-04",
+    "api": "ocr",
+    "count": 4455
+  },
+  {
+    "id": 8,
+    "date": "2025-08-04",
+    "api": "recognition",
+    "count": 1320
+  },
+  {
+    "id": 9,
+    "date": "2025-08-05",
+    "api": "ocr",
+    "count": 2099
+  },
+  {
+    "id": 10,
+    "date": "2025-08-05",
+    "api": "recognition",
+    "count": 864
+  },
+  {
+    "id": 11,
+    "date": "2025-08-06",
+    "api": "ocr",
+    "count": 6780
+  },
+  {
+    "id": 12,
+    "date": "2025-08-06",
+    "api": "recognition",
+    "count": 1450
+  },
+  {
+    "id": 13,
+    "date": "2025-08-07",
+    "api": "ocr",
+    "count": 9950
+  },
+  {
+    "id": 14,
+    "date": "2025-08-07",
+    "api": "recognition",
+    "count": 4100
+  },
+  {
+    "id": 15,
+    "date": "2025-08-08",
+    "api": "ocr",
+    "count": 1200
+  },
+  {
+    "id": 16,
+    "date": "2025-08-08",
+    "api": "recognition",
+    "count": 3200
+  },
+  {
+    "id": 17,
+    "date": "2025-08-09",
+    "api": "ocr",
+    "count": 5400
+  },
+  {
+    "id": 18,
+    "date": "2025-08-09",
+    "api": "recognition",
+    "count": 1100
+  },
+  {
+    "id": 19,
+    "date": "2025-08-10",
+    "api": "ocr",
+    "count": 3350
+  },
+  {
+    "id": 20,
+    "date": "2025-08-10",
+    "api": "recognition",
+    "count": 9800
+  },
+  {
+    "id": 21,
+    "date": "2025-08-11",
+    "api": "ocr",
+    "count": 7500
+  },
+  {
+    "id": 22,
+    "date": "2025-08-11",
+    "api": "recognition",
+    "count": 1900
+  },
+  {
+    "id": 23,
+    "date": "2025-08-12",
+    "api": "ocr",
+    "count": 1600
+  },
+  {
+    "id": 24,
+    "date": "2025-08-12",
+    "api": "recognition",
+    "count": 10500
+  },
+  {
+    "id": 25,
+    "date": "2025-08-13",
+    "api": "ocr",
+    "count": 4300
+  },
+  {
+    "id": 26,
+    "date": "2025-08-13",
+    "api": "recognition",
+    "count": 2200
+  },
+  {
+    "id": 27,
+    "date": "2025-08-14",
+    "api": "ocr",
+    "count": 9900
+  },
+  {
+    "id": 28,
+    "date": "2025-08-14",
+    "api": "recognition",
+    "count": 1750
+  },
+  {
+    "id": 29,
+    "date": "2025-08-15",
+    "api": "ocr",
+    "count": 2410
+  },
+  {
+    "id": 30,
+    "date": "2025-08-15",
+    "api": "recognition",
+    "count": 6300
+  },
+  {
+    "id": 31,
+    "date": "2025-08-16",
+    "api": "ocr",
+    "count": 5100
+  },
+  {
+    "id": 32,
+    "date": "2025-08-16",
+    "api": "recognition",
+    "count": 2100
+  },
+  {
+    "id": 33,
+    "date": "2025-08-17",
+    "api": "ocr",
+    "count": 1800
+  },
+  {
+    "id": 34,
+    "date": "2025-08-17",
+    "api": "recognition",
+    "count": 1200
+  },
+  {
+    "id": 35,
+    "date": "2025-08-18",
+    "api": "ocr",
+    "count": 8700
+  },
+  {
+    "id": 36,
+    "date": "2025-08-18",
+    "api": "recognition",
+    "count": 3100
+  },
+  {
+    "id": 37,
+    "date": "2025-08-19",
+    "api": "ocr",
+    "count": 3400
+  },
+  {
+    "id": 38,
+    "date": "2025-08-19",
+    "api": "recognition",
+    "count": 980
+  },
+  {
+    "id": 39,
+    "date": "2025-08-20",
+    "api": "ocr",
+    "count": 7600
+  },
+  {
+    "id": 40,
+    "date": "2025-08-20",
+    "api": "recognition",
+    "count": 2500
+  },
+  {
+    "id": 41,
+    "date": "2025-08-21",
+    "api": "ocr",
+    "count": 9200
+  },
+  {
+    "id": 42,
+    "date": "2025-08-21",
+    "api": "recognition",
+    "count": 1700
+  },
+  {
+    "id": 43,
+    "date": "2025-08-22",
+    "api": "ocr",
+    "count": 2300
+  },
+  {
+    "id": 44,
+    "date": "2025-08-22",
+    "api": "recognition",
+    "count": 4500
+  },
+  {
+    "id": 45,
+    "date": "2025-08-23",
+    "api": "ocr",
+    "count": 5600
+  },
+  {
+    "id": 46,
+    "date": "2025-08-23",
+    "api": "recognition",
+    "count": 2100
+  },
+  {
+    "id": 47,
+    "date": "2025-08-24",
+    "api": "ocr",
+    "count": 1500
+  },
+  {
+    "id": 48,
+    "date": "2025-08-24",
+    "api": "recognition",
+    "count": 900
+  },
+  {
+    "id": 49,
+    "date": "2025-08-25",
+    "api": "ocr",
+    "count": 6400
+  },
+  {
+    "id": 50,
+    "date": "2025-08-25",
+    "api": "recognition",
+    "count": 3000
+  },
+  {
+    "id": 51,
+    "date": "2025-08-26",
+    "api": "ocr",
+    "count": 7100
+  },
+  {
+    "id": 52,
+    "date": "2025-08-26",
+    "api": "recognition",
+    "count": 3300
+  },
+  {
+    "id": 53,
+    "date": "2025-08-27",
+    "api": "ocr",
+    "count": 8800
+  },
+  {
+    "id": 54,
+    "date": "2025-08-27",
+    "api": "recognition",
+    "count": 1900
+  },
+  {
+    "id": 55,
+    "date": "2025-08-28",
+    "api": "ocr",
+    "count": 4600
+  },
+  {
+    "id": 56,
+    "date": "2025-08-28",
+    "api": "recognition",
+    "count": 2600
+  },
+  {
+    "id": 57,
+    "date": "2025-08-29",
+    "api": "ocr",
+    "count": 5200
+  },
+  {
+    "id": 58,
+    "date": "2025-08-29",
+    "api": "recognition",
+    "count": 2100
+  },
+  {
+    "id": 59,
+    "date": "2025-08-30",
+    "api": "ocr",
+    "count": 3800
+  },
+  {
+    "id": 60,
+    "date": "2025-08-30",
+    "api": "recognition",
+    "count": 1400
+  },
+  {
+    "id": 61,
+    "date": "2025-08-31",
+    "api": "ocr",
+    "count": 2000
+  },
+  {
+    "id": 62,
+    "date": "2025-08-31",
+    "api": "recognition",
+    "count": 1000
+  },
+  {
+    "id": 63,
+    "date": "2025-09-01",
+    "api": "ocr",
+    "count": 9000
+  },
+  {
+    "id": 64,
+    "date": "2025-09-01",
+    "api": "recognition",
+    "count": 3200
+  },
+  {
+    "id": 65,
+    "date": "2025-09-02",
+    "api": "ocr",
+    "count": 4100
+  },
+  {
+    "id": 66,
+    "date": "2025-09-02",
+    "api": "recognition",
+    "count": 2100
+  },
+  {
+    "id": 67,
+    "date": "2025-09-03",
+    "api": "ocr",
+    "count": 3000
+  },
+  {
+    "id": 68,
+    "date": "2025-09-03",
+    "api": "recognition",
+    "count": 1500
+  },
+  {
+    "id": 69,
+    "date": "2025-09-04",
+    "api": "ocr",
+    "count": 7600
+  },
+  {
+    "id": 70,
+    "date": "2025-09-04",
+    "api": "recognition",
+    "count": 2300
+  },
+  {
+    "id": 71,
+    "date": "2025-09-05",
+    "api": "ocr",
+    "count": 8700
+  },
+  {
+    "id": 72,
+    "date": "2025-09-05",
+    "api": "recognition",
+    "count": 1800
+  },
+  {
+    "id": 73,
+    "date": "2025-09-06",
+    "api": "ocr",
+    "count": 2600
+  },
+  {
+    "id": 74,
+    "date": "2025-09-06",
+    "api": "recognition",
+    "count": 900
+  },
+  {
+    "id": 75,
+    "date": "2025-09-07",
+    "api": "ocr",
+    "count": 5400
+  },
+  {
+    "id": 76,
+    "date": "2025-09-07",
+    "api": "recognition",
+    "count": 1100
+  },
+  {
+    "id": 77,
+    "date": "2025-09-08",
+    "api": "ocr",
+    "count": 3350
+  },
+  {
+    "id": 78,
+    "date": "2025-09-08",
+    "api": "recognition",
+    "count": 9800
+  },
+  {
+    "id": 79,
+    "date": "2025-09-09",
+    "api": "ocr",
+    "count": 7500
+  },
+  {
+    "id": 80,
+    "date": "2025-09-09",
+    "api": "recognition",
+    "count": 1900
+  },
+  {
+    "id": 81,
+    "date": "2025-09-10",
+    "api": "ocr",
+    "count": 1600
+  },
+  {
+    "id": 82,
+    "date": "2025-09-10",
+    "api": "recognition",
+    "count": 10500
+  },
+  {
+    "id": 83,
+    "date": "2025-09-11",
+    "api": "ocr",
+    "count": 4300
+  },
+  {
+    "id": 84,
+    "date": "2025-09-11",
+    "api": "recognition",
+    "count": 2200
+  },
+  {
+    "id": 85,
+    "date": "2025-09-12",
+    "api": "ocr",
+    "count": 9900
+  },
+  {
+    "id": 86,
+    "date": "2025-09-12",
+    "api": "recognition",
+    "count": 1750
+  },
+  {
+    "id": 87,
+    "date": "2025-09-13",
+    "api": "ocr",
+    "count": 2410
+  },
+  {
+    "id": 88,
+    "date": "2025-09-13",
+    "api": "recognition",
+    "count": 6300
+  },
+  {
+    "id": 89,
+    "date": "2025-09-14",
+    "api": "ocr",
+    "count": 5100
+  },
+  {
+    "id": 90,
+    "date": "2025-09-14",
+    "api": "recognition",
+    "count": 2100
+  },
+  {
+    "id": 91,
+    "date": "2025-09-15",
+    "api": "ocr",
+    "count": 1800
+  },
+  {
+    "id": 92,
+    "date": "2025-09-15",
+    "api": "recognition",
+    "count": 1200
+  },
+  {
+    "id": 93,
+    "date": "2025-09-16",
+    "api": "ocr",
+    "count": 8700
+  },
+  {
+    "id": 94,
+    "date": "2025-09-16",
+    "api": "recognition",
+    "count": 3100
+  },
+  {
+    "id": 95,
+    "date": "2025-09-17",
+    "api": "ocr",
+    "count": 3400
+  },
+  {
+    "id": 96,
+    "date": "2025-09-17",
+    "api": "recognition",
+    "count": 980
+  },
+  {
+    "id": 97,
+    "date": "2025-09-18",
+    "api": "ocr",
+    "count": 7600
+  },
+  {
+    "id": 98,
+    "date": "2025-09-18",
+    "api": "recognition",
+    "count": 2500
+  },
+  {
+    "id": 99,
+    "date": "2025-09-19",
+    "api": "ocr",
+    "count": 9200
+  },
+  {
+    "id": 100,
+    "date": "2025-09-19",
+    "api": "recognition",
+    "count": 1700
+  },
+  {
+    "id": 101,
+    "date": "2025-09-20",
+    "api": "ocr",
+    "count": 2300
+  },
+  {
+    "id": 102,
+    "date": "2025-09-20",
+    "api": "recognition",
+    "count": 4500
+  },
+  {
+    "id": 103,
+    "date": "2025-09-21",
+    "api": "ocr",
+    "count": 5600
+  },
+  {
+    "id": 104,
+    "date": "2025-09-21",
+    "api": "recognition",
+    "count": 2100
+  },
+  {
+    "id": 105,
+    "date": "2025-09-22",
+    "api": "ocr",
+    "count": 1500
+  },
+  {
+    "id": 106,
+    "date": "2025-09-22",
+    "api": "recognition",
+    "count": 900
+  },
+  {
+    "id": 107,
+    "date": "2025-09-23",
+    "api": "ocr",
+    "count": 6400
+  },
+  {
+    "id": 108,
+    "date": "2025-09-23",
+    "api": "recognition",
+    "count": 3000
+  },
+  {
+    "id": 109,
+    "date": "2025-09-24",
+    "api": "ocr",
+    "count": 7100
+  },
+  {
+    "id": 110,
+    "date": "2025-09-24",
+    "api": "recognition",
+    "count": 3300
+  },
+  {
+    "id": 111,
+    "date": "2025-09-25",
+    "api": "ocr",
+    "count": 8800
+  },
+  {
+    "id": 112,
+    "date": "2025-09-25",
+    "api": "recognition",
+    "count": 1900
+  },
+  {
+    "id": 113,
+    "date": "2025-09-26",
+    "api": "ocr",
+    "count": 4600
+  },
+  {
+    "id": 114,
+    "date": "2025-09-26",
+    "api": "recognition",
+    "count": 2600
+  },
+  {
+    "id": 115,
+    "date": "2025-09-27",
+    "api": "ocr",
+    "count": 5200
+  },
+  {
+    "id": 116,
+    "date": "2025-09-27",
+    "api": "recognition",
+    "count": 2100
+  },
+  {
+    "id": 117,
+    "date": "2025-09-28",
+    "api": "ocr",
+    "count": 3800
+  },
+  {
+    "id": 118,
+    "date": "2025-09-28",
+    "api": "recognition",
+    "count": 1400
+  },
+  {
+    "id": 119,
+    "date": "2025-09-29",
+    "api": "ocr",
+    "count": 2000
+  },
+  {
+    "id": 120,
+    "date": "2025-09-29",
+    "api": "recognition",
+    "count": 1000
+  },
+  {
+    "id": 121,
+    "date": "2025-09-30",
+    "api": "ocr",
+    "count": 9000
+  },
+  {
+    "id": 122,
+    "date": "2025-09-30",
+    "api": "recognition",
+    "count": 3200
+  },
+  {
+    "id": 123,
+    "date": "2025-10-01",
+    "api": "ocr",
+    "count": 4100
+  },
+  {
+    "id": 124,
+    "date": "2025-10-01",
+    "api": "recognition",
+    "count": 2100
+  },
+  {
+    "id": 125,
+    "date": "2025-10-02",
+    "api": "ocr",
+    "count": 3000
+  },
+  {
+    "id": 126,
+    "date": "2025-10-02",
+    "api": "recognition",
+    "count": 1500
+  },
+  {
+    "id": 127,
+    "date": "2025-10-03",
+    "api": "ocr",
+    "count": 7600
+  },
+  {
+    "id": 128,
+    "date": "2025-10-03",
+    "api": "recognition",
+    "count": 2300
+  },
+  {
+    "id": 129,
+    "date": "2025-10-04",
+    "api": "ocr",
+    "count": 8700
+  },
+  {
+    "id": 130,
+    "date": "2025-10-04",
+    "api": "recognition",
+    "count": 1800
+  },
+  {
+    "id": 131,
+    "date": "2025-10-05",
+    "api": "ocr",
+    "count": 2600
+  },
+  {
+    "id": 132,
+    "date": "2025-10-05",
+    "api": "recognition",
+    "count": 900
+  },
+  {
+    "id": 133,
+    "date": "2025-10-06",
+    "api": "ocr",
+    "count": 5400
+  },
+  {
+    "id": 134,
+    "date": "2025-10-06",
+    "api": "recognition",
+    "count": 1100
+  },
+  {
+    "id": 135,
+    "date": "2025-10-07",
+    "api": "ocr",
+    "count": 3350
+  },
+  {
+    "id": 136,
+    "date": "2025-10-07",
+    "api": "recognition",
+    "count": 9800
+  },
+  {
+    "id": 137,
+    "date": "2025-10-08",
+    "api": "ocr",
+    "count": 7500
+  },
+  {
+    "id": 138,
+    "date": "2025-10-08",
+    "api": "recognition",
+    "count": 1900
+  },
+  {
+    "id": 139,
+    "date": "2025-10-09",
+    "api": "ocr",
+    "count": 1600
+  },
+  {
+    "id": 140,
+    "date": "2025-10-09",
+    "api": "recognition",
+    "count": 10500
+  },
+  {
+    "id": 141,
+    "date": "2025-10-10",
+    "api": "ocr",
+    "count": 4300
+  },
+  {
+    "id": 142,
+    "date": "2025-10-10",
+    "api": "recognition",
+    "count": 2200
+  },
+  {
+    "id": 143,
+    "date": "2025-10-11",
+    "api": "ocr",
+    "count": 9900
+  },
+  {
+    "id": 144,
+    "date": "2025-10-11",
+    "api": "recognition",
+    "count": 1750
+  },
+  {
+    "id": 145,
+    "date": "2025-10-12",
+    "api": "ocr",
+    "count": 2410
+  },
+  {
+    "id": 146,
+    "date": "2025-10-12",
+    "api": "recognition",
+    "count": 6300
+  },
+  {
+    "id": 147,
+    "date": "2025-10-13",
+    "api": "ocr",
+    "count": 5100
+  },
+  {
+    "id": 148,
+    "date": "2025-10-13",
+    "api": "recognition",
+    "count": 2100
+  },
+  {
+    "id": 149,
+    "date": "2025-10-14",
+    "api": "ocr",
+    "count": 1800
+  },
+  {
+    "id": 150,
+    "date": "2025-10-14",
+    "api": "recognition",
+    "count": 1200
+  }
+]
