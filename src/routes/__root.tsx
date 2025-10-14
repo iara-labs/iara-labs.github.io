@@ -1,5 +1,4 @@
 import { createRootRoute, Outlet, useLocation } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import Navigation from "@/components/shared/Navigation";
 import Footer from "@/components/shared/Footer";
 import { useScrollTracking } from "@/hooks/useScrollTracking";
@@ -23,7 +22,6 @@ const RootLayout = () => {
         <Outlet />
       </div>
       {!isMinimalPage && <Footer />}
-      <TanStackRouterDevtools />
     </>
   );
 };

@@ -1,0 +1,9 @@
+- Quantas requests ele fez em cada tipo de endpoint
+- Porcentagem de utilização do plano
+- Gerenciamento das Keys
+- Link para a documentação
+- Plano/Custo/Uso
+- Incluir validação dos campos de signin
+- Incluir validação dos campos de signup
+- Montar payload para signin
+- Montar payload para signup
