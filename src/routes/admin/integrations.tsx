@@ -9,6 +9,18 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Separator } from "@/components/ui/separator";
 import { SidebarTrigger } from "@/components/ui/sidebar";
+import { DataTableIntegrations } from "@/components/admin/integrations/DataTableIntegrations";
+import apiKeysData from "@/data/apiKeys.json";
+
+// Type assertion to ensure proper typing
+const typedApiKeysData = apiKeysData as Array<{
+  id: number;
+  key: string;
+  name: string;
+  createdAt: string;
+  status: "active" | "revoked";
+  lastUsed: string;
+}>;
 
 export const Route = createFileRoute("/admin/integrations")({
   component: Integrations,
@@ -27,23 +39,22 @@ function Integrations() {
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem className="hidden md:block">
-                <BreadcrumbLink href="#">Admin</BreadcrumbLink>
+                <BreadcrumbLink href="#">Administração</BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator className="hidden md:block" />
               <BreadcrumbItem>
-                <BreadcrumbPage>Integrations</BreadcrumbPage>
+                <BreadcrumbPage>Integrações</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
         </div>
       </header>
-      <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-        <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-          <div className="bg-muted/50 aspect-video rounded-xl" />
-          <div className="bg-muted/50 aspect-video rounded-xl" />
-          <div className="bg-muted/50 aspect-video rounded-xl" />
+      <div className="flex flex-1 flex-col">
+        <div className="@container/main flex flex-1 flex-col gap-2">
+          <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
+            <DataTableIntegrations data={typedApiKeysData} />
+          </div>
         </div>
-        <div className="bg-muted/50 min-h-[100vh] flex-1 rounded-xl md:min-h-min" />
       </div>
     </div>
   );

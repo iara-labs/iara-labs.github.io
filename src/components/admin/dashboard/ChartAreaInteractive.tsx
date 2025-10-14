@@ -41,7 +41,7 @@ const chartConfig = {
   },
   recognition: {
     label: "Recognition",
-    color: "var(--primary)",
+    color: "var(--secondary)",
   },
 } satisfies ChartConfig;
 
@@ -57,17 +57,22 @@ export function ChartAreaInteractive({ data }: ChartAreaInteractiveProps) {
 
   const filteredData = data.filter((item) => {
     const date = new Date(item.date);
-    const referenceDate = new Date("2024-06-30");
+    const now = new Date();
     let daysToSubtract = 90;
     if (timeRange === "30d") {
       daysToSubtract = 30;
     } else if (timeRange === "7d") {
       daysToSubtract = 7;
     }
-    const startDate = new Date(referenceDate);
+    const startDate = new Date(now);
     startDate.setDate(startDate.getDate() - daysToSubtract);
     return date >= startDate;
   });
+
+  // Debug: log dos dados filtrados
+  console.log("Filtered data:", filteredData.slice(0, 5));
+  console.log("Original data length:", data.length);
+  console.log("Filtered data length:", filteredData.length);
 
   return (
     <Card className="@container/card">
@@ -154,7 +159,10 @@ export function ChartAreaInteractive({ data }: ChartAreaInteractiveProps) {
               minTickGap={32}
               tickFormatter={(value) => {
                 const date = new Date(value);
-                return date.toLocaleDateString("pt-BR", { month: "short", day: "numeric" });
+                return date.toLocaleDateString("pt-BR", {
+                  month: "short",
+                  day: "numeric",
+                });
               }}
             />
             <ChartTooltip
@@ -162,7 +170,10 @@ export function ChartAreaInteractive({ data }: ChartAreaInteractiveProps) {
               content={
                 <ChartTooltipContent
                   labelFormatter={(value) => {
-                    return new Date(value).toLocaleDateString("pt-BR", { month: "short", day: "numeric" });
+                    return new Date(value).toLocaleDateString("pt-BR", {
+                      month: "short",
+                      day: "numeric",
+                    });
                   }}
                   indicator="dot"
                 />

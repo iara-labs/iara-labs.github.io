@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionCards } from "@/components/admin/dashboard/SectionCards";
 import { ChartAreaInteractive } from "@/components/admin/dashboard/ChartAreaInteractive";
-import { DataTable } from "@/components/admin/shared/DataTable";
+import { DataTableDashboard } from "@/components/admin/dashboard/DataTableDashboard";
 import logs from "@/data/apiLogs.json";
 import {
   Breadcrumb,
@@ -43,12 +43,16 @@ function Dashboard() {
       new Date(log.dataHora).toISOString().slice(0, 10)) as string;
     const entry = byDay.get(key) || { ocr: 0, recognition: 0 };
     if (log.api === "ocr") entry.ocr += log.count ?? 1;
-    else entry.recognition += log.count ?? 1;
+    else if (log.api === "recognition") entry.recognition += log.count ?? 1;
     byDay.set(key, entry);
   }
   const chartSeries = Array.from(byDay.entries())
     .sort(([a], [b]) => (a < b ? -1 : 1))
     .map(([date, v]) => ({ date, ocr: v.ocr, recognition: v.recognition }));
+
+  // Debug: log dos dados processados
+  console.log("Chart series:", chartSeries.slice(0, 10));
+  console.log("Sample log entry:", logs[0]);
   return (
     <div>
       <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
@@ -84,7 +88,7 @@ function Dashboard() {
             <div className="px-4 lg:px-6">
               <ChartAreaInteractive data={chartSeries} />
             </div>
-            <DataTable data={logs} />
+            <DataTableDashboard data={logs} />
           </div>
         </div>
       </div>
