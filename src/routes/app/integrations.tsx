@@ -9,7 +9,8 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Separator } from "@/components/ui/separator";
 import { SidebarTrigger } from "@/components/ui/sidebar";
-import { DataTableIntegrations } from "@/components/app/integrations/integrations";
+import { DataTable as IntegrationsDataTable } from "@/components/app/integrations/data-table/data-table";
+import type { ApiKey } from "@/components/app/integrations/data-table/columns";
 import apiKeysData from "@/data/api-keys.json";
 
 // Type assertion to ensure proper typing
@@ -52,7 +53,7 @@ function Integrations() {
       <div className="flex flex-1 flex-col">
         <div className="@container/main flex flex-1 flex-col gap-2">
           <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
-            <DataTableIntegrations data={typedApiKeysData} />
+            <IntegrationsDataTable data={typedApiKeysData as ApiKey[]} />
           </div>
         </div>
       </div>

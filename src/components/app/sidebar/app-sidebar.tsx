@@ -35,22 +35,22 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "/admin/dashboard",
+      url: "/app/dashboard",
       icon: LayoutDashboard,
     },
     {
       title: "Integrações",
-      url: "/admin/integrations",
+      url: "/app/integrations",
       icon: Plug,
     },
     {
       title: "Documentação",
-      url: "/admin/documentation",
+      url: "/app/documentation",
       icon: BookOpen,
     },
     {
       title: "Consumo do Plano",
-      url: "/admin/usage",
+      url: "/app/usage",
       icon: PieChart,
     },
   ],

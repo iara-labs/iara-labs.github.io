@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionCards } from "@/components/app/dashboard/cards";
 import { ChartAreaInteractive } from "@/components/app/dashboard/chart-area-interactive";
-import { DataTableDashboard } from "@/components/app/dashboard/requests";
+import { DataTable as DashboardDataTable } from "@/components/app/dashboard/data-table/data-table";
+import type { ApiLog } from "@/components/app/dashboard/data-table/columns";
 import logs from "@/data/api-logs.json";
 import {
   Breadcrumb,
@@ -97,7 +98,7 @@ function Dashboard() {
             <div className="px-4 lg:px-6">
               <ChartAreaInteractive data={chartSeries} />
             </div>
-            <DataTableDashboard data={logs} />
+            <DashboardDataTable data={logs as unknown as ApiLog[]} />
           </div>
         </div>
       </div>
