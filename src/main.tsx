@@ -15,7 +15,6 @@ declare module "@tanstack/react-router" {
 
 const rootElement = document.getElementById("root")!;
 
-// Inicialização mais robusta para React 19
 const initializeApp = () => {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
@@ -25,11 +24,9 @@ const initializeApp = () => {
   );
 };
 
-// Aguarda o DOM estar pronto e verifica se não há conteúdo já renderizado
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initializeApp);
 } else {
-  // DOM já está pronto
   if (!rootElement.innerHTML.trim()) {
     initializeApp();
   }

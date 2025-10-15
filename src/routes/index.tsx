@@ -1,18 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { useAnalytics } from "@/hooks/useAnalytics";
+import { useAnalytics } from "@/hooks/use-analytics";
 
 // Direct imports for better performance
-import Hero from "../components/pages/index/Hero";
-import Resources from "../components/pages/index/Resources";
-import HowItWorks from "../components/pages/index/HowItWorks";
-import Developers from "../components/pages/index/Developers";
-import SabIA from "../components/pages/index/SabIA";
-import Compatibility from "../components/pages/index/Compatibility";
-import Quickstart from "../components/pages/index/Quickstart";
-import Pricing from "../components/pages/index/Pricing";
-import Faq from "../components/pages/index/Faq";
-import Cta from "../components/pages/index/Cta";
+import Hero from "@/components/landing/home/hero";
+import Resources from "@/components/landing/home/resources";
+import HowItWorks from "@/components/landing/home/how-it-works";
+import Developers from "@/components/landing/home/developers";
+import SabIA from "@/components/landing/home/sabia";
+import Compatibility from "@/components/landing/home/compatibility";
+import Quickstart from "@/components/landing/home/quick-start";
+import Pricing from "@/components/landing/home/pricing";
+import Faq from "@/components/landing/home/faq";
+import Cta from "@/components/landing/home/cta";
 
 export const Route = createFileRoute("/")({
   component: Index,

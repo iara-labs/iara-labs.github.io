@@ -9,40 +9,20 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SignupRouteImport } from './routes/signup'
-import { Route as SigninRouteImport } from './routes/signin'
-import { Route as RegistrarSeRouteImport } from './routes/registrar-se'
-import { Route as ObrigadoRouteImport } from './routes/obrigado'
-import { Route as AdminRouteImport } from './routes/admin'
+import { Route as AppRouteImport } from './routes/app'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AdminUsageRouteImport } from './routes/admin/usage'
-import { Route as AdminIntegrationsRouteImport } from './routes/admin/integrations'
-import { Route as AdminDocumentationRouteImport } from './routes/admin/documentation'
-import { Route as AdminDashboardRouteImport } from './routes/admin/dashboard'
+import { Route as AppUsageRouteImport } from './routes/app/usage'
+import { Route as AppIntegrationsRouteImport } from './routes/app/integrations'
+import { Route as AppDocumentationRouteImport } from './routes/app/documentation'
+import { Route as AppDashboardRouteImport } from './routes/app/dashboard'
+import { Route as LandingWaitListRouteImport } from './routes/_landing/wait-list'
+import { Route as LandingThankYouRouteImport } from './routes/_landing/thank-you'
+import { Route as LandingSignUpRouteImport } from './routes/_landing/sign-up'
+import { Route as LandingSignInRouteImport } from './routes/_landing/sign-in'
 
-const SignupRoute = SignupRouteImport.update({
-  id: '/signup',
-  path: '/signup',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SigninRoute = SigninRouteImport.update({
-  id: '/signin',
-  path: '/signin',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RegistrarSeRoute = RegistrarSeRouteImport.update({
-  id: '/registrar-se',
-  path: '/registrar-se',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ObrigadoRoute = ObrigadoRouteImport.update({
-  id: '/obrigado',
-  path: '/obrigado',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminRoute = AdminRouteImport.update({
-  id: '/admin',
-  path: '/admin',
+const AppRoute = AppRouteImport.update({
+  id: '/app',
+  path: '/app',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -50,147 +30,139 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AdminUsageRoute = AdminUsageRouteImport.update({
+const AppUsageRoute = AppUsageRouteImport.update({
   id: '/usage',
   path: '/usage',
-  getParentRoute: () => AdminRoute,
+  getParentRoute: () => AppRoute,
 } as any)
-const AdminIntegrationsRoute = AdminIntegrationsRouteImport.update({
+const AppIntegrationsRoute = AppIntegrationsRouteImport.update({
   id: '/integrations',
   path: '/integrations',
-  getParentRoute: () => AdminRoute,
+  getParentRoute: () => AppRoute,
 } as any)
-const AdminDocumentationRoute = AdminDocumentationRouteImport.update({
+const AppDocumentationRoute = AppDocumentationRouteImport.update({
   id: '/documentation',
   path: '/documentation',
-  getParentRoute: () => AdminRoute,
+  getParentRoute: () => AppRoute,
 } as any)
-const AdminDashboardRoute = AdminDashboardRouteImport.update({
+const AppDashboardRoute = AppDashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
-  getParentRoute: () => AdminRoute,
+  getParentRoute: () => AppRoute,
+} as any)
+const LandingWaitListRoute = LandingWaitListRouteImport.update({
+  id: '/_landing/wait-list',
+  path: '/wait-list',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LandingThankYouRoute = LandingThankYouRouteImport.update({
+  id: '/_landing/thank-you',
+  path: '/thank-you',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LandingSignUpRoute = LandingSignUpRouteImport.update({
+  id: '/_landing/sign-up',
+  path: '/sign-up',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LandingSignInRoute = LandingSignInRouteImport.update({
+  id: '/_landing/sign-in',
+  path: '/sign-in',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/admin': typeof AdminRouteWithChildren
-  '/obrigado': typeof ObrigadoRoute
-  '/registrar-se': typeof RegistrarSeRoute
-  '/signin': typeof SigninRoute
-  '/signup': typeof SignupRoute
-  '/admin/dashboard': typeof AdminDashboardRoute
-  '/admin/documentation': typeof AdminDocumentationRoute
-  '/admin/integrations': typeof AdminIntegrationsRoute
-  '/admin/usage': typeof AdminUsageRoute
+  '/app': typeof AppRouteWithChildren
+  '/sign-in': typeof LandingSignInRoute
+  '/sign-up': typeof LandingSignUpRoute
+  '/thank-you': typeof LandingThankYouRoute
+  '/wait-list': typeof LandingWaitListRoute
+  '/app/dashboard': typeof AppDashboardRoute
+  '/app/documentation': typeof AppDocumentationRoute
+  '/app/integrations': typeof AppIntegrationsRoute
+  '/app/usage': typeof AppUsageRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/admin': typeof AdminRouteWithChildren
-  '/obrigado': typeof ObrigadoRoute
-  '/registrar-se': typeof RegistrarSeRoute
-  '/signin': typeof SigninRoute
-  '/signup': typeof SignupRoute
-  '/admin/dashboard': typeof AdminDashboardRoute
-  '/admin/documentation': typeof AdminDocumentationRoute
-  '/admin/integrations': typeof AdminIntegrationsRoute
-  '/admin/usage': typeof AdminUsageRoute
+  '/app': typeof AppRouteWithChildren
+  '/sign-in': typeof LandingSignInRoute
+  '/sign-up': typeof LandingSignUpRoute
+  '/thank-you': typeof LandingThankYouRoute
+  '/wait-list': typeof LandingWaitListRoute
+  '/app/dashboard': typeof AppDashboardRoute
+  '/app/documentation': typeof AppDocumentationRoute
+  '/app/integrations': typeof AppIntegrationsRoute
+  '/app/usage': typeof AppUsageRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/admin': typeof AdminRouteWithChildren
-  '/obrigado': typeof ObrigadoRoute
-  '/registrar-se': typeof RegistrarSeRoute
-  '/signin': typeof SigninRoute
-  '/signup': typeof SignupRoute
-  '/admin/dashboard': typeof AdminDashboardRoute
-  '/admin/documentation': typeof AdminDocumentationRoute
-  '/admin/integrations': typeof AdminIntegrationsRoute
-  '/admin/usage': typeof AdminUsageRoute
+  '/app': typeof AppRouteWithChildren
+  '/_landing/sign-in': typeof LandingSignInRoute
+  '/_landing/sign-up': typeof LandingSignUpRoute
+  '/_landing/thank-you': typeof LandingThankYouRoute
+  '/_landing/wait-list': typeof LandingWaitListRoute
+  '/app/dashboard': typeof AppDashboardRoute
+  '/app/documentation': typeof AppDocumentationRoute
+  '/app/integrations': typeof AppIntegrationsRoute
+  '/app/usage': typeof AppUsageRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/admin'
-    | '/obrigado'
-    | '/registrar-se'
-    | '/signin'
-    | '/signup'
-    | '/admin/dashboard'
-    | '/admin/documentation'
-    | '/admin/integrations'
-    | '/admin/usage'
+    | '/app'
+    | '/sign-in'
+    | '/sign-up'
+    | '/thank-you'
+    | '/wait-list'
+    | '/app/dashboard'
+    | '/app/documentation'
+    | '/app/integrations'
+    | '/app/usage'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/admin'
-    | '/obrigado'
-    | '/registrar-se'
-    | '/signin'
-    | '/signup'
-    | '/admin/dashboard'
-    | '/admin/documentation'
-    | '/admin/integrations'
-    | '/admin/usage'
+    | '/app'
+    | '/sign-in'
+    | '/sign-up'
+    | '/thank-you'
+    | '/wait-list'
+    | '/app/dashboard'
+    | '/app/documentation'
+    | '/app/integrations'
+    | '/app/usage'
   id:
     | '__root__'
     | '/'
-    | '/admin'
-    | '/obrigado'
-    | '/registrar-se'
-    | '/signin'
-    | '/signup'
-    | '/admin/dashboard'
-    | '/admin/documentation'
-    | '/admin/integrations'
-    | '/admin/usage'
+    | '/app'
+    | '/_landing/sign-in'
+    | '/_landing/sign-up'
+    | '/_landing/thank-you'
+    | '/_landing/wait-list'
+    | '/app/dashboard'
+    | '/app/documentation'
+    | '/app/integrations'
+    | '/app/usage'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AdminRoute: typeof AdminRouteWithChildren
-  ObrigadoRoute: typeof ObrigadoRoute
-  RegistrarSeRoute: typeof RegistrarSeRoute
-  SigninRoute: typeof SigninRoute
-  SignupRoute: typeof SignupRoute
+  AppRoute: typeof AppRouteWithChildren
+  LandingSignInRoute: typeof LandingSignInRoute
+  LandingSignUpRoute: typeof LandingSignUpRoute
+  LandingThankYouRoute: typeof LandingThankYouRoute
+  LandingWaitListRoute: typeof LandingWaitListRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/signup': {
-      id: '/signup'
-      path: '/signup'
-      fullPath: '/signup'
-      preLoaderRoute: typeof SignupRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/signin': {
-      id: '/signin'
-      path: '/signin'
-      fullPath: '/signin'
-      preLoaderRoute: typeof SigninRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/registrar-se': {
-      id: '/registrar-se'
-      path: '/registrar-se'
-      fullPath: '/registrar-se'
-      preLoaderRoute: typeof RegistrarSeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/obrigado': {
-      id: '/obrigado'
-      path: '/obrigado'
-      fullPath: '/obrigado'
-      preLoaderRoute: typeof ObrigadoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin': {
-      id: '/admin'
-      path: '/admin'
-      fullPath: '/admin'
-      preLoaderRoute: typeof AdminRouteImport
+    '/app': {
+      id: '/app'
+      path: '/app'
+      fullPath: '/app'
+      preLoaderRoute: typeof AppRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -200,60 +172,88 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/admin/usage': {
-      id: '/admin/usage'
+    '/app/usage': {
+      id: '/app/usage'
       path: '/usage'
-      fullPath: '/admin/usage'
-      preLoaderRoute: typeof AdminUsageRouteImport
-      parentRoute: typeof AdminRoute
+      fullPath: '/app/usage'
+      preLoaderRoute: typeof AppUsageRouteImport
+      parentRoute: typeof AppRoute
     }
-    '/admin/integrations': {
-      id: '/admin/integrations'
+    '/app/integrations': {
+      id: '/app/integrations'
       path: '/integrations'
-      fullPath: '/admin/integrations'
-      preLoaderRoute: typeof AdminIntegrationsRouteImport
-      parentRoute: typeof AdminRoute
+      fullPath: '/app/integrations'
+      preLoaderRoute: typeof AppIntegrationsRouteImport
+      parentRoute: typeof AppRoute
     }
-    '/admin/documentation': {
-      id: '/admin/documentation'
+    '/app/documentation': {
+      id: '/app/documentation'
       path: '/documentation'
-      fullPath: '/admin/documentation'
-      preLoaderRoute: typeof AdminDocumentationRouteImport
-      parentRoute: typeof AdminRoute
+      fullPath: '/app/documentation'
+      preLoaderRoute: typeof AppDocumentationRouteImport
+      parentRoute: typeof AppRoute
     }
-    '/admin/dashboard': {
-      id: '/admin/dashboard'
+    '/app/dashboard': {
+      id: '/app/dashboard'
       path: '/dashboard'
-      fullPath: '/admin/dashboard'
-      preLoaderRoute: typeof AdminDashboardRouteImport
-      parentRoute: typeof AdminRoute
+      fullPath: '/app/dashboard'
+      preLoaderRoute: typeof AppDashboardRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_landing/wait-list': {
+      id: '/_landing/wait-list'
+      path: '/wait-list'
+      fullPath: '/wait-list'
+      preLoaderRoute: typeof LandingWaitListRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_landing/thank-you': {
+      id: '/_landing/thank-you'
+      path: '/thank-you'
+      fullPath: '/thank-you'
+      preLoaderRoute: typeof LandingThankYouRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_landing/sign-up': {
+      id: '/_landing/sign-up'
+      path: '/sign-up'
+      fullPath: '/sign-up'
+      preLoaderRoute: typeof LandingSignUpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_landing/sign-in': {
+      id: '/_landing/sign-in'
+      path: '/sign-in'
+      fullPath: '/sign-in'
+      preLoaderRoute: typeof LandingSignInRouteImport
+      parentRoute: typeof rootRouteImport
     }
   }
 }
 
-interface AdminRouteChildren {
-  AdminDashboardRoute: typeof AdminDashboardRoute
-  AdminDocumentationRoute: typeof AdminDocumentationRoute
-  AdminIntegrationsRoute: typeof AdminIntegrationsRoute
-  AdminUsageRoute: typeof AdminUsageRoute
+interface AppRouteChildren {
+  AppDashboardRoute: typeof AppDashboardRoute
+  AppDocumentationRoute: typeof AppDocumentationRoute
+  AppIntegrationsRoute: typeof AppIntegrationsRoute
+  AppUsageRoute: typeof AppUsageRoute
 }
 
-const AdminRouteChildren: AdminRouteChildren = {
-  AdminDashboardRoute: AdminDashboardRoute,
-  AdminDocumentationRoute: AdminDocumentationRoute,
-  AdminIntegrationsRoute: AdminIntegrationsRoute,
-  AdminUsageRoute: AdminUsageRoute,
+const AppRouteChildren: AppRouteChildren = {
+  AppDashboardRoute: AppDashboardRoute,
+  AppDocumentationRoute: AppDocumentationRoute,
+  AppIntegrationsRoute: AppIntegrationsRoute,
+  AppUsageRoute: AppUsageRoute,
 }
 
-const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
+const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AdminRoute: AdminRouteWithChildren,
-  ObrigadoRoute: ObrigadoRoute,
-  RegistrarSeRoute: RegistrarSeRoute,
-  SigninRoute: SigninRoute,
-  SignupRoute: SignupRoute,
+  AppRoute: AppRouteWithChildren,
+  LandingSignInRoute: LandingSignInRoute,
+  LandingSignUpRoute: LandingSignUpRoute,
+  LandingThankYouRoute: LandingThankYouRoute,
+  LandingWaitListRoute: LandingWaitListRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

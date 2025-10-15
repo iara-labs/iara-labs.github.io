@@ -1,18 +1,15 @@
 import { createRootRoute, Outlet, useLocation } from "@tanstack/react-router";
-import Navigation from "@/components/shared/Navigation";
-import Footer from "@/components/shared/Footer";
-import { useScrollTracking } from "@/hooks/useScrollTracking";
+import Navigation from "@/components/landing/navigation/navigation";
+import Footer from "@/components/landing/footer/footer";
+import { useScrollTracking } from "@/hooks/use-scroll-tracking";
 
 const RootLayout = () => {
   const location = useLocation();
-  const isSigninPage = location.pathname === "/signin";
-  const isSignupPage = location.pathname === "/signup";
-  const isAdminPage = location.pathname.startsWith("/admin");
-
-  // Páginas que não devem ter menu e rodapé
+  const isSigninPage = location.pathname === "/sign-in";
+  const isSignupPage = location.pathname === "/sign-up";
+  const isAdminPage = location.pathname.startsWith("/app");
   const isMinimalPage = isSigninPage || isSignupPage || isAdminPage;
 
-  // Ativa o tracking de scroll apenas se não for uma página minimal
   useScrollTracking();
 
   return (
