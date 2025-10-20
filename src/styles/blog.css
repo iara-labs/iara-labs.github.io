@@ -1,0 +1,90 @@
+/* Blog specific styles */
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Blog prose styles */
+.blog-prose {
+  @apply max-w-none;
+}
+
+.blog-prose h1 {
+  @apply text-3xl font-bold text-[var(--color-secondary)] mb-6;
+}
+
+.blog-prose h2 {
+  @apply text-2xl font-bold text-[var(--color-secondary)] mb-4 mt-8;
+}
+
+.blog-prose h3 {
+  @apply text-xl font-bold text-[var(--color-secondary)] mb-3 mt-6;
+}
+
+.blog-prose p {
+  @apply text-[var(--color-muted-foreground)] leading-relaxed mb-4;
+}
+
+.blog-prose a {
+  @apply text-[var(--color-primary)] no-underline hover:underline;
+}
+
+.blog-prose strong {
+  @apply text-[var(--color-secondary)] font-semibold;
+}
+
+.blog-prose code {
+  @apply bg-[var(--color-muted)] text-[var(--color-secondary)] px-1 py-0.5 rounded text-sm;
+}
+
+.blog-prose pre {
+  @apply bg-[var(--color-muted)] border border-[var(--color-border)] p-4 rounded-lg overflow-x-auto;
+}
+
+.blog-prose pre code {
+  @apply bg-transparent p-0;
+}
+
+.blog-prose ul {
+  @apply list-disc ml-6 mb-4;
+}
+
+.blog-prose li {
+  @apply text-[var(--color-muted-foreground)] mb-2;
+}
+
+.blog-prose hr {
+  @apply my-6 border-[var(--color-border)];
+}
+
+/* Blog card hover effects */
+.blog-card {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.blog-card:hover {
+  @apply transform -translate-y-1;
+}
+
+/* Blog sidebar sticky positioning */
+.blog-sidebar {
+  @apply sticky top-32;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .blog-sidebar {
+    @apply static;
+  }
+}

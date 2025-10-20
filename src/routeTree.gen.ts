@@ -9,8 +9,11 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AppRouteImport } from './routes/app'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BlogIndexRouteImport } from './routes/blog/index'
+import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 import { Route as AppUsageRouteImport } from './routes/app/usage'
 import { Route as AppIntegrationsRouteImport } from './routes/app/integrations'
 import { Route as AppDocumentationRouteImport } from './routes/app/documentation'
@@ -20,6 +23,11 @@ import { Route as LandingThankYouRouteImport } from './routes/_landing/thank-you
 import { Route as LandingSignUpRouteImport } from './routes/_landing/sign-up'
 import { Route as LandingSignInRouteImport } from './routes/_landing/sign-in'
 
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AppRoute = AppRouteImport.update({
   id: '/app',
   path: '/app',
@@ -29,6 +37,16 @@ const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BlogRoute,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
 } as any)
 const AppUsageRoute = AppUsageRouteImport.update({
   id: '/usage',
@@ -74,6 +92,7 @@ const LandingSignInRoute = LandingSignInRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/app': typeof AppRouteWithChildren
+  '/blog': typeof BlogRouteWithChildren
   '/sign-in': typeof LandingSignInRoute
   '/sign-up': typeof LandingSignUpRoute
   '/thank-you': typeof LandingThankYouRoute
@@ -82,6 +101,8 @@ export interface FileRoutesByFullPath {
   '/app/documentation': typeof AppDocumentationRoute
   '/app/integrations': typeof AppIntegrationsRoute
   '/app/usage': typeof AppUsageRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -94,11 +115,14 @@ export interface FileRoutesByTo {
   '/app/documentation': typeof AppDocumentationRoute
   '/app/integrations': typeof AppIntegrationsRoute
   '/app/usage': typeof AppUsageRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/app': typeof AppRouteWithChildren
+  '/blog': typeof BlogRouteWithChildren
   '/_landing/sign-in': typeof LandingSignInRoute
   '/_landing/sign-up': typeof LandingSignUpRoute
   '/_landing/thank-you': typeof LandingThankYouRoute
@@ -107,12 +131,15 @@ export interface FileRoutesById {
   '/app/documentation': typeof AppDocumentationRoute
   '/app/integrations': typeof AppIntegrationsRoute
   '/app/usage': typeof AppUsageRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/app'
+    | '/blog'
     | '/sign-in'
     | '/sign-up'
     | '/thank-you'
@@ -121,6 +148,8 @@ export interface FileRouteTypes {
     | '/app/documentation'
     | '/app/integrations'
     | '/app/usage'
+    | '/blog/$slug'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -133,10 +162,13 @@ export interface FileRouteTypes {
     | '/app/documentation'
     | '/app/integrations'
     | '/app/usage'
+    | '/blog/$slug'
+    | '/blog'
   id:
     | '__root__'
     | '/'
     | '/app'
+    | '/blog'
     | '/_landing/sign-in'
     | '/_landing/sign-up'
     | '/_landing/thank-you'
@@ -145,11 +177,14 @@ export interface FileRouteTypes {
     | '/app/documentation'
     | '/app/integrations'
     | '/app/usage'
+    | '/blog/$slug'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AppRoute: typeof AppRouteWithChildren
+  BlogRoute: typeof BlogRouteWithChildren
   LandingSignInRoute: typeof LandingSignInRoute
   LandingSignUpRoute: typeof LandingSignUpRoute
   LandingThankYouRoute: typeof LandingThankYouRoute
@@ -158,6 +193,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/app': {
       id: '/app'
       path: '/app'
@@ -171,6 +213,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof BlogRoute
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
     }
     '/app/usage': {
       id: '/app/usage'
@@ -247,9 +303,22 @@ const AppRouteChildren: AppRouteChildren = {
 
 const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
 
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AppRoute: AppRouteWithChildren,
+  BlogRoute: BlogRouteWithChildren,
   LandingSignInRoute: LandingSignInRoute,
   LandingSignUpRoute: LandingSignUpRoute,
   LandingThankYouRoute: LandingThankYouRoute,

@@ -2,6 +2,7 @@ import { createRootRoute, Outlet, useLocation } from "@tanstack/react-router";
 import Navigation from "@/components/landing/navigation/navigation";
 import Footer from "@/components/landing/footer/footer";
 import { useScrollTracking } from "@/hooks/use-scroll-tracking";
+import { Toaster } from "@/components/ui/sonner";
 
 const RootLayout = () => {
   const location = useLocation();
@@ -19,6 +20,7 @@ const RootLayout = () => {
         <Outlet />
       </div>
       {!isMinimalPage && <Footer />}
+      <Toaster />
     </>
   );
 };

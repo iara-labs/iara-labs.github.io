@@ -10,9 +10,10 @@ const Navigation = () => {
   const location = useLocation();
   const { trackCTAClick } = useAnalytics();
 
-  // Verificar se estamos na página de registro, obrigado, signin ou signup
+  // Verificar se estamos na página de registro, obrigado, signin, signup ou blog
   const isOnRegisterPage = location.pathname === "/wait-list";
   const isOnThankYouPage = location.pathname === "/obrigado";
+  const isOnBlogPage = location.pathname.startsWith("/blog");
 
   // Função para scroll suave ou navegação
   const scrollToSection = (href: string, itemLabel?: string) => {
@@ -24,8 +25,15 @@ const Navigation = () => {
       );
     }
 
-    if (isOnRegisterPage || isOnThankYouPage) {
-      // Se estamos na página de registro, obrigado, signin ou signup, navegar para a página index com a seção
+    // Se é um link externo (começa com /), navegar diretamente
+    if (href.startsWith("/")) {
+      window.location.href = href;
+      setIsMobileMenuOpen(false);
+      return;
+    }
+
+    if (isOnRegisterPage || isOnThankYouPage || isOnBlogPage) {
+      // Se estamos na página de registro, obrigado, signin, signup ou blog, navegar para a página index com a seção
       window.location.href = `/${href}`;
     } else {
       // Se estamos na página index, fazer scroll suave
@@ -49,6 +57,12 @@ const Navigation = () => {
     if (isOnRegisterPage || isOnThankYouPage) {
       // Se estamos na página de registro, obrigado, signin ou signup, definir seção ativa como "inicio"
       setActiveSection("inicio");
+      return;
+    }
+
+    if (isOnBlogPage) {
+      // Se estamos na página do blog, definir seção ativa como "blog"
+      setActiveSection("blog");
       return;
     }
 
@@ -86,7 +100,7 @@ const Navigation = () => {
     handleScroll(); // Verificar seção inicial
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isOnRegisterPage, isOnThankYouPage]);
+  }, [isOnRegisterPage, isOnThankYouPage, isOnBlogPage]);
 
   return (
     <nav

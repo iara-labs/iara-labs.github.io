@@ -6,6 +6,7 @@
 @import "./base.css";
 @import "./scroll.css";
 @import "./animations.css";
+@import "./blog.css";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
