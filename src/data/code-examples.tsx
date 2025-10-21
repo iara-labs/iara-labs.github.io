@@ -5,10 +5,10 @@ import { readFileSync } from "fs";
 
 const client = new RekognitionClient({
 region: "sa-east-1",
-endpoint: "https://api.sabia.ai",
+endpoint: "https://api.iara.ai",
 credentials: {
-accessKeyId: process.env.SABIA_ACCESS_KEY,
-secretAccessKey: process.env.SABIA_SECRET_KEY,
+accessKeyId: process.env.IARA_ACCESS_KEY,
+secretAccessKey: process.env.IARA_SECRET_KEY,
 },
 });
 
@@ -35,10 +35,10 @@ console.log(\`\${text.Type}: \${text.DetectedText} (confidence: \${text.Confiden
 
 const textractClient = new TextractClient({
 region: "sa-east-1",
-endpoint: "https://api.sabia.ai",
+endpoint: "https://api.iara.ai",
 credentials: {
-accessKeyId: process.env.SABIA_ACCESS_KEY,
-secretAccessKey: process.env.SABIA_SECRET_KEY,
+accessKeyId: process.env.IARA_ACCESS_KEY,
+secretAccessKey: process.env.IARA_SECRET_KEY,
 },
 });
 
@@ -57,9 +57,9 @@ import base64
 client = boto3.client(
     'rekognition',
     region_name='sa-east-1',
-    endpoint_url='https://api.sabia.ai',
-    aws_access_key_id=os.getenv('SABIA_ACCESS_KEY'),
-    aws_secret_access_key=os.getenv('SABIA_SECRET_KEY')
+    endpoint_url='https://api.iara.ai',
+    aws_access_key_id=os.getenv('IARA_ACCESS_KEY'),
+    aws_secret_access_key=os.getenv('IARA_SECRET_KEY')
 )
 
 # Ler imagem
@@ -84,9 +84,9 @@ for text in response['TextDetections']:
 textract_client = boto3.client(
     'textract',
     region_name='sa-east-1',
-    endpoint_url='https://api.sabia.ai',
-    aws_access_key_id=os.getenv('SABIA_ACCESS_KEY'),
-    aws_secret_access_key=os.getenv('SABIA_SECRET_KEY')
+    endpoint_url='https://api.iara.ai',
+    aws_access_key_id=os.getenv('IARA_ACCESS_KEY'),
+    aws_secret_access_key=os.getenv('IARA_SECRET_KEY')
 )
 
 response = textract_client.detect_document_text(
@@ -96,7 +96,7 @@ response = textract_client.detect_document_text(
 print(response['Blocks'])`,
   },
   curl: {
-    detectFaces: `curl -X POST https://api.sabia.ai/rekognition/DetectFaces \\
+    detectFaces: `curl -X POST https://api.iara.ai/rekognition/DetectFaces \\
   -H "Content-Type: application/x-amz-json-1.1" \\
   -H "X-Amz-Target: RekognitionService.DetectFaces" \\
   -H "Authorization: AWS4-HMAC-SHA256 Credential=..." \\
@@ -106,7 +106,7 @@ print(response['Blocks'])`,
     },
     "Attributes": ["ALL"]
   }'`,
-    detectText: `curl -X POST https://api.sabia.ai/rekognition/DetectText \\
+    detectText: `curl -X POST https://api.iara.ai/rekognition/DetectText \\
   -H "Content-Type: application/x-amz-json-1.1" \\
   -H "X-Amz-Target: RekognitionService.DetectText" \\
   -H "Authorization: AWS4-HMAC-SHA256 Credential=..." \\
@@ -115,7 +115,7 @@ print(response['Blocks'])`,
       "Bytes": "<base64-encoded-image>"
     }
   }'`,
-    textract: `curl -X POST https://api.sabia.ai/textract/DetectDocumentText \\
+    textract: `curl -X POST https://api.iara.ai/textract/DetectDocumentText \\
   -H "Content-Type: application/x-amz-json-1.1" \\
   -H "X-Amz-Target: Textract.DetectDocumentText" \\
   -H "Authorization: AWS4-HMAC-SHA256 Credential=..." \\
@@ -143,7 +143,7 @@ func main() {
         config.WithRegion("sa-east-1"),
         config.WithEndpointResolverWithOptions(aws.EndpointResolverWithOptionsFunc(
             func(service, region string, options ...interface{}) (aws.Endpoint, error) {
-                return aws.Endpoint{URL: "https://api.sabia.ai"}, nil
+                return aws.Endpoint{URL: "https://api.iara.ai"}, nil
             })),
     )
     if err != nil {
@@ -206,10 +206,10 @@ use Aws\\Exception\\AwsException;
 $client = new RekognitionClient([
     'version' => 'latest',
     'region'  => 'sa-east-1',
-    'endpoint' => 'https://api.sabia.ai',
+    'endpoint' => 'https://api.iara.ai',
     'credentials' => [
-        'key'    => $_ENV['SABIA_ACCESS_KEY'],
-        'secret' => $_ENV['SABIA_SECRET_KEY'],
+        'key'    => $_ENV['IARA_ACCESS_KEY'],
+        'secret' => $_ENV['IARA_SECRET_KEY'],
     ],
 ]);
 
@@ -234,10 +234,10 @@ foreach ($result['TextDetections'] as $text) {
 $textractClient = new Aws\\Textract\\TextractClient([
     'version' => 'latest',
     'region'  => 'sa-east-1',
-    'endpoint' => 'https://api.sabia.ai',
+    'endpoint' => 'https://api.iara.ai',
     'credentials' => [
-        'key'    => $_ENV['SABIA_ACCESS_KEY'],
-        'secret' => $_ENV['SABIA_SECRET_KEY'],
+        'key'    => $_ENV['IARA_ACCESS_KEY'],
+        'secret' => $_ENV['IARA_SECRET_KEY'],
     ],
 ]);
 
@@ -252,9 +252,9 @@ print_r($result['Blocks']);`,
 
 client = Aws::Rekognition::Client.new(
   region: 'sa-east-1',
-  endpoint: 'https://api.sabia.ai',
-  access_key_id: ENV['SABIA_ACCESS_KEY'],
-  secret_access_key: ENV['SABIA_SECRET_KEY']
+  endpoint: 'https://api.iara.ai',
+  access_key_id: ENV['IARA_ACCESS_KEY'],
+  secret_access_key: ENV['IARA_SECRET_KEY']
 )
 
 image_bytes = File.read('photo.jpg')
@@ -276,9 +276,9 @@ end`,
     textract: `# Textract
 textract_client = Aws::Textract::Client.new(
   region: 'sa-east-1',
-  endpoint: 'https://api.sabia.ai',
-  access_key_id: ENV['SABIA_ACCESS_KEY'],
-  secret_access_key: ENV['SABIA_SECRET_KEY']
+  endpoint: 'https://api.iara.ai',
+  access_key_id: ENV['IARA_ACCESS_KEY'],
+  secret_access_key: ENV['IARA_SECRET_KEY']
 )
 
 result = textract_client.detect_document_text({
@@ -299,7 +299,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     let config = Config::builder()
         .region(region_provider)
-        .endpoint_url("https://api.sabia.ai")
+        .endpoint_url("https://api.iara.ai")
         .build();
     
     let client = Client::from_conf(config);
@@ -362,11 +362,11 @@ public class DetectFaces {
     public static void main(String[] args) throws Exception {
         RekognitionClient client = RekognitionClient.builder()
             .region(Region.SA_EAST_1)
-            .endpointOverride(URI.create("https://api.sabia.ai"))
+            .endpointOverride(URI.create("https://api.iara.ai"))
             .credentialsProvider(StaticCredentialsProvider.create(
                 AwsBasicCredentials.create(
-                    System.getenv("SABIA_ACCESS_KEY"),
-                    System.getenv("SABIA_SECRET_KEY")
+                    System.getenv("IARA_ACCESS_KEY"),
+                    System.getenv("IARA_SECRET_KEY")
                 )
             ))
             .build();
@@ -397,11 +397,11 @@ import software.amazon.awssdk.services.textract.TextractClient;
 
 TextractClient textractClient = TextractClient.builder()
     .region(Region.SA_EAST_1)
-    .endpointOverride(URI.create("https://api.sabia.ai"))
+    .endpointOverride(URI.create("https://api.iara.ai"))
     .credentialsProvider(StaticCredentialsProvider.create(
         AwsBasicCredentials.create(
-            System.getenv("SABIA_ACCESS_KEY"),
-            System.getenv("SABIA_SECRET_KEY")
+            System.getenv("IARA_ACCESS_KEY"),
+            System.getenv("IARA_SECRET_KEY")
         )
     ))
     .build();
@@ -420,12 +420,12 @@ using Amazon;
 using System.IO;
 
 var client = new AmazonRekognitionClient(
-    Environment.GetEnvironmentVariable("SABIA_ACCESS_KEY"),
-    Environment.GetEnvironmentVariable("SABIA_SECRET_KEY"),
+    Environment.GetEnvironmentVariable("IARA_ACCESS_KEY"),
+    Environment.GetEnvironmentVariable("IARA_SECRET_KEY"),
     new AmazonRekognitionConfig
     {
         RegionEndpoint = RegionEndpoint.SAEast1,
-        ServiceURL = "https://api.sabia.ai"
+        ServiceURL = "https://api.iara.ai"
     }
 );
 
@@ -454,12 +454,12 @@ foreach (var text in response.TextDetections)
 using Amazon.Textract;
 
 var textractClient = new AmazonTextractClient(
-    Environment.GetEnvironmentVariable("SABIA_ACCESS_KEY"),
-    Environment.GetEnvironmentVariable("SABIA_SECRET_KEY"),
+    Environment.GetEnvironmentVariable("IARA_ACCESS_KEY"),
+    Environment.GetEnvironmentVariable("IARA_SECRET_KEY"),
     new AmazonTextractConfig
     {
         RegionEndpoint = RegionEndpoint.SAEast1,
-        ServiceURL = "https://api.sabia.ai"
+        ServiceURL = "https://api.iara.ai"
     }
 );
 

@@ -1,10 +1,10 @@
-<!-- SabIA Visual Identity — single source of truth for brand & landing UI -->
+<!-- Iara Visual Identity — single source of truth for brand & landing UI -->
 
-## Identidade Visual — SabIA
+## Identidade Visual — Iara
 
 ### Marca
 
-- **Nome**: SabIA ("Sab" + "IA" de Inteligência Artificial). Usar assim em todos os contextos: "SabIA".
+- **Nome**: Iara (nome indígena brasileiro que significa "senhora das águas"). Usar assim em todos os contextos: "Iara".
 - **Essência**: plataforma brasileira de visão computacional compatível com SDK da AWS, focada em Reconhecimento Facial e OCR, com infra no Brasil.
 - **Tagline**: Alternativa brasileira ao AWS Rekognition e Textract.
 - **Personalidade**: tech minimalista, com brasilidade sutil (acentos cromáticos e formas discretas), confiável e developer-first.
@@ -12,7 +12,7 @@
 
 AI Brief — Marca
 
-- Nome: SabIA. Case exato: "S" maiúsculo + "IA" maiúsculo.
+- Nome: Iara. Case exato: "I" maiúsculo + "ara" minúsculo.
 - Proposta: visão computacional (faces, OCR) compatível com SDK AWS.
 - Princípios: confiança, performance local (sa-east-1), suporte PT-BR.
 - Uso: evite gírias; privilegie clareza e precisão técnica.
@@ -21,7 +21,7 @@ AI Brief — Marca
 
 ### Logotipo (diretrizes)
 
-- **Construção**: wordmark "SabIA" (preferencial) + símbolo opcional que remete a visão/olho abstraído ou pixel/retícula com leve referência a curvas orgânicas brasileiras.
+- **Construção**: wordmark "Iara" (preferencial) + símbolo opcional que remete a visão/olho abstraído ou pixel/retícula com leve referência a curvas orgânicas brasileiras.
 - **Proporções**: relação altura/espessura equilibrada para leitura em tamanhos pequenos; x-height generosa.
 - **Área de respiro**: no mínimo 0,5× da altura do wordmark ao redor.
 - **Tamanho mínimo**: 24 px de altura em UI; 12 mm em impresso.
@@ -29,12 +29,12 @@ AI Brief — Marca
 - **Alinhamento**: alinhamento ótico horizontal; evitar center com elementos desbalanceados sem compensação ótica.
 - **Restrições (Don’t)**:
   - não distorcer, inclinar ou aplicar efeitos (glow, shadow exagerado, degradês pesados);
-  - não alterar case (sempre "SabIA");
+  - não alterar case (sempre "Iara");
   - não usar sobre fundos com baixo contraste; manter WCAG AA para texto/logos.
 
 AI Brief — Logotipo
 
-- Wordmark "SabIA" limpo e legível; símbolo opcional de visão/pixels.
+- Wordmark "Iara" limpo e legível; símbolo opcional de visão/pixels.
 - Estilo: minimalista tech; sem adornos caricatos; curvas sutis.
 - Versões: positivo, negativo, mono; preservar respiro 0,5×.
 
@@ -45,13 +45,11 @@ AI Brief — Logotipo
 Paleta inspirada no Brasil de forma sutil: verde e azul como acentos, amarelo em doses moderadas, base neutra cinza.
 
 - **Primárias**
-
-  - `brand.primary` (Verde SabIA): `#1FA37A`
-  - `brand.secondary` (Azul SabIA): `#1062C3`
+  - `brand.primary` (Verde Iara): `#1FA37A`
+  - `brand.secondary` (Azul Iara): `#1062C3`
   - `brand.accent` (Amarelo Sutil): `#FFC857`
 
 - **Neutros**
-
   - `neutral.900`: `#0F172A`
   - `neutral.800`: `#1E293B`
   - `neutral.700`: `#334155`
@@ -253,7 +251,7 @@ Glossário
 
 - Rekognition: serviço de visão para imagens (ex.: DetectFaces, DetectText).
 - Textract-Compat: modo para `DetectDocumentText` (documentos) usando cliente Textract.
-- Endpoint: URL do servidor SabIA substituindo o endpoint AWS no SDK.
+- Endpoint: URL do servidor Iara substituindo o endpoint AWS no SDK.
 
 AI Brief — Mensagens
 

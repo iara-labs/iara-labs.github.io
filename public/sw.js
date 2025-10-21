@@ -1,5 +1,5 @@
-// Service Worker básico para SabIA Labs
-const CACHE_NAME = "sabia-labs-v1";
+// Service Worker básico para Iara Labs
+const CACHE_NAME = "iara-labs-v1";
 const urlsToCache = [
   "/",
   "/index.html",

@@ -1,6 +1,6 @@
 {
-  "name": "SabIA Labs - Visão Computacional Brasileira",
-  "short_name": "SabIA Labs",
+  "name": "Iara Labs - Visão Computacional Brasileira",
+  "short_name": "Iara Labs",
   "description": "Plataforma brasileira de reconhecimento facial e OCR compatível com AWS SDK. Infraestrutura no Brasil, latência baixa e compliance local.",
   "start_url": "/",
   "display": "standalone",
@@ -47,14 +47,14 @@
       "sizes": "1280x720",
       "type": "image/webp",
       "form_factor": "wide",
-      "label": "Dashboard SabIA Labs - Visão geral da plataforma"
+      "label": "Dashboard Iara Labs - Visão geral da plataforma"
     },
     {
       "src": "/images/screenshot-mobile.webp",
       "sizes": "390x844",
       "type": "image/webp",
       "form_factor": "narrow",
-      "label": "SabIA Labs Mobile - Interface otimizada para dispositivos móveis"
+      "label": "Iara Labs Mobile - Interface otimizada para dispositivos móveis"
     }
   ],
   "shortcuts": [

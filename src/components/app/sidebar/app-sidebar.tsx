@@ -16,18 +16,18 @@ import {
 
 // System logo component to be used wherever an icon ElementType is expected
 const SystemLogo = ({ className }: { className?: string }) => (
-  <img src="/images/logo-nav.webp" alt="SabIA" className={className} />
+  <img src="/images/logo-nav.webp" alt="Iara" className={className} />
 );
 
 const data = {
   user: {
     name: "João Pedro",
-    email: "joao@sabia.api.br",
+    email: "joao@iara.api.br",
     avatar: "/images/logo-nav.webp",
   },
   teams: [
     {
-      name: "SabIA Team",
+      name: "Iara Team",
       logo: SystemLogo,
       plan: "Pró",
     },

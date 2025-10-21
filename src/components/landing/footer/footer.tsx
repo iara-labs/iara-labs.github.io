@@ -94,11 +94,11 @@ const Footer = () => {
             <div className="flex items-center mb-4">
               <img
                 src="/images/logo.webp"
-                alt="SabIA Labs"
+                alt="Iara Labs"
                 className="h-8 w-auto mr-3"
               />
               <span className="font-['Space_Grotesk'] text-xl font-bold">
-                SabIA
+                Iara
               </span>
             </div>
             <p className="text-[var(--color-neutral-300)] leading-relaxed mb-6 max-w-md">
@@ -256,7 +256,7 @@ const Footer = () => {
         <div className="border-t border-[var(--color-neutral-700)] mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-[var(--color-neutral-400)] text-sm mb-4 md:mb-0">
-              © {currentYear} SabIA Labs. Todos os direitos reservados.
+              © {currentYear} Iara Labs. Todos os direitos reservados.
             </div>
             <div className="flex space-x-6 text-sm">
               <a

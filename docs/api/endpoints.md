@@ -1,10 +1,10 @@
-# Documentação da API - SabIA Labs
+# Documentação da API - Iara Labs
 
-Esta documentação especifica todos os endpoints necessários para o backend da plataforma SabIA Labs, baseada na análise do frontend existente.
+Esta documentação especifica todos os endpoints necessários para o backend da plataforma Iara Labs, baseada na análise do frontend existente.
 
 ## Visão Geral
 
-A API da SabIA Labs é uma plataforma de IA que oferece serviços de OCR e Reconhecimento de documentos. O sistema possui:
+A API da Iara Labs é uma plataforma de IA que oferece serviços de OCR e Reconhecimento de documentos. O sistema possui:
 
 - **Usuários** que podem pertencer a múltiplos **Times**
 - **Times** que possuem **Planos** de assinatura
@@ -22,7 +22,7 @@ Authorization: Bearer <jwt_token>
 ## Base URL
 
 ```
-https://api.sabialabs.com/v1
+https://api.iara.ai/v1
 ```
 
 ---
@@ -96,7 +96,7 @@ Autentica um usuário e retorna um JWT.
       "email": "joao@exemplo.com",
       "phone": "(11) 99999-9999",
       "company": "Empresa Exemplo",
-      "avatar": "https://api.sabialabs.com/avatars/uuid.jpg"
+      "avatar": "https://api.iara.ai/avatars/uuid.jpg"
     },
     "token": "jwt_token_here",
     "expiresIn": 86400
@@ -200,7 +200,7 @@ Authorization: Bearer <jwt_token>
       "id": "uuid",
       "name": "Time Desenvolvimento",
       "plan": "Starter",
-      "logo": "https://api.sabialabs.com/logos/team-uuid.png",
+      "logo": "https://api.iara.ai/logos/team-uuid.png",
       "role": "admin",
       "createdAt": "2025-01-15T10:30:00Z"
     },
@@ -208,7 +208,7 @@ Authorization: Bearer <jwt_token>
       "id": "uuid2",
       "name": "Time Produção",
       "plan": "Pro",
-      "logo": "https://api.sabialabs.com/logos/team-uuid2.png",
+      "logo": "https://api.iara.ai/logos/team-uuid2.png",
       "role": "member",
       "createdAt": "2025-01-10T14:20:00Z"
     }
@@ -247,7 +247,7 @@ Authorization: Bearer <jwt_token>
     "id": "uuid",
     "name": "Novo Time",
     "plan": "sandbox",
-    "logo": "https://api.sabialabs.com/logos/team-uuid.png",
+    "logo": "https://api.iara.ai/logos/team-uuid.png",
     "role": "admin",
     "createdAt": "2025-01-20T10:30:00Z"
   }
@@ -299,7 +299,7 @@ Authorization: Bearer <jwt_token>
         "name": "João Silva",
         "email": "joao@exemplo.com",
         "role": "admin",
-        "avatar": "https://api.sabialabs.com/avatars/uuid.jpg"
+        "avatar": "https://api.iara.ai/avatars/uuid.jpg"
       }
     ],
     "createdAt": "2025-01-15T10:30:00Z"
@@ -339,7 +339,7 @@ Authorization: Bearer <jwt_token>
     "name": "Novo Usuário",
     "email": "novo@exemplo.com",
     "role": "member",
-    "avatar": "https://api.sabialabs.com/avatars/uuid.jpg"
+    "avatar": "https://api.iara.ai/avatars/uuid.jpg"
   }
 }
 ```
@@ -1100,24 +1100,24 @@ X-RateLimit-Reset: 1640995200
 
 ```bash
 # 1. Login
-curl -X POST https://api.sabialabs.com/v1/auth/login \
+curl -X POST https://api.iara.ai/v1/auth/login \
   -H "Content-Type: application/json" \
   -d '{"email": "joao@exemplo.com", "password": "senha123"}'
 
 # 2. Criar time
-curl -X POST https://api.sabialabs.com/v1/teams \
+curl -X POST https://api.iara.ai/v1/teams \
   -H "Authorization: Bearer <jwt_token>" \
   -H "Content-Type: application/json" \
   -d '{"name": "Meu Time", "plan": "starter"}'
 
 # 3. Criar API Key
-curl -X POST https://api.sabialabs.com/v1/teams/{teamId}/api-keys \
+curl -X POST https://api.iara.ai/v1/teams/{teamId}/api-keys \
   -H "Authorization: Bearer <jwt_token>" \
   -H "Content-Type: application/json" \
   -d '{"name": "API Key Principal", "description": "Chave principal"}'
 
 # 4. Usar API Key para OCR
-curl -X POST https://api.sabialabs.com/v1/ocr \
+curl -X POST https://api.iara.ai/v1/ocr \
   -H "Authorization: Bearer <api_key>" \
   -F "image=@documento.jpg"
 ```

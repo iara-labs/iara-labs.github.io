@@ -7,7 +7,7 @@ const SabIA = () => {
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="mb-16 text-center">
           <h2 className="font-['Space_Grotesk'] text-4xl font-bold leading-tight text-[var(--color-neutral-900)] md:text-5xl lg:text-6x">
-            Por que escolher a SabIA?
+            Por que escolher a Iara?
           </h2>
         </div>
         <div className="grid gap-8 md:grid-cols-2">

@@ -27,7 +27,7 @@ export function SigninForm({
       <div className="flex justify-center mb-8">
         <img
           src="/images/logo-nav.webp"
-          alt="SabIA Labs"
+          alt="Iara Labs"
           className="h-16 w-auto"
         />
       </div>

@@ -2,7 +2,7 @@
 title: "O que a queda da AWS pode nos mostrar?"
 author: "Diogo Cezar"
 date: "2025-10-20"
-excerpt: "A queda global da AWS que afetou centenas de serviços em dezembro de 2024 mostra a importância de ter infraestrutura local e independente. Descubra como a SabIA Labs oferece soluções brasileiras que mantêm seu negócio funcionando quando todo mundo para."
+excerpt: "A queda global da AWS que afetou centenas de serviços em dezembro de 2024 mostra a importância de ter infraestrutura local e independente. Descubra como a Iara Labs oferece soluções brasileiras que mantêm seu negócio funcionando quando todo mundo para."
 tags: ["AWS", "Infraestrutura", "Brasil", "Confiabilidade", "Cloud Computing"]
 ---
 
@@ -30,7 +30,7 @@ A AWS responde por aproximadamente **um terço de todo o mercado de computação
 
 ## A solução: Infraestrutura brasileira independente
 
-É aqui que a **SabIA Labs** entra como uma alternativa estratégica. Nossa proposta é simples, mas poderosa:
+É aqui que a **Iara Labs** entra como uma alternativa estratégica. Nossa proposta é simples, mas poderosa:
 
 ### **Hospedagem no Brasil**
 
@@ -59,7 +59,7 @@ Enquanto seus concorrentes estão offline devido a falhas de infraestrutura exte
 - **Diferencial competitivo** em momentos críticos
 - **Controle total** sobre sua infraestrutura
 
-## Por que escolher a SabIA Labs
+## Por que escolher a Iara Labs
 
 ### **Confiabilidade**
 
@@ -89,6 +89,6 @@ Enquanto seus concorrentes estão offline devido a falhas de infraestrutura exte
 
 A queda da AWS foi um alerta para o mundo digital: **depender de uma única infraestrutura é um risco que nenhuma empresa pode se dar ao luxo de correr**.
 
-A SabIA Labs oferece uma alternativa real e viável: **infraestrutura brasileira, independente e confiável** que mantém seu negócio funcionando quando todo mundo para.
+A Iara Labs oferece uma alternativa real e viável: **infraestrutura brasileira, independente e confiável** que mantém seu negócio funcionando quando todo mundo para.
 
 Não espere a próxima queda para agir. **Diversifique sua infraestrutura agora** e garanta que seu negócio continue operando, independentemente do que aconteça com os gigantes globais.

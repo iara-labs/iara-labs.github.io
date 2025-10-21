@@ -12,7 +12,7 @@ function BlogIndex() {
       {/* Header */}
       <div className="text-center space-y-4">
         <h1 className="font-['Space_Grotesk'] text-4xl font-bold text-[var(--color-secondary)] md:text-5xl">
-          Blog SabIA Labs
+          Blog Iara Labs
         </h1>
         <p className="text-lg text-[var(--color-muted-foreground)] max-w-2xl mx-auto">
           Descubra insights, tutoriais e novidades sobre inteligência artificial

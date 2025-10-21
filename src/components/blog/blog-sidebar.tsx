@@ -77,7 +77,7 @@ export default function BlogSidebar({ currentSlug }: BlogSidebarProps) {
         </h3>
         <p className="text-sm text-[var(--color-muted-foreground)] mb-4">
           Junte-se à lista de espera e seja um dos primeiros a experimentar as
-          APIs de IA da SabIA Labs.
+          APIs de IA da Iara Labs.
         </p>
         <a
           href="/wait-list"

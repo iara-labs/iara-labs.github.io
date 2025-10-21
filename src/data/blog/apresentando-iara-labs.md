@@ -1,14 +1,14 @@
 ---
-title: "Apresentando a SabIA Labs: A revolução da Inteligência Artificial brasileira"
+title: "Apresentando a Iara Labs: A revolução da Inteligência Artificial brasileira"
 author: "Diogo Cezar"
 date: "2025-10-20"
-excerpt: "Conheça a SabIA Labs, a primeira plataforma brasileira de APIs de Inteligência Artificial. Desenvolvida por brasileiros, para brasileiros, com infraestrutura local e suporte em português."
-tags: ["SabIA Labs", "Inteligência Artificial", "Brasil"]
+excerpt: "Conheça a Iara Labs, a primeira plataforma brasileira de APIs de Inteligência Artificial. Desenvolvida por brasileiros, para brasileiros, com infraestrutura local e suporte em português."
+tags: ["Iara Labs", "Inteligência Artificial", "Brasil"]
 ---
 
-Bem-vindos ao futuro da **Inteligência Artificial no Brasil**! Hoje temos o prazer de apresentar oficialmente a **SabIA Labs**, a primeira plataforma brasileira de APIs de IA desenvolvida especificamente para o mercado nacional.
+Bem-vindos ao futuro da **Inteligência Artificial no Brasil**! Hoje temos o prazer de apresentar oficialmente a **Iara Labs**, a primeira plataforma brasileira de APIs de IA desenvolvida especificamente para o mercado nacional.
 
-A **SabIA Labs** nasceu de uma visão simples, mas poderosa: **democratizar o acesso à Inteligência Artificial de alta qualidade para empresas e desenvolvedores brasileiros**. Enquanto o mundo se volta para soluções globais, nós acreditamos que o Brasil merece uma alternativa que entende nossas necessidades, nossa cultura e nossos desafios únicos.
+A **Iara Labs** nasceu de uma visão simples, mas poderosa: **democratizar o acesso à Inteligência Artificial de alta qualidade para empresas e desenvolvedores brasileiros**. Enquanto o mundo se volta para soluções globais, nós acreditamos que o Brasil merece uma alternativa que entende nossas necessidades, nossa cultura e nossos desafios únicos.
 
 ## Nossa Missão
 
@@ -32,7 +32,7 @@ As principais plataformas de IA do mundo (OpenAI, Google, Anthropic) têm limita
 
 ### Nossa solução brasileira
 
-A SabIA Labs resolve todos esses problemas:
+A Iara Labs resolve todos esses problemas:
 
 ### Preços em reais, sem surpresas
 
@@ -83,7 +83,7 @@ A SabIA Labs resolve todos esses problemas:
 
 ## O futuro da IA no Brasil
 
-A SabIA Labs não é apenas uma empresa de tecnologia - **somos um movimento**. Acreditamos que o Brasil tem potencial para ser um líder mundial em Inteligência Artificial, e estamos construindo as bases para isso acontecer.
+A Iara Labs não é apenas uma empresa de tecnologia - **somos um movimento**. Acreditamos que o Brasil tem potencial para ser um líder mundial em Inteligência Artificial, e estamos construindo as bases para isso acontecer.
 
 ### Nossa visão
 

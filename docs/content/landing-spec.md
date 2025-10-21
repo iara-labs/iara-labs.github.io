@@ -1,31 +1,31 @@
-## SabIA — Landing Page Spec (conteúdo + diretrizes)
+## Iara — Landing Page Spec (conteúdo + diretrizes)
 
 ---
 
 ### 1) Metadados (SEO/OG)
 
-- Título: SabIA — Alternativa brasileira ao AWS Rekognition e Textract
+- Título: Iara — Alternativa brasileira ao AWS Rekognition e Textract
 - Descrição: Plataforma brasileira de visão computacional (Reconhecimento Facial e OCR) compatível com o SDK da AWS. Mesma DX — basta trocar o endpoint. Infra no Brasil, baixa latência, suporte em português.
-- Palavras‑chave: SabIA, visão computacional, reconhecimento facial, OCR, Rekognition, Textract, AWS SDK, Brasil, sa-east-1
-- Canonical: https://sabia.ai/
+- Palavras‑chave: Iara, visão computacional, reconhecimento facial, OCR, Rekognition, Textract, AWS SDK, Brasil, sa-east-1
+- Canonical: https://iara.ai/
 - Robots: index, follow
 - OG:
-  - og:title: SabIA — Alternativa brasileira ao AWS Rekognition e Textract
+  - og:title: Iara — Alternativa brasileira ao AWS Rekognition e Textract
   - og:description: Reconhecimento facial e OCR com a mesma experiência do SDK da AWS — apenas altere o endpoint.
-  - og:image: https://sabia.ai/og/cover.png
+  - og:image: https://iara.ai/og/cover.png
   - og:type: website
-  - og:url: https://sabia.ai/
+  - og:url: https://iara.ai/
 - JSON-LD (resumo)
 
 ```json
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "SabIA",
+  "name": "Iara",
   "applicationCategory": "AIService",
   "operatingSystem": "Cloud",
   "description": "Plataforma brasileira de visão computacional compatível com SDK da AWS (Reconhecimento Facial e OCR).",
-  "url": "https://sabia.ai/"
+  "url": "https://iara.ai/"
 }
 ```
 

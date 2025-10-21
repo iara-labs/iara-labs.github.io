@@ -112,8 +112,8 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-[80px] md:h-[110px]">
           <div className="flex items-center">
             <img
-              src="/images/logo-nav.webp"
-              alt="SabIA Labs"
+              src="/images/logo.webp"
+              alt="Iara Labs"
               className="h-10 md:h-12 w-auto"
             />
           </div>

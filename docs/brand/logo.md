@@ -1,10 +1,10 @@
-## Brief de Logotipo — SabIA
+## Brief de Logotipo — Iara
 
-Este é um prompt detalhado para um designer profissional (ou modelo de geração de imagem/vetor) criar o logotipo da marca SabIA, alinhado à identidade visual definida em `brand/visual-identity.md`.
+Este é um prompt detalhado para um designer profissional (ou modelo de geração de imagem/vetor) criar o logotipo da marca Iara, alinhado à identidade visual definida em `brand/visual-identity.md`.
 
 ### Contexto de marca
 
-- Nome: SabIA ("Sab" + "IA" de Inteligência Artificial). Usar exatamente "SabIA" com S maiúsculo e "IA" maiúsculo.
+- Nome: Iara. Usar exatamente "Iara" com I maiúsculo e demais letras minúsculas.
 - Essência: plataforma brasileira de visão computacional compatível com SDK da AWS (Rekognition/Textract-Compat), com infra no Brasil.
 - Personalidade: tech minimalista, confiável, developer-first, com brasilidade sutil (acentos cromáticos e formas discretas, sem clichês).
 - Tagline (opcional em lockup): "A alternativa brasileira ao AWS Rekognition e Textract".
@@ -13,7 +13,7 @@ Este é um prompt detalhado para um designer profissional (ou modelo de geraçã
 
 Criar um sistema de marca composto por:
 
-1. Wordmark primário "SabIA" (preferencial para UI/landing);
+1. Wordmark primário "Iara" (preferencial para UI/landing);
 2. Símbolo/opcional: um ícone abstrato relacionado a visão/pixel/retícula, com leve referência a curvas orgânicas brasileiras;
 3. Lockups e versões para uso em superfícies claras, escuras e monocromáticas.
 
@@ -22,15 +22,15 @@ Criar um sistema de marca composto por:
 - Estética: minimalista tech; sem ornamentos excessivos; formas limpas; excelente legibilidade em tamanhos pequenos.
 - Subtilezas brasileiras: refletir Brasil via cromia (verde/azul) e curvas discretas; evitar bandeiras, mapas ou mascotes literais.
 - Construção do wordmark: basear-se em uma sans geométrica com caráter tecnológico (ex.: próximo à Space Grotesk), com ajustes de desenho para um resultado proprietário.
-- Case e ortografia: SEMPRE "SabIA". Não alterar para Sabia/SABIÁ/SabiaLabs, etc.
+- Case e ortografia: SEMPRE "Iara". Não alterar para IARA/íara/IaraLabs, etc.
 - Ritmo e proporção: altura-x generosa, modulação equilibrada, cantos ligeiramente suavizados, kerning oticamente ajustado.
 - Área de respiro: mínimo 0,5× da altura do wordmark ao redor em aplicações.
 - Tamanho mínimo: 24 px de altura na UI e 12 mm no impresso para o wordmark.
 
 ### Cores (brand palette)
 
-- Primária: Verde SabIA `#1FA37A` (uso preferencial para CTAs e destaque).
-- Secundária: Azul SabIA `#1062C3` (foco/realces e acessibilidade em estados de foco).
+- Primária: Verde Iara `#1FA37A` (uso preferencial para CTAs e destaque).
+- Secundária: Azul Iara `#1062C3` (foco/realces e acessibilidade em estados de foco).
 - Acento: Amarelo sutil `#FFC857` (usos pontuais; evitar como fundo de textos longos).
 - Neutros de suporte: `#0F172A`, `#1E293B`, `#334155`, `#475569`, `#64748B`, `#94A3B8`, `#CBD5E1`, `#E2E8F0`, `#F1F5F9`, `#F8FAFC`.
 - Contraste: garantir WCAG AA (mín. 4.5:1) para aplicações com texto/logotipo.
@@ -57,7 +57,7 @@ Criar um sistema de marca composto por:
 ### Restrições de uso (Don’t)
 
 - Não distorcer, inclinar, aplicar efeitos de glow/bevel/gradientes pesados.
-- Não alterar o case (nunca "SABIa", "sabIA" etc.).
+- Não alterar o case (nunca "IARA", "íara" etc.).
 - Não usar sobre fundos com contraste insuficiente (respeitar AA).
 - Não contornar o wordmark com strokes arbitrários em pequenos tamanhos.
 
@@ -84,7 +84,7 @@ Criar um sistema de marca composto por:
 
 ### Prompt consolidado (para IA/geração)
 
-"Crie um logotipo minimalista e tecnológico para a marca SabIA (S maiúsculo, IA maiúsculo). Desenvolva um wordmark proprietário inspirado em sans geométrica (próxima à Space Grotesk), com altura-x generosa, cantos levemente suavizados e kerning ajustado. Inclua um símbolo opcional abstrato que remeta a visão computacional (olho/retícula/pixel/landmarks) com leve curva orgânica de inspiração brasileira, evitando clichês literais. Use a paleta: verde `#1FA37A` (primária), azul `#1062C3` (secundária), amarelo `#FFC857` (acento limitado), com neutros `#0F172A` e `#F8FAFC`. Prepare variações positivo (fundo claro), negativo (fundo escuro), monocromático e de alto contraste. Garanta legibilidade do wordmark a 24 px e do símbolo a 16 px; defina área de respiro de 0,5× da altura do wordmark. Não utilizar efeitos como glow, bevel ou gradientes pesados; mantenha visual clean e moderno. Entregue em SVG otimizado + PNG @1x/@2x/@3x, com lockups horizontal (símbolo à esquerda) e empilhado (símbolo acima)."
+"Crie um logotipo minimalista e tecnológico para a marca Iara (I maiúsculo, demais letras minúsculas). Desenvolva um wordmark proprietário inspirado em sans geométrica (próxima à Space Grotesk), com altura-x generosa, cantos levemente suavizados e kerning ajustado. Inclua um símbolo opcional abstrato que remeta a visão computacional (olho/retícula/pixel/landmarks) com leve curva orgânica de inspiração brasileira, evitando clichês literais. Use a paleta: verde `#1FA37A` (primária), azul `#1062C3` (secundária), amarelo `#FFC857` (acento limitado), com neutros `#0F172A` e `#F8FAFC`. Prepare variações positivo (fundo claro), negativo (fundo escuro), monocromático e de alto contraste. Garanta legibilidade do wordmark a 24 px e do símbolo a 16 px; defina área de respiro de 0,5× da altura do wordmark. Não utilizar efeitos como glow, bevel ou gradientes pesados; mantenha visual clean e moderno. Entregue em SVG otimizado + PNG @1x/@2x/@3x, com lockups horizontal (símbolo à esquerda) e empilhado (símbolo acima)."
 
 ### Observações finais
 
