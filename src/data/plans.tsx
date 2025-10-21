@@ -37,9 +37,9 @@ export const plans: Plan[] = [
   },
   {
     name: "Starter",
-    price: "R$ 99",
+    price: "R$ 49,90",
     priceSubtext: "/mês",
-    annualPrice: "R$ 990",
+    annualPrice: "R$ 499,90",
     annualPriceSubtext: "/ano",
     mainFeature: "5.000 requisições/mês",
     features: [
@@ -55,9 +55,9 @@ export const plans: Plan[] = [
   },
   {
     name: "Pro",
-    price: "R$ 499",
+    price: "R$ 99,90",
     priceSubtext: "/mês",
-    annualPrice: "R$ 4.990",
+    annualPrice: "R$ 999,90",
     annualPriceSubtext: "/ano",
     mainFeature: "50.000 requisições/mês",
     features: [
