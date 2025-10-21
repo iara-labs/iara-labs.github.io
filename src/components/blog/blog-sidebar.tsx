@@ -81,7 +81,7 @@ export default function BlogSidebar({ currentSlug }: BlogSidebarProps) {
         </p>
         <a
           href="/wait-list"
-          className="inline-flex items-center justify-center w-full rounded-xl bg-[var(--color-primary)] px-4 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2"
+          className="inline-flex items-center justify-center w-full rounded-4xl bg-[var(--color-primary)] px-4 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2"
         >
           Entrar na Lista de Espera
         </a>

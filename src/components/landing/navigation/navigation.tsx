@@ -154,7 +154,7 @@ const Navigation = () => {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-md text-[var(--color-secondary)] hover:text-[var(--color-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] cursor-pointer"
+              className="p-2 rounded-4xl text-[var(--color-secondary)] hover:text-[var(--color-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] cursor-pointer"
             >
               <svg
                 className="h-6 w-6"
@@ -191,7 +191,7 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.href, item.label)}
-                className={`w-full text-left px-4 py-3 text-base font-medium transition-all duration-300 ease-in-out rounded-md cursor-pointer ${
+                className={`w-full text-left px-4 py-3 text-base font-medium transition-all duration-300 ease-in-out rounded-4xl cursor-pointer ${
                   activeSection === item.id
                     ? "text-white bg-[var(--color-primary)]"
                     : "text-[var(--color-secondary)] hover:text-white hover:bg-[var(--color-primary)]"
@@ -209,7 +209,7 @@ const Navigation = () => {
                     "navigation-mobile"
                   )
                 }
-                className="w-full inline-flex items-center justify-center rounded-lg bg-[var(--color-primary)] px-6 py-3 text-base font-semibold text-white shadow-md transition-all hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:ring-offset-2 cursor-pointer"
+                className="w-full inline-flex items-center justify-center rounded-4xl bg-[var(--color-primary)] px-6 py-3 text-base font-semibold text-white shadow-md transition-all hover:bg-[#188f6a] focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] focus:ring-offset-2 cursor-pointer"
               >
                 {isOnThankYouPage ? "Voltar ao Início" : "Começar Agora"}
               </a>

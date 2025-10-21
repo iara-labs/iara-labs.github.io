@@ -1,7 +1,7 @@
-const SabIA = () => {
+const WhyChoose = () => {
   return (
     <section
-      id="sabia"
+      id="iara"
       className="bg-gradient-to-br from-[var(--color-neutral-50)] via-[var(--color-background)] to-[var(--color-neutral-100)] py-20 md:py-32"
     >
       <div className="mx-auto max-w-[1200px] px-6">
@@ -114,4 +114,4 @@ const SabIA = () => {
   );
 };
 
-export default SabIA;
+export default WhyChoose;

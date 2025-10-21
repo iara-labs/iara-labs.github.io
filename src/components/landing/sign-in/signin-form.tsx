@@ -92,7 +92,7 @@ export function SigninForm({
             <Field>
               <Button
                 type="submit"
-                className="w-full bg-[var(--color-primary)] hover:bg-[#188f6a] text-white font-semibold py-3 rounded-xl transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-[var(--color-primary)]/25"
+                className="w-full bg-[var(--color-primary)] hover:bg-[#188f6a] text-white font-semibold py-3 rounded-4xl transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-[var(--color-primary)]/25"
               >
                 Entrar
               </Button>

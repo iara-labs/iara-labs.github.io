@@ -36,7 +36,7 @@ export default function RegisterHero() {
           {/* Left Column - Content */}
           <div className="space-y-8">
             {/* Badge */}
-            <div className="inline-flex items-center rounded-full bg-[var(--color-primary)]/10 px-4 py-2 text-sm font-medium text-[var(--color-primary)]">
+            <div className="inline-flex items-center rounded-4xl bg-[var(--color-primary)]/10 px-4 py-2 text-sm font-medium text-[var(--color-primary)]">
               <svg
                 className="mr-2 h-4 w-4"
                 fill="currentColor"

@@ -7,7 +7,7 @@ import Hero from "@/components/landing/home/hero";
 import Resources from "@/components/landing/home/resources";
 import HowItWorks from "@/components/landing/home/how-it-works";
 import Developers from "@/components/landing/home/developers";
-import SabIA from "@/components/landing/home/sabia";
+import WhyChoose from "@/components/landing/home/why-choose";
 import Compatibility from "@/components/landing/home/compatibility";
 import Quickstart from "@/components/landing/home/quick-start";
 import Pricing from "@/components/landing/home/pricing";
@@ -32,7 +32,7 @@ function Index() {
   return (
     <div className="bg-[var(--color-background)]">
       <Hero />
-      <SabIA />
+      <WhyChoose />
       <Resources />
       <HowItWorks />
       <Developers />
