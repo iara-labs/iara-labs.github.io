@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://sabia-labs.github.io/sitemap.xml
+Sitemap: https://iara-labs.github.io/sitemap.xml
 
 # PWA related
 Allow: /manifest.json

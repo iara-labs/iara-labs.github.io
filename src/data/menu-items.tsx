@@ -6,7 +6,7 @@ export interface MenuItem {
 
 export const menuItems: MenuItem[] = [
   { id: "inicio", label: "Início", href: "#inicio" },
-  { id: "sabia", label: "Iara", href: "#iara" },
+  { id: "iara", label: "Iara", href: "#iara" },
   { id: "blog", label: "Blog", href: "/blog" },
   { id: "como-funciona", label: "Como Funciona", href: "#como-funciona" },
   {
