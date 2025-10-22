@@ -1,0 +1,84 @@
+{
+  "name": "Iara Labs - Visão Computacional Brasileira",
+  "short_name": "Iara Labs",
+  "description": "Plataforma brasileira de reconhecimento facial e OCR compatível com AWS SDK. Infraestrutura no Brasil, latência baixa e compliance local.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBFCFB",
+  "theme_color": "#1fa37a",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "categories": [
+    "productivity",
+    "developer",
+    "business"
+  ],
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/screenshot-desktop.webp",
+      "sizes": "1280x720",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Dashboard Iara Labs - Visão geral da plataforma"
+    },
+    {
+      "src": "/images/screenshot-mobile.webp",
+      "sizes": "390x844",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Iara Labs Mobile - Interface otimizada para dispositivos móveis"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Criar Chave API",
+      "short_name": "Nova Chave",
+      "description": "Crie uma nova chave de API para começar a usar",
+      "url": "/form",
+      "icons": [
+        {
+          "src": "/favicon-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Documentação",
+      "short_name": "Docs",
+      "description": "Acesse a documentação completa da API",
+      "url": "/docs",
+      "icons": [
+        {
+          "src": "/favicon-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
+}
